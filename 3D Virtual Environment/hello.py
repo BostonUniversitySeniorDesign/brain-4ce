@@ -6,28 +6,21 @@ from panda3d.core import AmbientLight, DirectionalLight, PointLight
 from panda3d.core import NodePath
 from panda3d.core import PandaNode
 from pandac.PandaModules import WindowProperties
-from direct.showbase import DirectObject
+from direct.gui.OnscreenText import OnscreenText
 
-
-class MyApp(ShowBase, DirectObject.DirectObject):
-
+class MyApp(ShowBase):
     xCoord = 0
     yCoord = 0
-
-    def ChangeCameraPosition(self):
-        self.xCoord = self.xCoord + 5
-        self.yCoord = self.yCoord + 5
-        self.camera.setPos(self.xCoord,self.yCoord,-0.5)
-        print(self.xCoord)
-        print(self.yCoord)
-
-    # def __Mouseinit__(self):
-    #    self.disableMouse()
+    textObject = None
 
     def __init__(self):
         ShowBase.__init__(self)
-#        self.accept('mouse1', self.__Mouseinit__)
-        self.accept('a', self.ChangeCameraPosition)
+
+        self.accept('d', self.ChangeCameraPositionRight)
+        self.accept('a', self.ChangeCameraPositionLeft)
+        self.accept('s', self.ChangeCameraPositionBackward)
+        self.accept('w', self.ChangeCameraPositionForward)
+        self.taskMgr.add(self.UpdateCameraPosition)
 
         blank_node = PandaNode("my_blank_node")
         nodepath1 = NodePath(blank_node)
@@ -35,7 +28,7 @@ class MyApp(ShowBase, DirectObject.DirectObject):
 
         blank_node2 = PandaNode("my_blank_node2")
         nodepath2 = NodePath(blank_node2)
-        nodepath2.reparentTo(self.render)        
+        nodepath2.reparentTo(self.render)
 
         dlight = DirectionalLight('my dlight')
 
@@ -44,20 +37,37 @@ class MyApp(ShowBase, DirectObject.DirectObject):
         self.scene.setScale(10, 10, 10)
         self.scene.reparentTo(nodepath2)
 
-        sphObject = self.loader.loadModel("my-objects/sphere.egg")
-        sphObject.setPos(0, 10, 0.1)
-        sphObject.setScale(.6, .6, .6)
-        sphObject.reparentTo(nodepath1)
+        self.sphObject = self.loader.loadModel("my-objects/sphere.egg")
+        self.sphObject.setPos(0, 10, 0.1)
+        self.sphObject.setScale(.6, .6, .6)
+        self.sphObject.reparentTo(nodepath1)
+
+        self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
 
         dlnp = nodepath1.attachNewNode(dlight)
         nodepath1.setLight(dlnp)
 
 
+    def ChangeCameraPositionForward(self):
+        self.yCoord += 5
+
+    def ChangeCameraPositionBackward(self):
+        self.yCoord -= 5     
+
+    def ChangeCameraPositionRight(self):
+        self.xCoord += 5          
+
+    def ChangeCameraPositionLeft(self):
+        self.xCoord -= 5           
+
+    def UpdateCameraPosition(self, task):
+        self.textObject.destroy()
+        self.textObject = OnscreenText(text='x: ' + str(self.xCoord) + ' y:' + str(self.yCoord), pos=(-0.5, 0.02), scale=0.07)
+        self.camera.setPos(self.xCoord, self.yCoord, 0)
+        self.sphObject.setPos(self.xCoord,10+self.yCoord, 0.1)
+        return task.cont
 
 
 
 game = MyApp()
-
 game.run()
-
-print(game.x)
