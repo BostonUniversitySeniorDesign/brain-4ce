@@ -20,7 +20,7 @@ class MyApp(ShowBase):
         self.accept('a', self.ChangeCameraPositionLeft)
         self.accept('s', self.ChangeCameraPositionBackward)
         self.accept('w', self.ChangeCameraPositionForward)
-        # self.taskMgr.add(self.UpdateCameraPosition)
+        self.taskMgr.add(self.UpdateCameraPosition)
 
         blank_node = PandaNode("my_blank_node")
         nodepath1 = NodePath(blank_node)
@@ -73,12 +73,12 @@ class MyApp(ShowBase):
     def ChangeCameraPositionLeft(self):
         self.xCoord -= 5           
 
-    # def UpdateCameraPosition(self, task):
-    #     self.textObject.destroy()
-    #     self.textObject = OnscreenText(text='x: ' + str(self.xCoord) + ' y:' + str(self.yCoord), pos=(-0.5, 0.02), scale=0.07)
-    #     self.camera.setPos(self.xCoord, self.yCoord, 0)
-    #     self.sphObject.setPos(self.xCoord,10+self.yCoord, 0.1)
-    #     return task.cont
+    def UpdateCameraPosition(self, task):
+        self.textObject.destroy()
+        self.textObject = OnscreenText(text='x: ' + str(self.xCoord) + ' y:' + str(self.yCoord), pos=(-0.5, 0.02), scale=0.07)
+        self.camera.setPos(self.xCoord, self.yCoord, 0)
+        self.sphObject.setPos(self.xCoord,10+self.yCoord, 0.1)
+        return task.cont
 
 
 
