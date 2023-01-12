@@ -1328,7 +1328,7 @@
     (property "Value" "TVS_D" (id 1) (at 147.32 68.5799 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "ESDALC6V1-1M2:ESDALC6V1-1M2" (id 2) (at 144.78 67.31 0)
+    (property "Footprint" "TSV - Diodes:ESDALC6V1-1M2" (id 2) (at 144.78 67.31 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 144.78 67.31 0)

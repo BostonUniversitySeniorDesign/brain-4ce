@@ -2277,7 +2277,7 @@
       (reference "D8") (unit 1) (value "ESD_VARISTOR") (footprint "Diode_SMD:D_0402_1005Metric")
     )
     (path "/b24d8777-8fb6-410d-8bb3-437667e145b2/468af50b-4e98-4777-bdd9-3facf53c9286"
-      (reference "D9") (unit 1) (value "TVS_D") (footprint "ESDALC6V1-1M2:ESDALC6V1-1M2")
+      (reference "D9") (unit 1) (value "TVS_D") (footprint "TSV - Diodes:ESDALC6V1-1M2")
     )
     (path "/b24d8777-8fb6-410d-8bb3-437667e145b2/13352bfb-c70f-47b9-8ea3-ac9c905cff3c"
       (reference "D10") (unit 1) (value "LED_RED") (footprint "LED_SMD:LED_0603_1608Metric")
