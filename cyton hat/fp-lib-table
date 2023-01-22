@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name "TSV - Diodes")(type "KiCad")(uri "${KIPRJMOD}/libraries/footprints/TSV_Diodes.pretty")(options "")(descr "")(disabled))
+  (lib (name "Resistor Arrays")(type "KiCad")(uri "${KIPRJMOD}/libraries/footprints/Resistor_Arrays.pretty")(options "")(descr "")(disabled))
+  (lib (name "Capacitor Arrays")(type "KiCad")(uri "${KIPRJMOD}/libraries/footprints/Capacitor_Arrays.pretty")(options "")(descr "")(disabled))
+)
