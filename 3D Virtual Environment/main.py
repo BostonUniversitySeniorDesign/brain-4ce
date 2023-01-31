@@ -36,7 +36,7 @@ class MyApp(ShowBase):
 
         self.scene = self.loader.loadModel("my-objects/plane.egg")
         self.scene.setPos(0,0,-0.5)
-        self.scene.setScale(10, 10, 10)
+        self.scene.setScale(50, 50, 10)
         self.scene.reparentTo(nodepath2)
 
         self.sphObject = self.loader.loadModel("my-objects/sphere.egg")
@@ -45,8 +45,8 @@ class MyApp(ShowBase):
         self.sphObject.reparentTo(nodepath1)
 
         self.barrier = self.loader.loadModel("my-objects/barrier.egg")
-        self.barrier.setPos(0, 65, 0.1)
-        self.barrier.setScale(6.3, 6.3, 1)
+        self.barrier.setPos(0, 300, 1.63)
+        self.barrier.setScale(6.3, 31.3, 1)
         self.barrier.setHpr(90,0,0)
         self.barrier.reparentTo(nodepath1)
 
