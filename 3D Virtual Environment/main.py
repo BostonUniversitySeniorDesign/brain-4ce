@@ -38,21 +38,23 @@ class MyApp(ShowBase):
         self.nodepath2 = NodePath(blank_node2)
         self.nodepath2.reparentTo(self.render)
 
+        blank_node3 = PandaNode("my_blank_node3")
+        self.nodepath3 = NodePath(blank_node3)
+        self.nodepath3.reparentTo(self.render)
 
-        self.scene = generate.GenerateModel(self, (0,0,-0.5), (50,50,10), (0,0,0), self.render, "my-objects/plane.egg")
+        self.scene = generate.GenerateModel(self, (0,0,-0.5), (50,50,10), (0,0,0), self.nodepath3, "my-objects/plane.egg")
         self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.6, 0.6, 0.6), (0,0,0), self.nodepath2, "my-objects/sphere.egg")
         self.barrier1 = generate.GenerateModel(self,(0, 300, 1.63), (6.3, 31.3, 1), (90,0,0), self.nodepath1, "my-objects/barrier.egg")
         self.barrier2 = generate.GenerateModel(self, (300, 0, 1.63), (6.3, 31.3, 1), (180,0,0), self.nodepath1, "my-objects/barrier.egg")
         self.barrier3 = generate.GenerateModel(self, (-300, 0, 1.63), (6.3, 31.3, 1), (180,0,0), self.nodepath1, "my-objects/barrier.egg")
-        self.barrier4 = generate.GenerateModel(self, (-300, 0, 1.63), (6.3, 31.3, 1), (90,0,0), self.nodepath1, "my-objects/barrier.egg")
+        self.barrier4 = generate.GenerateModel(self, (0, -300, 1.63), (6.3, 31.3, 1), (90,0,0), self.nodepath1, "my-objects/barrier.egg")
 
 
         self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
 
         generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
-
-#        generate.SetLight(self, "my alight", 'a', (0.2,0.2,0.8,1), self.nodepath2)
-#        generate.SetLight(self, "green", 'a', (173,255,47,1), self.nodepath2)
+        generate.SetLight(self, "my alight", 'a', (0.2,0.2,0.8,1), self.scene)
+        generate.SetLight(self, "green light", 'a', ((0.2, 0.9, 0.2, 1)), self.nodepath1)
 
 
     def ChangeCameraPositionForward(self):
@@ -62,14 +64,14 @@ class MyApp(ShowBase):
         self.yCoord -= 5     
 
     def ChangeCameraPositionRight(self):
-        self.xCoord += 5 * math.cos(math.radians(self.angle))
-        self.yCoord += 5 * math.sin(math.radians(self.angle))
-        self.angle += 90
+        self.xCoord += 1
+
+
 
     def ChangeCameraPositionLeft(self):
-        self.xCoord -= 5 * math.cos(math.radians(self.angle))
-        self.yCoord -= 5 * math.sin(math.radians(self.angle))
-        self.angle -= 90
+        self.xCoord -= 1
+
+
 
     def UpdateCameraPosition(self, task):
         self.textObject.destroy()
