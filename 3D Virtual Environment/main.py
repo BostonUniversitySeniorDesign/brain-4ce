@@ -5,6 +5,7 @@ from direct.interval.IntervalGlobal import Sequence
 from panda3d.core import AmbientLight, DirectionalLight, PointLight
 from panda3d.core import NodePath
 from panda3d.core import PandaNode
+from panda3d.core import Vec3
 from panda3d.core import WindowProperties
 from direct.gui.OnscreenText import OnscreenText
 import math
@@ -12,11 +13,15 @@ import generate
 
 class MyApp(ShowBase):
 
-        
     xCoord = 0
     yCoord = 0
-    angle  = 0
+    posx = 0
+    camera_hpr = 0
+    angle  = 180
+    zHPR = 90
+    dir = 'forward'
     textObject = None
+    camera_pos = 0
 
     def __init__(self):
         ShowBase.__init__(self)
@@ -24,11 +29,12 @@ class MyApp(ShowBase):
         # ShowBase.useTrackball(self)
         ShowBase.oobe(self)
 
-        self.accept('d', self.ChangeCameraPositionRight)
-        self.accept('a', self.ChangeCameraPositionLeft)
-        self.accept('s', self.ChangeCameraPositionBackward)
-        self.accept('w', self.ChangeCameraPositionForward)
+        self.accept('d', self.ChangeSpherePositionRight)
+        self.accept('a', self.ChangeSpherePositionLeft)
+        self.accept('s', self.ChangeSpherePositionBackward)
+        self.accept('w', self.ChangeSpherePositionForward)
         self.taskMgr.add(self.UpdateCameraPosition)
+        self.taskMgr.add(self.UpdateSpherePosition)
 
         blank_node = PandaNode("my_blank_node")
         self.nodepath1 = NodePath(blank_node)
@@ -41,6 +47,8 @@ class MyApp(ShowBase):
         blank_node3 = PandaNode("my_blank_node3")
         self.nodepath3 = NodePath(blank_node3)
         self.nodepath3.reparentTo(self.render)
+
+
 
         self.scene = generate.GenerateModel(self, (0,0,-0.5), (50,50,10), (0,0,0), self.nodepath3, "my-objects/plane.egg")
         self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.6, 0.6, 0.6), (0,0,0), self.nodepath2, "my-objects/sphere.egg")
@@ -57,30 +65,56 @@ class MyApp(ShowBase):
         generate.SetLight(self, "green light", 'a', ((0.2, 0.9, 0.2, 1)), self.nodepath1)
 
 
-    def ChangeCameraPositionForward(self):
+    def ChangeSpherePositionForward(self):
         self.yCoord += 5
+        #self.sphObject.setPos(self.camera_pos - Vec3(2,2,0))
 
-    def ChangeCameraPositionBackward(self):
-        self.yCoord -= 5     
+    def ChangeSpherePositionBackward(self):
+        #self.yCoord -= 5
+        #self.sphObject.setPos(self.camera_pos - Vec3(0,2,0))
+        #self.sphObject.setPos(self.camera_pos)
+        return
 
-    def ChangeCameraPositionRight(self):
-        self.xCoord += 1
+    def ChangeSpherePositionRight(self):
+        self.angle -= 10
+    #    self.xCoord = self.camera.getPos()[0] + 10
+     #   self.yCoord = self.camera.getPos()[0] + 10
+        
 
 
 
-    def ChangeCameraPositionLeft(self):
-        self.xCoord -= 1
 
-
+    def ChangeSpherePositionLeft(self):
+        self.angle += 10
+        
 
     def UpdateCameraPosition(self, task):
         self.textObject.destroy()
-        self.textObject = OnscreenText(text='x: ' + str(self.xCoord) + ' y:' + str(self.yCoord), pos=(-0.5, 0.02), scale=0.07)
-        self.camera.setPos(self.xCoord, self.yCoord, 0)
-#        self.camera.setHpr(self.angle, 0, 0)
-        self.sphObject.setPos(self.xCoord, 10 + self.yCoord, 0.1)
+        self.textObject = OnscreenText(text='x: ' + str(self.sphObject.getPos()[0]) + ' y:' + str(self.sphObject.getPos()[1]), pos=(-0.5, 0.02), scale=0.07)
+
+        sph_hpr = self.sphObject.getHpr()
+        sph_heading = sph_hpr[0]
+
+
+        self.camera_pos = self.sphObject.getPos() + Vec3(math.sin(math.radians(sph_heading)), math.cos(math.radians(sph_heading)), 0) * 10
+        
+
+        #when you want to rotate, change camera angle. sphere stays in place.
+
+
+      #  self.camera.setHpr(0,0,0)
+        self.camera.setPos(self.camera_pos)
+        self.camera.lookAt(self.sphObject)
+
+      #  self.camera.setHpr(self.camera_hpr)
+
         return task.cont
 
+    def UpdateSpherePosition(self, task):
+        #self.angle += 1
+        self.sphObject.setPos(self.camera.getPos() + Vec3(2,2,0))
+        self.sphObject.setH(self.angle)
+        return task.cont
 
 
 
