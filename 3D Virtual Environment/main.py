@@ -60,7 +60,7 @@ class MyApp(ShowBase):
 
 
     def ChangeSpherePositionForward(self):
-        self.sphObject.setPos(self.xCoord, self.yCoord, 0)
+        self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
 
     def ChangeSpherePositionRight(self):
         self.angle -= 10
