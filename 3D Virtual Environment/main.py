@@ -15,11 +15,7 @@ class MyApp(ShowBase):
 
     xCoord = 0
     yCoord = 0
-    posx = 0
-    camera_hpr = 0
     angle  = 180
-    zHPR = 90
-    dir = 'forward'
     textObject = None
     camera_pos = 0
 
@@ -28,10 +24,9 @@ class MyApp(ShowBase):
         # ShowBase.useDrive(self)
         # ShowBase.useTrackball(self)
         ShowBase.oobe(self)
-
+        
         self.accept('d', self.ChangeSpherePositionRight)
         self.accept('a', self.ChangeSpherePositionLeft)
-        self.accept('s', self.ChangeSpherePositionBackward)
         self.accept('w', self.ChangeSpherePositionForward)
         self.taskMgr.add(self.UpdateCameraPosition)
         self.taskMgr.add(self.UpdateSpherePosition)
@@ -57,7 +52,6 @@ class MyApp(ShowBase):
         self.barrier3 = generate.GenerateModel(self, (-300, 0, 1.63), (6.3, 31.3, 1), (180,0,0), self.nodepath1, "my-objects/barrier.egg")
         self.barrier4 = generate.GenerateModel(self, (0, -300, 1.63), (6.3, 31.3, 1), (90,0,0), self.nodepath1, "my-objects/barrier.egg")
 
-
         self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
 
         generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
@@ -66,56 +60,33 @@ class MyApp(ShowBase):
 
 
     def ChangeSpherePositionForward(self):
-        self.yCoord += 5
-        #self.sphObject.setPos(self.camera_pos - Vec3(2,2,0))
-
-    def ChangeSpherePositionBackward(self):
-        #self.yCoord -= 5
-        #self.sphObject.setPos(self.camera_pos - Vec3(0,2,0))
-        #self.sphObject.setPos(self.camera_pos)
-        return
+        self.sphObject.setPos(self.xCoord, self.yCoord, 0)
 
     def ChangeSpherePositionRight(self):
         self.angle -= 10
-    #    self.xCoord = self.camera.getPos()[0] + 10
-     #   self.yCoord = self.camera.getPos()[0] + 10
-        
-
-
-
 
     def ChangeSpherePositionLeft(self):
         self.angle += 10
         
-
     def UpdateCameraPosition(self, task):
         self.textObject.destroy()
         self.textObject = OnscreenText(text='x: ' + str(self.sphObject.getPos()[0]) + ' y:' + str(self.sphObject.getPos()[1]), pos=(-0.5, 0.02), scale=0.07)
-
         sph_hpr = self.sphObject.getHpr()
         sph_heading = sph_hpr[0]
 
 
         self.camera_pos = self.sphObject.getPos() + Vec3(math.sin(math.radians(sph_heading)), math.cos(math.radians(sph_heading)), 0) * 10
-        
+        self.xCoord = self.camera_pos[0] 
+        self.yCoord = self.camera_pos[1] 
 
-        #when you want to rotate, change camera angle. sphere stays in place.
-
-
-      #  self.camera.setHpr(0,0,0)
         self.camera.setPos(self.camera_pos)
         self.camera.lookAt(self.sphObject)
-
-      #  self.camera.setHpr(self.camera_hpr)
 
         return task.cont
 
     def UpdateSpherePosition(self, task):
-        #self.angle += 1
-        self.sphObject.setPos(self.camera.getPos() + Vec3(2,2,0))
         self.sphObject.setH(self.angle)
         return task.cont
-
 
 
 game = MyApp()
