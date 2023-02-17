@@ -5,7 +5,7 @@ from direct.interval.IntervalGlobal import Sequence
 from panda3d.core import AmbientLight, DirectionalLight, PointLight
 from panda3d.core import NodePath
 from panda3d.core import PandaNode
-from panda3d.core import Vec3
+from panda3d.core import Vec3, Spotlight, TextureStage
 from panda3d.core import WindowProperties
 from direct.gui.OnscreenText import OnscreenText
 import math
@@ -23,10 +23,11 @@ class MyApp(ShowBase):
         ShowBase.__init__(self)
         # ShowBase.useDrive(self)
         # ShowBase.useTrackball(self)
-        ShowBase.oobe(self)
+
         
         self.accept('d', self.ChangeSpherePositionRight)
         self.accept('a', self.ChangeSpherePositionLeft)
+        self.accept('s', self.enabledebug)
         self.accept('w', self.ChangeSpherePositionForward)
         self.taskMgr.add(self.UpdateCameraPosition)
         self.taskMgr.add(self.UpdateSpherePosition)
@@ -52,21 +53,27 @@ class MyApp(ShowBase):
         self.barrier3 = generate.GenerateModel(self, (-300, 0, 1.63), (6.3, 31.3, 1), (180,0,0), self.nodepath1, "my-objects/barrier.egg")
         self.barrier4 = generate.GenerateModel(self, (0, -300, 1.63), (6.3, 31.3, 1), (90,0,0), self.nodepath1, "my-objects/barrier.egg")
 
+
+
+
         self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
 
-        generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
-        generate.SetLight(self, "my alight", 'a', (0.2,0.2,0.8,1), self.scene)
-        generate.SetLight(self, "green light", 'a', ((0.2, 0.9, 0.2, 1)), self.nodepath1)
+        self.dlnp = generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
+        self.bluenp = generate.SetLight(self, "blue light", 'a', (0.2,0.2,0.8,1),  self.scene)
+        self.greennp = generate.SetLight(self, "green light", 'a', ((0.2, 0.9, 0.2, 1)), self.nodepath1)
 
+
+    def enabledebug(self):
+        ShowBase.oobe(self)
 
     def ChangeSpherePositionForward(self):
         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
 
     def ChangeSpherePositionRight(self):
-        self.angle -= 10
+        self.angle += 10
 
     def ChangeSpherePositionLeft(self):
-        self.angle += 10
+        self.angle -= 10
         
     def UpdateCameraPosition(self, task):
         self.textObject.destroy()
@@ -81,6 +88,9 @@ class MyApp(ShowBase):
 
         self.camera.setPos(self.camera_pos)
         self.camera.lookAt(self.sphObject)
+
+        
+        self.dlnp.setHpr(self.camera.getHpr())
 
         return task.cont
 
