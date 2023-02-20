@@ -23,6 +23,7 @@ class MyApp(ShowBase):
         ShowBase.__init__(self)
         # ShowBase.useDrive(self)
         # ShowBase.useTrackball(self)
+        #ShowBase.oobe(self)
 
         
         self.accept('d', self.ChangeSpherePositionRight)
@@ -64,7 +65,7 @@ class MyApp(ShowBase):
 
 
     def enabledebug(self):
-        ShowBase.oobe(self)
+        self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
 
     def ChangeSpherePositionForward(self):
         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
@@ -77,7 +78,7 @@ class MyApp(ShowBase):
         
     def UpdateCameraPosition(self, task):
         self.textObject.destroy()
-        self.textObject = OnscreenText(text='x: ' + str(self.sphObject.getPos()[0]) + ' y:' + str(self.sphObject.getPos()[1]), pos=(-0.5, 0.02), scale=0.07)
+        self.textObject = OnscreenText(text='x: ' + str(round(self.sphObject.getPos()[0],2)) + ' y:' + str(round(self.sphObject.getPos()[1],2)), pos=(-0.5, 0.02), scale=0.07)
         sph_hpr = self.sphObject.getHpr()
         sph_heading = sph_hpr[0]
 
