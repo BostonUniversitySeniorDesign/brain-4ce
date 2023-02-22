@@ -10,6 +10,7 @@ from panda3d.core import WindowProperties
 from direct.gui.OnscreenText import OnscreenText
 import math
 import generate
+import random
 
 class MyApp(ShowBase):
 
@@ -18,20 +19,23 @@ class MyApp(ShowBase):
     angle  = 180
     textObject = None
     camera_pos = 0
+    list = ['left', 'right', 'backward', 'forward']
+    prev_sec = 0
 
     def __init__(self):
         ShowBase.__init__(self)
         # ShowBase.useDrive(self)
         # ShowBase.useTrackball(self)
-        #ShowBase.oobe(self)
+        ShowBase.oobe(self)
 
         
-        self.accept('d', self.ChangeSpherePositionRight)
-        self.accept('a', self.ChangeSpherePositionLeft)
-        self.accept('s', self.enabledebug)
-        self.accept('w', self.ChangeSpherePositionForward)
+        # self.accept('d', self.ChangeSpherePositionRight)
+        # self.accept('a', self.ChangeSpherePositionLeft)
+        # self.accept('s', self.enabledebug)
+        # self.accept('w', self.ChangeSpherePositionForward)
         self.taskMgr.add(self.UpdateCameraPosition)
         self.taskMgr.add(self.UpdateSpherePosition)
+        self.taskMgr.add(self.ChooseDirection)
 
         blank_node = PandaNode("my_blank_node")
         self.nodepath1 = NodePath(blank_node)
@@ -64,7 +68,7 @@ class MyApp(ShowBase):
         self.greennp = generate.SetLight(self, "green light", 'a', ((0.2, 0.9, 0.2, 1)), self.nodepath1)
 
 
-    def enabledebug(self):
+    def ChangeSpherePositionBackward(self):
         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
 
     def ChangeSpherePositionForward(self):
@@ -97,6 +101,43 @@ class MyApp(ShowBase):
 
     def UpdateSpherePosition(self, task):
         self.sphObject.setH(self.angle)
+        return task.cont
+
+    def ChooseDirection(self, task):
+        
+        secs = int(task.time)
+        
+        #print(secs)
+
+        # if secs == 1:
+
+        #     dir = self.list[random.randint(0,3)]
+
+        #     if dir == 'forward':
+        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
+        #     elif dir == 'backward':
+        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
+        #     elif dir == 'right':
+        #         self.angle += 10
+        #     elif dir == 'left':
+        #         self.angle -= 10
+
+        #     secs = 0
+        
+        curr_sec = int(task.time)
+        if curr_sec != self.prev_sec:
+            dir = self.list[random.randint(0,3)]
+
+            if dir == 'forward':
+                self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
+            elif dir == 'backward':
+                self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
+            elif dir == 'right':
+                self.angle += 10
+            elif dir == 'left':
+                self.angle -= 10
+            self.prev_sec = curr_sec
+
         return task.cont
 
 
