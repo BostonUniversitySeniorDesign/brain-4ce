@@ -26,13 +26,13 @@ class MyApp(ShowBase):
         ShowBase.__init__(self)
         # ShowBase.useDrive(self)
         # ShowBase.useTrackball(self)
-        ShowBase.oobe(self)
+       # ShowBase.oobe(self)
 
         
-        # self.accept('d', self.ChangeSpherePositionRight)
-        # self.accept('a', self.ChangeSpherePositionLeft)
-        # self.accept('s', self.enabledebug)
-        # self.accept('w', self.ChangeSpherePositionForward)
+        self.accept('d', self.ChangeSpherePositionRight)
+        self.accept('a', self.ChangeSpherePositionLeft)
+        self.accept('s', self.ChangeSpherePositionBackward)
+        self.accept('w', self.ChangeSpherePositionForward)
         self.taskMgr.add(self.UpdateCameraPosition)
         self.taskMgr.add(self.UpdateSpherePosition)
         self.taskMgr.add(self.ChooseDirection)
@@ -76,7 +76,7 @@ class MyApp(ShowBase):
 
     def ChangeSpherePositionRight(self):
         self.angle += 10
-
+    
     def ChangeSpherePositionLeft(self):
         self.angle -= 10
         
