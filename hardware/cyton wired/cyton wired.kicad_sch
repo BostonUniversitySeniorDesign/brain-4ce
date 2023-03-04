@@ -2132,16 +2132,16 @@
       (reference "#PWR0128") (unit 1) (value "VDDA") (footprint "")
     )
     (path "/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/6cf8cb2f-75e4-4b79-acce-ca16bd3fe78c"
-      (reference "C1") (unit 1) (value "CA0508KRX7R9BB102") (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (reference "C1") (unit 1) (value "CA0508KRX7R9BB102") (footprint "Capacitor Arrays:CAPCAXE50P210X130X94-8N")
     )
     (path "/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/551c858b-1246-4096-83a0-67784f5eb7d8"
-      (reference "C1") (unit 2) (value "CA0508KRX7R9BB102") (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (reference "C1") (unit 2) (value "CA0508KRX7R9BB102") (footprint "Capacitor Arrays:CAPCAXE50P210X130X94-8N")
     )
     (path "/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/15621afb-05c1-4d04-bc0d-c58a864f5665"
-      (reference "C1") (unit 3) (value "CA0508KRX7R9BB102") (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (reference "C1") (unit 3) (value "CA0508KRX7R9BB102") (footprint "Capacitor Arrays:CAPCAXE50P210X130X94-8N")
     )
     (path "/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/7067cb38-6703-44ad-a119-caa409800854"
-      (reference "C1") (unit 4) (value "CA0508KRX7R9BB102") (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (reference "C1") (unit 4) (value "CA0508KRX7R9BB102") (footprint "Capacitor Arrays:CAPCAXE50P210X130X94-8N")
     )
     (path "/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/14fe9f5e-ec0d-4e90-a4ec-bbf28bd4bac2"
       (reference "C2") (unit 1) (value "CA0508KRX7R9BB102") (footprint "Capacitor Arrays:CAPCAXE50P210X130X94-8N")

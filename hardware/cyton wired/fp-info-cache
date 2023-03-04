@@ -1,4 +1,4 @@
-20939256944785812
+20945968722018120
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -2526,6 +2526,13 @@ Gauge Massstab 100mm SilkScreenTop Type 2
 0
 0
 0
+Capacitor Arrays
+CAPCAXE50P210X130X94-8N
+
+
+0
+8
+8
 Capacitor_SMD
 CP_Elec_3x5.3
 SMT capacitor, aluminium electrolytic, 3x5.3, Cornell Dubilier Electronics 
@@ -79134,6 +79141,13 @@ Standex Meder SIL reed relais
 0
 4
 4
+Resistor Arrays
+RESCAF80P320X160X60-8N
+
+
+0
+8
+8
 Resistor_SMD
 R_0201_0603Metric
 Resistor SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
@@ -81934,6 +81948,20 @@ Logo WEEE
 0
 0
 0
+TSV - Diodes
+ESDALC6V1-1M2
+
+
+0
+2
+2
+TSV - Diodes
+TPD4E1B06DCKR
+
+
+0
+6
+6
 TerminalBlock
 TerminalBlock_Altech_AK300-2_P5.00mm
 Altech AK300 terminal block, pitch 5.0mm, 45 degree angled, see http://www.mouser.com/ds/2/16/PCBMETRC-24178.pdf
