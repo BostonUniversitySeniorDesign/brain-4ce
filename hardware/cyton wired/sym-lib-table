@@ -4,4 +4,6 @@
   (lib (name "Capacitor Arrays")(type "KiCad")(uri "${KIPRJMOD}/libraries/symbols/Capacitor_Arrays.kicad_sym")(options "")(descr ""))
   (lib (name "Brain-4ce_Regulator_SwitchedCapacitor")(type "KiCad")(uri "${KIPRJMOD}/libraries/symbols/Brain-4ce_Regulator_SwitchedCapacitor.kicad_sym")(options "")(descr ""))
   (lib (name "Brain-4ce_Regulator_Linear")(type "KiCad")(uri "${KIPRJMOD}/libraries/symbols/Brain-4ce_Regulator_Linear.kicad_sym")(options "")(descr ""))
+  (lib (name "Brain-4ce_MCU_Microchip_PIC32")(type "KiCad")(uri "${KIPRJMOD}/libraries/symbols/Brain-4ce_MCU_Microchip_PIC32.kicad_sym")(options "")(descr ""))
+  (lib (name "Brain-4ce_Oscillator")(type "KiCad")(uri "${KIPRJMOD}/libraries/symbols/ABMM2-8.000MHZ-E2-T.kicad_sym")(options "")(descr ""))
 )

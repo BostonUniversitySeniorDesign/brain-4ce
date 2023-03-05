@@ -2,3 +2,5 @@ cyton hat/cyton hat-backups
 cyton hat/fp-info-cache
 cyton hat/#auto_saved_files#
 *.bak
+*-bak
+*-backups
