@@ -2210,7 +2210,7 @@
     (property "Sheetname" "Daisy Functionality" (at 30.48 20.2434 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheetfile" "../shared schematics/Daisy Functionality.kicad_sch" (at 30.48 92.0246 0)
+    (property "Sheetfile" "../shared schematics/ADS129X-X functionality.kicad_sch" (at 30.48 92.0246 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (pin "BIAS" input (at 30.48 86.36 180)
