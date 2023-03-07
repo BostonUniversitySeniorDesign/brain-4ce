@@ -2801,7 +2801,7 @@
     )
     (pin "1" (uuid dba39b57-9272-4005-b985-cc0c41eb2987))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0116") (unit 1)
         )
@@ -2826,7 +2826,7 @@
     )
     (pin "1" (uuid 4ab64be1-c38a-42a8-b383-b14771bf4f4f))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0112") (unit 1)
         )
@@ -2870,7 +2870,7 @@
     (pin "4" (uuid 1f40c05d-9410-46c7-881c-e6139ae3839d))
     (pin "5" (uuid 4595ed39-d520-4e5b-8fc0-f2caec5651ee))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C4") (unit 4)
         )
@@ -2908,7 +2908,7 @@
     (pin "7" (uuid 61c30f25-8f1c-4993-9d4c-e9b317a00dd7))
     (pin "8" (uuid 20d27a7e-52a5-46d7-ada3-840f073a8354))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "R4") (unit 1)
         )
@@ -2938,7 +2938,7 @@
     (pin "5" (uuid 42f382f3-031a-4ac2-832e-b203973a7260))
     (pin "6" (uuid eb5712a6-be5e-4d5d-8465-8a72b23b8ca8))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "D4") (unit 1)
         )
@@ -2982,7 +2982,7 @@
     (pin "4" (uuid 85aa911f-6811-4f28-bcb1-a010c124b774))
     (pin "5" (uuid a9f5df74-e456-487e-be3a-ed73744f90bd))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C2") (unit 1)
         )
@@ -3026,7 +3026,7 @@
     (pin "4" (uuid 3e2e60a7-8834-4996-97a7-18fb189e935c))
     (pin "5" (uuid 94b1a799-884b-4dff-b552-3b64a1ff8349))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C1") (unit 3)
         )
@@ -3064,7 +3064,7 @@
     (pin "7" (uuid 8b333010-0aea-46f9-b126-360c0ed1d1c9))
     (pin "8" (uuid 7f49a731-d1cd-4cfb-b2f1-b18759b10bf4))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "R5") (unit 1)
         )
@@ -3089,7 +3089,7 @@
     )
     (pin "1" (uuid 8efdcfe9-6733-4675-bb6e-82bba37fbfc9))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0102") (unit 1)
         )
@@ -3177,7 +3177,7 @@
     (pin "8" (uuid 23b7ac5e-8d2e-432e-8f32-179fdedf20e9))
     (pin "9" (uuid b48ea12b-d79f-4087-90cd-739bb3fa4e2c))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "U1") (unit 1)
         )
@@ -3207,7 +3207,7 @@
     (pin "5" (uuid bcbf3556-53e2-41cc-b911-9bc0aba4f60d))
     (pin "6" (uuid 9999c03d-b4e2-4281-bd4e-f880bcc073a4))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "D1") (unit 1)
         )
@@ -3232,7 +3232,7 @@
     )
     (pin "1" (uuid 9f39563e-c312-46c3-b2eb-a9be4dc9269b))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0108") (unit 1)
         )
@@ -3258,7 +3258,7 @@
     (pin "1" (uuid 850389b9-8744-4b8b-815c-f5c5d63e561c))
     (pin "2" (uuid ae7f8ecf-1264-4908-8128-9fd4c37eb5c2))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C14") (unit 1)
         )
@@ -3302,7 +3302,7 @@
     (pin "4" (uuid df75f5b7-e2ce-456a-ad04-7eec0f19ed59))
     (pin "5" (uuid 6d0c6dee-20f6-475f-bca3-d75e6f3938c1))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C4") (unit 2)
         )
@@ -3346,7 +3346,7 @@
     (pin "4" (uuid 3e2e60a7-8834-4996-97a7-18fb189e935d))
     (pin "5" (uuid 94b1a799-884b-4dff-b552-3b64a1ff834a))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C5") (unit 3)
         )
@@ -3371,7 +3371,7 @@
     )
     (pin "1" (uuid 40f8c0a2-7ad9-4616-9c4a-175e9f486a67))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#FLG0102") (unit 1)
         )
@@ -3397,7 +3397,7 @@
     (pin "1" (uuid d48172bb-427a-415d-9218-f353e9842867))
     (pin "2" (uuid 7329a3f7-bacf-4670-9683-8ce16200bc35))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C6") (unit 1)
         )
@@ -3435,7 +3435,7 @@
     (pin "7" (uuid 1a4fbfb6-74ff-4eb5-a096-5c9a1be0ed46))
     (pin "8" (uuid cde973bd-ec09-4b78-b2cd-4582bbb4503d))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "R3") (unit 1)
         )
@@ -3460,7 +3460,7 @@
     )
     (pin "1" (uuid 49ec73bc-e053-4686-af73-0a75cd79bfa7))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#FLG0101") (unit 1)
         )
@@ -3486,7 +3486,7 @@
     (pin "1" (uuid 77f4eb03-9100-4488-afe2-524d04a6e421))
     (pin "2" (uuid a905294c-8653-452a-a19d-60cef4ded631))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C9") (unit 1)
         )
@@ -3530,7 +3530,7 @@
     (pin "4" (uuid 85aa911f-6811-4f28-bcb1-a010c124b775))
     (pin "5" (uuid a9f5df74-e456-487e-be3a-ed73744f90be))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C3") (unit 1)
         )
@@ -3555,7 +3555,7 @@
     )
     (pin "1" (uuid 6636c69f-b2b7-4f56-8390-7e8b22a141dd))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0107") (unit 1)
         )
@@ -3580,7 +3580,7 @@
     )
     (pin "1" (uuid 51e2918e-8634-4244-aa01-be511718f4c4))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0119") (unit 1)
         )
@@ -3624,7 +3624,7 @@
     (pin "4" (uuid 3e2e60a7-8834-4996-97a7-18fb189e935e))
     (pin "5" (uuid 94b1a799-884b-4dff-b552-3b64a1ff834b))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C3") (unit 3)
         )
@@ -3649,7 +3649,7 @@
     )
     (pin "1" (uuid aff4b7f4-5bea-4c26-9fa7-58888e27885a))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0118") (unit 1)
         )
@@ -3693,7 +3693,7 @@
     (pin "4" (uuid 85aa911f-6811-4f28-bcb1-a010c124b776))
     (pin "5" (uuid a9f5df74-e456-487e-be3a-ed73744f90bf))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C4") (unit 1)
         )
@@ -3737,7 +3737,7 @@
     (pin "4" (uuid df75f5b7-e2ce-456a-ad04-7eec0f19ed5a))
     (pin "5" (uuid 6d0c6dee-20f6-475f-bca3-d75e6f3938c2))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C1") (unit 2)
         )
@@ -3762,7 +3762,7 @@
     )
     (pin "1" (uuid f525a13f-19f2-4ef4-b118-9d7f5de20c24))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0103") (unit 1)
         )
@@ -3779,7 +3779,7 @@
     (property "Value" "1nF" (at 461.01 168.9099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:C_0201_0603Metric" (at 458.1652 171.45 0)
+    (property "Footprint" "Capacitor_SMD:C_0402_1005Metric" (at 458.1652 171.45 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 457.2 167.64 0)
@@ -3788,7 +3788,7 @@
     (pin "1" (uuid 50490545-f539-4cba-b1ae-a6f4d922dcbe))
     (pin "2" (uuid 4bee3a81-240f-41f2-ba64-47963e656463))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C27") (unit 1)
         )
@@ -3832,7 +3832,7 @@
     (pin "4" (uuid df75f5b7-e2ce-456a-ad04-7eec0f19ed5b))
     (pin "5" (uuid 6d0c6dee-20f6-475f-bca3-d75e6f3938c3))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C5") (unit 2)
         )
@@ -3858,7 +3858,7 @@
     (pin "1" (uuid 68dcbdb1-cca8-4a87-9691-bda07a7ee2b1))
     (pin "2" (uuid a8d96890-d242-411d-a89e-cd1f2bed41cf))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "R6") (unit 1)
         )
@@ -3883,7 +3883,7 @@
     )
     (pin "1" (uuid 66639cc4-b529-463f-9496-b07c7fa86627))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0115") (unit 1)
         )
@@ -3927,7 +3927,7 @@
     (pin "4" (uuid 85aa911f-6811-4f28-bcb1-a010c124b777))
     (pin "5" (uuid a9f5df74-e456-487e-be3a-ed73744f90c0))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C1") (unit 1)
         )
@@ -3957,7 +3957,7 @@
     (pin "5" (uuid fbad41f3-4646-455a-a303-310140c96b39))
     (pin "6" (uuid 402d4bf1-5c01-4743-891e-ceb8d735080c))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "D6") (unit 1)
         )
@@ -3982,7 +3982,7 @@
     )
     (pin "1" (uuid 42598743-762c-4d44-89c4-e71d6ec2acdc))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0117") (unit 1)
         )
@@ -4026,7 +4026,7 @@
     (pin "4" (uuid df75f5b7-e2ce-456a-ad04-7eec0f19ed5c))
     (pin "5" (uuid 6d0c6dee-20f6-475f-bca3-d75e6f3938c4))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C3") (unit 2)
         )
@@ -4070,7 +4070,7 @@
     (pin "4" (uuid 4a9981b9-9535-46ae-b21a-15ef512db163))
     (pin "5" (uuid 75aababa-4e78-4fb6-aaf8-67747786e6d9))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C1") (unit 4)
         )
@@ -4100,7 +4100,7 @@
     (pin "5" (uuid a11b2596-ddc1-4962-9d33-bc9535cf70dd))
     (pin "6" (uuid 784d7113-fb64-4364-abc7-ef95cb22a3e4))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "D3") (unit 1)
         )
@@ -4144,7 +4144,7 @@
     (pin "4" (uuid 493aecd7-f4eb-4f70-9189-61a9d59d0636))
     (pin "5" (uuid 8115a06f-791b-4b82-b057-a94be0d9d1b9))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C3") (unit 4)
         )
@@ -4170,7 +4170,7 @@
     (pin "1" (uuid d8a8ec8d-bc92-4d6d-b0b5-c62445f661cb))
     (pin "2" (uuid b77c0e2b-2f5e-4d6b-8c92-5bcd1e70a699))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C7") (unit 1)
         )
@@ -4195,7 +4195,7 @@
     )
     (pin "1" (uuid b9f3769e-0ec2-45ba-adb2-023fc6a00d59))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#FLG01") (unit 1)
         )
@@ -4233,7 +4233,7 @@
     (pin "7" (uuid 5c8d5c59-cdee-458c-b20f-8d945b24558b))
     (pin "8" (uuid dc4886f7-193b-4c01-bda0-29341b67378d))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "R1") (unit 1)
         )
@@ -4258,7 +4258,7 @@
     )
     (pin "1" (uuid 423841fc-a85c-439d-9773-5aeb6f6e3199))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#FLG0103") (unit 1)
         )
@@ -4283,7 +4283,7 @@
     )
     (pin "1" (uuid 3c1f3129-86c2-425d-94e2-2dcafab21388))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR017") (unit 1)
         )
@@ -4309,7 +4309,7 @@
     (pin "1" (uuid 7e5dc464-c45f-458f-87cf-9b0db41d7ed8))
     (pin "2" (uuid 9d9e312b-36fd-4e3d-9c96-2b0847789f2b))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "R13") (unit 1)
         )
@@ -4335,7 +4335,7 @@
     (pin "1" (uuid fe905781-2119-4dfd-b75e-1f1b937f8f4d))
     (pin "2" (uuid 2673bd7d-f3ce-4fe6-a8b9-3cb6e9bf14c3))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C13") (unit 1)
         )
@@ -4379,7 +4379,7 @@
     (pin "4" (uuid 8207592c-3254-43d7-918a-1e3b08b6e2c1))
     (pin "5" (uuid aab23f3a-fee0-48e3-8d67-ccc7f16b1eb6))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C2") (unit 4)
         )
@@ -4404,7 +4404,7 @@
     )
     (pin "1" (uuid c523163f-be32-41fc-938f-cef70d7eb280))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0106") (unit 1)
         )
@@ -4429,7 +4429,7 @@
     )
     (pin "1" (uuid 37c9e5c9-78d3-4827-9f0d-a6b298ad1679))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0105") (unit 1)
         )
@@ -4454,7 +4454,7 @@
     )
     (pin "1" (uuid 1f6884b6-fd14-49f3-96bd-f08d88da2550))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0101") (unit 1)
         )
@@ -4498,7 +4498,7 @@
     (pin "4" (uuid 3e2e60a7-8834-4996-97a7-18fb189e935f))
     (pin "5" (uuid 94b1a799-884b-4dff-b552-3b64a1ff834c))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C4") (unit 3)
         )
@@ -4523,7 +4523,7 @@
     )
     (pin "1" (uuid f3856f08-6a0e-41ca-90c2-99c6b62edce9))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0110") (unit 1)
         )
@@ -4548,7 +4548,7 @@
     )
     (pin "1" (uuid 9ba9b1ae-7b3d-48c5-acc8-fc810fcf256f))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0114") (unit 1)
         )
@@ -4573,7 +4573,7 @@
     )
     (pin "1" (uuid ad3f02e2-a043-4fcc-aacf-7603995e7f67))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0126") (unit 1)
         )
@@ -4598,7 +4598,7 @@
     )
     (pin "1" (uuid 4c7ba098-eb15-4c07-90a0-d409f317e5f0))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0111") (unit 1)
         )
@@ -4636,7 +4636,7 @@
     (pin "7" (uuid 3d75337b-8971-417c-ac19-d181887f5f6c))
     (pin "8" (uuid bcbf561f-c0df-4277-a848-21029f9c5490))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "R2") (unit 1)
         )
@@ -4661,7 +4661,7 @@
     )
     (pin "1" (uuid 6ccf82f7-416f-401c-8b48-4779c5e9cff4))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0113") (unit 1)
         )
@@ -4705,7 +4705,7 @@
     (pin "4" (uuid 3e2e60a7-8834-4996-97a7-18fb189e9360))
     (pin "5" (uuid 94b1a799-884b-4dff-b552-3b64a1ff834d))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C2") (unit 3)
         )
@@ -4749,7 +4749,7 @@
     (pin "4" (uuid 47924564-8b2b-4389-bb22-6c435664f8b1))
     (pin "5" (uuid 0f0f7c58-3536-40f4-9a91-d1ccde8d776b))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C5") (unit 4)
         )
@@ -4793,7 +4793,7 @@
     (pin "4" (uuid df75f5b7-e2ce-456a-ad04-7eec0f19ed5d))
     (pin "5" (uuid 6d0c6dee-20f6-475f-bca3-d75e6f3938c5))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C2") (unit 2)
         )
@@ -4819,7 +4819,7 @@
     (pin "1" (uuid a1163de5-059c-4153-af61-fb7e26ca87b2))
     (pin "2" (uuid c0620e15-4b37-45db-a5c7-f4ab7720fe14))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C8") (unit 1)
         )
@@ -4845,7 +4845,7 @@
     (pin "1" (uuid 021e7ea5-2ce5-4d45-96fb-1d145c6d8fd4))
     (pin "2" (uuid 8ede43e5-ba8b-497e-983a-3f487cbe2056))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C11") (unit 1)
         )
@@ -4875,7 +4875,7 @@
     (pin "5" (uuid d0f44cab-a68e-4c17-863a-9b262f5e1519))
     (pin "6" (uuid 112bebc2-b13e-4b8d-81fd-0cf3f77479fc))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "D2") (unit 1)
         )
@@ -4905,7 +4905,7 @@
     (pin "5" (uuid 35f26003-cfe1-4588-b041-c694d13830b8))
     (pin "6" (uuid fab870b3-aff1-457e-ae5d-cc721df7772b))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "D5") (unit 1)
         )
@@ -4930,7 +4930,7 @@
     )
     (pin "1" (uuid 484c1636-7499-4154-8c7c-b58798384e97))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0104") (unit 1)
         )
@@ -4956,7 +4956,7 @@
     (pin "1" (uuid f49d70cf-7a32-4a0c-a779-c089bcc206d8))
     (pin "2" (uuid a0df7070-efec-4941-a92d-4bda0fcaca64))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C10") (unit 1)
         )
@@ -4981,7 +4981,7 @@
     )
     (pin "1" (uuid 5c6d2a12-dc4f-41d8-a7c2-3843e2a86b66))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0125") (unit 1)
         )
@@ -5007,7 +5007,7 @@
     (pin "1" (uuid 75a08152-0c65-4e57-aefe-b6adc076ddfd))
     (pin "2" (uuid a6e82cd2-5f7c-461e-8998-89908db22a57))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C15") (unit 1)
         )
@@ -5032,7 +5032,7 @@
     )
     (pin "1" (uuid 58be21fc-58d4-4f76-9099-6c3ebad31d7f))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "#PWR0109") (unit 1)
         )
@@ -5058,7 +5058,7 @@
     (pin "1" (uuid 05f3adc7-e50d-41e6-95b4-a184f5245aa7))
     (pin "2" (uuid bf00b05d-2290-41a3-a182-e5e375fd36bb))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C12") (unit 1)
         )
@@ -5102,7 +5102,7 @@
     (pin "4" (uuid 85aa911f-6811-4f28-bcb1-a010c124b778))
     (pin "5" (uuid a9f5df74-e456-487e-be3a-ed73744f90c1))
     (instances
-      (project "cyton daisy"
+      (project "cyton wired"
         (path "/636b2fe2-bf5b-4d7a-bf51-64a01d1350e1/59a2adfc-5bb4-49a5-b947-81743a3b3fe6"
           (reference "C5") (unit 1)
         )
