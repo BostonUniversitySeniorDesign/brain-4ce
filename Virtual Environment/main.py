@@ -26,7 +26,7 @@ class MyApp(ShowBase):
         ShowBase.__init__(self)
         # ShowBase.useDrive(self)
         # ShowBase.useTrackball(self)
-       # ShowBase.oobe(self)
+        ShowBase.oobe(self)
 
         
         self.accept('d', self.ChangeSpherePositionRight)
@@ -124,19 +124,19 @@ class MyApp(ShowBase):
 
         #     secs = 0
         
-        curr_sec = int(task.time)
-        if curr_sec != self.prev_sec:
-            dir = self.list[random.randint(0,3)]
+        # curr_sec = int(task.time)
+        # if curr_sec != self.prev_sec:
+        #     dir = self.list[random.randint(0,3)]
 
-            if dir == 'forward':
-                self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
-            elif dir == 'backward':
-                self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
-            elif dir == 'right':
-                self.angle += 10
-            elif dir == 'left':
-                self.angle -= 10
-            self.prev_sec = curr_sec
+        #     if dir == 'forward':
+        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
+        #     elif dir == 'backward':
+        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
+        #     elif dir == 'right':
+        #         self.angle += 10
+        #     elif dir == 'left':
+        #         self.angle -= 10
+        #     self.prev_sec = curr_sec
 
         return task.cont
 
