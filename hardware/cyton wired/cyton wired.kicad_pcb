@@ -719,7 +719,7 @@
     (descr "Mounting Hole 3.5mm, no annular")
     (tags "mounting hole 3.5mm no annular")
     (attr exclude_from_pos_files exclude_from_bom)
-    (fp_text reference "REF**" (at 0 -4.5) (layer "F.SilkS")
+    (fp_text reference "REF**" (at 0 -4.5) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp d0fda08f-b468-4215-a55b-482bceae5537)
     )
@@ -4077,7 +4077,7 @@
     (descr "Mounting Hole 3.5mm, no annular")
     (tags "mounting hole 3.5mm no annular")
     (attr exclude_from_pos_files exclude_from_bom)
-    (fp_text reference "REF**" (at 0 -4.5) (layer "F.SilkS")
+    (fp_text reference "REF**" (at 0 -4.5) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 3e8cce25-164d-4adc-b083-6712eae77381)
     )
@@ -4093,7 +4093,7 @@
       (stroke (width 0.15) (type solid)) (fill none) (layer "Cmts.User") (tstamp 0b8ce0bb-5140-4825-a65b-6a6d73e43484))
     (fp_circle (center 0 0) (end 3.75 0)
       (stroke (width 0.05) (type solid)) (fill none) (layer "F.CrtYd") (tstamp 16dc6c4d-637d-49ba-b406-0b3fe115dbe2))
-    (pad "" np_thru_hole circle locked (at 0 0) (size 3.5 3.5) (drill 3.5) (layers "*.Cu" "*.Mask") (tstamp 7910a686-e04e-4aa0-bbbc-023d409d7aaf))
+    (pad "" np_thru_hole circle (at 0 0) (size 3.5 3.5) (drill 3.5) (layers "*.Cu" "*.Mask") (tstamp 7910a686-e04e-4aa0-bbbc-023d409d7aaf))
   )
 
   (footprint "Diode_SMD:D_0402_1005Metric" (layer "F.Cu")
@@ -4158,7 +4158,7 @@
     (descr "Mounting Hole 3.5mm, no annular")
     (tags "mounting hole 3.5mm no annular")
     (attr exclude_from_pos_files exclude_from_bom)
-    (fp_text reference "REF**" (at 0 -4.5) (layer "F.SilkS")
+    (fp_text reference "REF**" (at 0 -4.5) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 3f0d1d83-3eba-4d20-b509-eab40920de5d)
     )
