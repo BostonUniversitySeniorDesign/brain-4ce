@@ -11,6 +11,9 @@ from brainflow.board_shim import BoardShim, BoardIds, BrainFlowInputParams
 def main():
 	board = find_cyton(lambda x : True)
 
+	board.prepare_session()
+	board.start_stream()
+
 	print(board)
 
 def find_cyton(criterion : Callable, duration=0.1):
@@ -73,11 +76,13 @@ def get_cyton(cyton):
 	
 def init_daisy(cyton):
 
+	brd_params = BrainFlowInputParams()
+
+	brd_params.serial_port = cyton.device
+
 	return BoardShim(
 		board_id     = BoardIds.CYTON_DAISY_BOARD,
-		input_params = BrainFlowInputParams(
-			serial_port = cyton.device
-		)
+		input_params = brd_params
 	)
 
 def init_cyton(cyton):
