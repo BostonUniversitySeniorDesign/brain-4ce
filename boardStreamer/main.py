@@ -7,8 +7,36 @@ from typing import Callable
 
 from brainflow.board_shim import BoardShim, BoardIds, BrainFlowInputParams
 
+import argparse
+
+parser = argparse.ArgumentParser(
+	prog='ProgramName',
+	description='What the program does',
+	epilog='Text at the bottom of help'
+)
+
+parser.add_argument(
+	'-p', '--port',
+    type=int,
+    default=800
+	help='Port to send data to over sockets'
+)
+
+parser.add_argument(
+	'-m', '--mode',
+	choices=['sim8', 'sim16', 'com'],
+    default='com',
+	help='sets server mode'
+)
+
+args = parser.parse_args()
+
+
+
+pass
 
 def main():
+
 	board = find_cyton(lambda x : True)
 
 	board.prepare_session()
@@ -80,6 +108,8 @@ def init_daisy(cyton):
 
 	brd_params.serial_port = cyton.device
 
+	print('detected 16 channels')
+
 	return BoardShim(
 		board_id     = BoardIds.CYTON_DAISY_BOARD,
 		input_params = brd_params
@@ -90,6 +120,8 @@ def init_cyton(cyton):
 	brd_params = BrainFlowInputParams()
 
 	brd_params.serial_port = cyton.device
+
+	print('detected 8 channels')
 
 	return BoardShim(
 		board_id     = BoardIds.CYTON_BOARD,
