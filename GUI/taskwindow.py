@@ -36,6 +36,10 @@ class Circle:
 
         self.canvas.after(5000, self.draw)
 
+        #circle timer
+        #function to update middle timer every 1s
+        #function to update instruction every 5s 
+
 
         
     def change_color(self):
