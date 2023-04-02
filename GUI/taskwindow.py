@@ -15,6 +15,8 @@ class Circle:
         self.circles = []
         for i in range(6):
             circle = self.canvas.create_oval(self.x, self.y, self.x+50, self.y+50, fill='white')
+
+            self.canvas.create_text(self.x+25, self.y+25, text=str(i), fill="black", font=('Helvetica 25 bold'))
             self.circles.append(circle)
             self.x += 75
             
@@ -31,7 +33,7 @@ class Circle:
             self.change_color()
             self.iswhite = True
 
-        self.canvas.after(1000, self.draw)
+        self.canvas.after(5000, self.draw)
 
 
         
