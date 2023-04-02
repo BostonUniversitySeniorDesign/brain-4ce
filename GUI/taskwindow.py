@@ -6,6 +6,7 @@ class Circle:
         self.canvas = canvas
         self.iswhite = True
         self.curr = 0
+        self.labels = ['Right arm!', 'Left arm!', 'Right foot!', 'Left foot!', 'Left hand!', 'Right hand!']
         self.draw()
         
     def draw(self):
@@ -39,6 +40,7 @@ class Circle:
         
     def change_color(self):
         self.canvas.itemconfig(self.circles[self.curr], fill='red')
+        self.canvas.create_text(self.x+25, self.y+250, text=self.labels[self.curr], fill="black", font=('Helvetica 35 bold'))        
         self.curr = self.curr + 1
         if self.curr == 6:
             self.curr = 0
