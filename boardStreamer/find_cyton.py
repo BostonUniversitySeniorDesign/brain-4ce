@@ -7,44 +7,7 @@ from typing import Callable
 
 from brainflow.board_shim import BoardShim, BoardIds, BrainFlowInputParams
 
-import argparse
-
-parser = argparse.ArgumentParser(
-	prog='ProgramName',
-	description='What the program does',
-	epilog='Text at the bottom of help'
-)
-
-parser.add_argument(
-	'-p', '--port',
-    type=int,
-    default=800
-	help='Port to send data to over sockets'
-)
-
-parser.add_argument(
-	'-m', '--mode',
-	choices=['sim8', 'sim16', 'com'],
-    default='com',
-	help='sets server mode'
-)
-
-args = parser.parse_args()
-
-
-
-pass
-
-def main():
-
-	board = find_cyton(lambda x : True)
-
-	board.prepare_session()
-	board.start_stream()
-
-	print(board)
-
-def find_cyton(criterion : Callable, duration=0.1):
+def find_cyton(criterion : Callable, duration : float = 0.1):
 	'''
 		attempts to find cyton in com ports based on
 		a passed criterion for a cyton
@@ -81,9 +44,14 @@ def get_cyton(cyton):
 	'''
 
 	# prevents reading startup message when connecting
-	sleep(1)
+	sleep(0.5)
 
 	with serial.Serial(cyton.device, baudrate=115_200) as probe:
+
+		# stops session if in progess
+		probe.write(b's')
+		sleep(0.5)
+		probe.read_all()
 
 		# attempts to set board to 16 channels
 		# meaning I am checking for the existance of a daisy
@@ -100,8 +68,8 @@ def get_cyton(cyton):
 		elif response == b'no':
 			return init_cyton(cyton)
 		else:
-			raise Exception(f'unknown hardware configuration on {cyton.device}')
-	
+			raise Exception(f'Unknown hardware configuration on {cyton.device}')
+
 def init_daisy(cyton):
 
 	brd_params = BrainFlowInputParams()
@@ -127,6 +95,3 @@ def init_cyton(cyton):
 		board_id     = BoardIds.CYTON_BOARD,
 		input_params = brd_params
 	)
-
-if __name__ == '__main__':
-	main()

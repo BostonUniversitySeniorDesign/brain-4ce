@@ -6,3 +6,4 @@ GUI
 fp-info-cache
 *.zip
 *.gbrjob
+__pycache__
