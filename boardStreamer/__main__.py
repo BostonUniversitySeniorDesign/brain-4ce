@@ -33,19 +33,23 @@ class CommandArgs():
 			help='determines the number of samples to aquire per packet'
 		)
 
-		#parser.parse_args()
-
 	def run(self):
+		'''
+			Returns list for keyword arguments
+		'''
 		args = self.parser.parse_args()
 
-		return args
+		return vars(args)
 
 
-class CytonBoard():
-	def __init__(self, args):
+class CytonBoard:
+	def __init__(self, mode='com', window=10, **kargs):
+
+		self.mode   = mode
+		self.window = window
 
 		# chooses between simulated board or real board
-		if args.mode in ['sim8', 'sim16']:
+		if self.mode in ['sim8', 'sim16']:
 			board_args = BrainFlowInputParams()
 			board = BoardShim(
 				BoardIds.SYNTHETIC_BOARD,
@@ -57,25 +61,26 @@ class CytonBoard():
 		board.prepare_session()
 		board.start_stream()
 
-		if args.mode == 'sim8':
+		if self.mode == 'sim8':
 			def aquire_data(board : BoardShim):
 				
 				eeg_channels = board.get_eeg_channels(board.board_id)[:8]
 
-				return board.get_board_data(args.window)[eeg_channels,:]
-		elif args.mode == 'sim16':
+				return board.get_board_data(window)[eeg_channels,:]
+
+		elif self.mode == 'sim16':
 			def aquire_data(board : BoardShim):
 				
 				eeg_channels = board.get_eeg_channels(board.board_id)[:16]
 
-				return board.get_board_data(args.window)[eeg_channels,:]
+				return board.get_board_data(window)[eeg_channels,:]
+
 		else:
 			def aquire_data(board : BoardShim):
 				
 				eeg_channels = board.get_eeg_channels(board.board_id)
 
-				return board.get_board_data(args.window)[eeg_channels,:]
-
+				return board.get_board_data(window)[eeg_channels,:]
 
 		# Insert Code to aquire board data
 		while True:
@@ -91,4 +96,4 @@ class CytonBoard():
 args = CommandArgs().run()
 
 
-board = CytonBoard(args)
+board = CytonBoard(**args)
