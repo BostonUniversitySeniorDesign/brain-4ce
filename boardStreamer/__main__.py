@@ -36,7 +36,7 @@ parser.add_argument(
 	Returns list for keyword arguments
 '''
 args = parser.parse_args()
-
+args = vars(args)
 
 class CytonBoard:
 	def __init__(self, mode='com', window=10, **kargs):
