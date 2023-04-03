@@ -5,43 +5,37 @@ from time import sleep
 
 from functools import cached_property
 
-class CommandArgs():
-	def __init__(self):
+parser = argparse.ArgumentParser(
+	prog='Board Streamer',
+	description='Connect to a real EEG board or simulates an EEG board to send data over a socker',
+	# epilog='Text at the bottom of help'
+)
 
-		self.parser = argparse.ArgumentParser(
-			prog='Board Streamer',
-			description='Connect to a real EEG board or simulates an EEG board to send data over a socker',
-			# epilog='Text at the bottom of help'
-		)
+parser.add_argument(
+	'-p', '--port',
+	type=int,
+	default=800,
+	help='Port to send data to over sockets'
+)
 
-		self.parser.add_argument(
-			'-p', '--port',
-			type=int,
-			default=800,
-			help='Port to send data to over sockets'
-		)
+parser.add_argument(
+	'-m', '--mode',
+	choices=['sim8', 'sim16', 'com'],
+	default='com',
+	help='sets server mode'
+)
 
-		self.parser.add_argument(
-			'-m', '--mode',
-			choices=['sim8', 'sim16', 'com'],
-			default='com',
-			help='sets server mode'
-		)
+parser.add_argument(
+	'-w', '--window',
+	type=int,
+	default=10,
+	help='determines the number of samples to aquire per packet'
+)
 
-		self.parser.add_argument(
-			'-w', '--window',
-			type=int,
-			default=10,
-			help='determines the number of samples to aquire per packet'
-		)
-
-	def run(self):
-		'''
-			Returns list for keyword arguments
-		'''
-		args = self.parser.parse_args()
-
-		return vars(args)
+'''
+	Returns list for keyword arguments
+'''
+args = parser.parse_args()
 
 
 class CytonBoard:
@@ -98,9 +92,6 @@ class CytonBoard:
 			sleep(0.004) # 4ms sleep since sample rate is 250 Hz
 		
 		return self.board.get_board_data(self.window)[self.eeg_channels,:]
-
-
-args = CommandArgs().run()
 
 
 board = CytonBoard(**args)
