@@ -3,6 +3,8 @@ from find_cyton import find_cyton
 from brainflow.board_shim import BoardShim, BoardIds, BrainFlowInputParams
 from time import sleep
 
+from functools import cached_property
+
 class CommandArgs():
 	def __init__(self):
 
@@ -45,9 +47,15 @@ class CommandArgs():
 class CytonBoard:
 	def __init__(self, mode='com', window=10, **kargs):
 
-		self.mode   = mode
-		self.window = window
+		self.mode   : str = mode
+		self.window : int = window
 
+	@cached_property
+	def board(self) -> BoardShim:
+		'''
+			creates brainflow board instance
+		'''
+		
 		# chooses between simulated board or real board
 		if self.mode in ['sim8', 'sim16']:
 			board_args = BrainFlowInputParams()
@@ -61,39 +69,43 @@ class CytonBoard:
 		board.prepare_session()
 		board.start_stream()
 
+		return board
+
+	@cached_property
+	def eeg_channels(self) -> list:
+		'''
+			Gets indices from the data packets that correspond to
+			EEG channels
+		'''
+
 		if self.mode == 'sim8':
-			def aquire_data(board : BoardShim):
-				
-				eeg_channels = board.get_eeg_channels(board.board_id)[:8]
-
-				return board.get_board_data(window)[eeg_channels,:]
-
+			return self.board.get_eeg_channels(self.board.board_id)[:8]
 		elif self.mode == 'sim16':
-			def aquire_data(board : BoardShim):
-				
-				eeg_channels = board.get_eeg_channels(board.board_id)[:16]
-
-				return board.get_board_data(window)[eeg_channels,:]
-
+			return self.board.get_eeg_channels(self.board.board_id)[:16]
 		else:
-			def aquire_data(board : BoardShim):
-				
-				eeg_channels = board.get_eeg_channels(board.board_id)
+			return self.board.get_eeg_channels(self.board.board_id)
 
-				return board.get_board_data(window)[eeg_channels,:]
+	def get_data(self) -> list:
+		'''
+			Gets next data of size self.window
+		'''
 
-		# Insert Code to aquire board data
-		while True:
-			sleep(1)
-			foo = aquire_data(board)
-			pass
+		# brings function to get amount of data in the ring buffer
+		# into the local scope
+		num_samples = self.board.get_board_data_count
 
-	## Insert Socket Code ##
-	def CreateSocket(self):
-		pass
+		while num_samples() < self.window: 
+			sleep(0.004) # 4ms sleep since sample rate is 250 Hz
+		
+		return self.board.get_board_data(self.window)[self.eeg_channels,:]
 
 
 args = CommandArgs().run()
 
 
 board = CytonBoard(**args)
+
+while True:
+	data = board.get_data()
+
+	# insert socket code here
