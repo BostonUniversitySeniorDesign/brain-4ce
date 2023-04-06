@@ -1,4 +1,5 @@
 import tkinter as tk
+import time
 
 class Circle:
     def __init__(self, canvas, window):
@@ -9,45 +10,30 @@ class Circle:
         self.labels = ['Right arm!', 'Left arm!', 'Right foot!', 'Left foot!', 'Left hand!', 'Right hand!']
         self.draw()
         
-    def draw(self):
+    def erase_text(self):
         self.canvas.delete("all")
+        self.canvas.after(2000, self.draw)
+
+    def draw(self):
         self.x = 45
         self.y = 25
         self.circles = []
-        for i in range(6):
-            circle = self.canvas.create_oval(self.x, self.y, self.x+50, self.y+50, fill='white')
-
-            self.canvas.create_text(self.x+25, self.y+25, text=str(i), fill="black", font=('Helvetica 25 bold'))
-            self.circles.append(circle)
-            self.x += 75
-            
-            if i == 2:
-                self.y += 75
-                self.x = 45
 
         self.canvas.scale("all", 0, 0, 2, 2)
 
-        if self.iswhite == True:
-            self.change_color()
-            self.iswhite = False
-        else:
-            self.change_color()
-            self.iswhite = True
+        self.change_color()
 
-        self.canvas.after(5000, self.draw)
-
-        #circle timer
-        #function to update middle timer every 1s
-        #function to update instruction every 5s 
-
+        self.canvas.after(5000, self.erase_text)
 
         
     def change_color(self):
-        self.canvas.itemconfig(self.circles[self.curr], fill='red')
-        self.canvas.create_text(self.x+25, self.y+250, text=self.labels[self.curr], fill="black", font=('Helvetica 35 bold'))        
+
+        self.canvas.create_text(300, 185, text=self.labels[self.curr], fill="black", font=('Calibri 60 bold'))
         self.curr = self.curr + 1
         if self.curr == 6:
             self.curr = 0
+
+
 
 
 def tWindow():
