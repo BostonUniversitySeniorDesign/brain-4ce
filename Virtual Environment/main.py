@@ -11,6 +11,7 @@ from direct.gui.OnscreenText import OnscreenText
 import math
 import generate
 import random
+import socket
 
 class MyApp(ShowBase):
 
@@ -19,7 +20,7 @@ class MyApp(ShowBase):
     angle  = 180
     textObject = None
     camera_pos = 0
-    list = ['left', 'right', 'backward', 'forward']
+    dir_list = ['left', 'right', 'backward', 'forward']
     prev_sec = 0
 
     def __init__(self):
@@ -68,6 +69,22 @@ class MyApp(ShowBase):
         self.greennp = generate.SetLight(self, "green light", 'a', ((0.2, 0.9, 0.2, 1)), self.nodepath1)
 
 
+        host = socket.gethostname()
+        port = 55001 #random unprivileged port
+
+        """ Starting a TCP socket. """
+        server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        
+        """ Bind the IP and PORT to the server. """
+        server_socket.bind((host, port))
+        
+        """ Start Server Listening"""
+        server_socket.listen()
+
+        """ Server accepts connection from client"""
+        self.conn, self.address = server_socket.accept()
+
+
     def ChangeSpherePositionBackward(self):
         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
 
@@ -104,39 +121,26 @@ class MyApp(ShowBase):
         return task.cont
 
     def ChooseDirection(self, task):
-        
-        secs = int(task.time)
-        
-        #print(secs)
 
-        # if secs == 1:
 
-        #     dir = self.list[random.randint(0,3)]
 
-        #     if dir == 'forward':
-        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
-        #     elif dir == 'backward':
-        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
-        #     elif dir == 'right':
-        #         self.angle += 10
-        #     elif dir == 'left':
-        #         self.angle -= 10
 
-        #     secs = 0
-        
-        # curr_sec = int(task.time)
-        # if curr_sec != self.prev_sec:
-        #     dir = self.list[random.randint(0,3)]
+        data = self.conn.recv(1024).decode()
+        data = int(data)
+    
+        curr_sec = int(task.time)
+        if curr_sec != self.prev_sec:
+            dir = self.dir_list[data]
 
-        #     if dir == 'forward':
-        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
-        #     elif dir == 'backward':
-        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
-        #     elif dir == 'right':
-        #         self.angle += 10
-        #     elif dir == 'left':
-        #         self.angle -= 10
-        #     self.prev_sec = curr_sec
+            if dir == 'forward':
+                self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
+            elif dir == 'backward':
+                self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
+            elif dir == 'right':
+                self.angle += 10
+            elif dir == 'left':
+                self.angle -= 10
+            self.prev_sec = curr_sec
 
         return task.cont
 
