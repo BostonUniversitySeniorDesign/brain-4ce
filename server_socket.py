@@ -1,12 +1,10 @@
 import socket
 import pickle
 import boardStreamer
-from boardStreamer import __main__
-
 
 def server_program():
     host = socket.gethostname()
-    port = 65400 #random unprivileged port
+    port = 50000 #random unprivileged port
 
     """ Starting a TCP socket. """
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -26,7 +24,7 @@ def server_program():
 
     while True:
 
-        data = conn.recv(1024)
+        data = conn.recv(10000)
         buffer.append(pickle.loads(data))
         print(buffer[i])
         i = i + 1

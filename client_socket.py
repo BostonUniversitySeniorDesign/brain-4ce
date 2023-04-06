@@ -1,14 +1,14 @@
+# IGNORE THIS FILE - CURRENTLY NOT IN USE
+
 import socket
 import time
 import pickle
 import pandas
-import boardStreamer
-from boardStreamer import __main__
-
+from boardStreamer import __main__ 
 
 def client_program():
     host = socket.gethostname()
-    port = 65400 #random unprivileged port
+    port = 50000 #random unprivileged port
     
     """ Starting a TCP socket. """
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

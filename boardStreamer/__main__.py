@@ -2,6 +2,8 @@ import argparse
 from find_cyton import find_cyton
 from brainflow.board_shim import BoardShim, BoardIds, BrainFlowInputParams
 from time import sleep
+import socket
+import pickle
 
 from functools import cached_property
 
@@ -96,7 +98,17 @@ class CytonBoard:
 
 board = CytonBoard(**args)
 
+# setup socket connection 
+host = socket.gethostname()
+port = 50000 #random unprivileged port
+""" Starting a TCP socket. """
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+""" Connecting to the server. """    
+client_socket.connect((host, port))
+
 while True:
 	data = board.get_data()
+	
+	client_socket.send(pickle.dumps(data))
 
-	# insert socket code here
+   
