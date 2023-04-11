@@ -3,7 +3,7 @@ import random
 import socket
 
 
-def main():
+def s_main():
     count = 0
     # How many numbers to generate 
     num_outputs = 5
@@ -12,7 +12,7 @@ def main():
 
     # setup socket connection 
     host = socket.gethostname()
-    port = 55001 #random unprivileged port
+    port = 55002 #random unprivileged port
     """ Starting a TCP socket. """
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     """ Connecting to the server. """    
@@ -30,4 +30,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    s_main()

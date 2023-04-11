@@ -9,9 +9,11 @@ from panda3d.core import Vec3, Spotlight, TextureStage
 from panda3d.core import WindowProperties
 from direct.gui.OnscreenText import OnscreenText
 import math
+import socket
 import generate
 import random
-import socket
+from ML_Fake import s_main
+import time
 
 class MyApp(ShowBase):
 
@@ -27,7 +29,7 @@ class MyApp(ShowBase):
         ShowBase.__init__(self)
         # ShowBase.useDrive(self)
         # ShowBase.useTrackball(self)
-        ShowBase.oobe(self)
+       # ShowBase.oobe(self)
 
         
         self.accept('d', self.ChangeSpherePositionRight)
@@ -70,7 +72,7 @@ class MyApp(ShowBase):
 
 
         host = socket.gethostname()
-        port = 55001 #random unprivileged port
+        port = 55002 #random unprivileged port
 
         """ Starting a TCP socket. """
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -83,6 +85,7 @@ class MyApp(ShowBase):
 
         """ Server accepts connection from client"""
         self.conn, self.address = server_socket.accept()
+
 
 
     def ChangeSpherePositionBackward(self):
@@ -98,6 +101,69 @@ class MyApp(ShowBase):
         self.angle -= 10
         
     def UpdateCameraPosition(self, task):
+        # self.textObject.destroy()
+        # self.textObject = OnscreenText(text='x: ' + str(round(self.sphObject.getPos()[0],2)) + ' y:' + str(round(self.sphObject.getPos()[1],2)), pos=(-0.5, 0.02), scale=0.07)
+        # sph_hpr = self.sphObject.getHpr()
+        # sph_heading = sph_hpr[0]
+
+
+        # self.camera_pos = self.sphObject.getPos() + Vec3(math.sin(math.radians(sph_heading)), math.cos(math.radians(sph_heading)), 0) * 10
+        # self.xCoord = self.camera_pos[0] 
+        # self.yCoord = self.camera_pos[1] 
+
+        # self.camera.setPos(self.camera_pos)
+        # self.camera.lookAt(self.sphObject)
+
+        
+        # self.dlnp.setHpr(self.camera.getHpr())
+
+        return task.cont
+
+    def UpdateSpherePosition(self, task):
+        self.sphObject.setH(self.angle)
+        return task.cont
+
+    def ChooseDirection(self, task):
+        
+       #secs = int(task.time)
+        
+        #print(secs)
+
+        # if secs == 1:
+
+        #     dir = self.list[random.randint(0,3)]
+
+        #     if dir == 'forward':
+        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
+        #     elif dir == 'backward':
+        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
+        #     elif dir == 'right':
+        #         self.angle += 10
+        #     elif dir == 'left':
+        #         self.angle -= 10
+
+        #     secs = 0
+
+        data = self.conn.recv(1024).decode()
+        data = int(data)
+
+       # curr_sec = int(task.time)
+        #if curr_sec != self.prev_sec:
+            #dir = self.list[random.randint(0,3)]
+        
+
+        dir = self.dir_list[data]
+        if dir == 'forward':
+            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
+        elif dir == 'backward':
+            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
+        elif dir == 'right':
+            self.angle += 10
+        elif dir == 'left':
+            self.angle -= 10
+        #self.prev_sec = curr_sec
+
+
         self.textObject.destroy()
         self.textObject = OnscreenText(text='x: ' + str(round(self.sphObject.getPos()[0],2)) + ' y:' + str(round(self.sphObject.getPos()[1],2)), pos=(-0.5, 0.02), scale=0.07)
         sph_hpr = self.sphObject.getHpr()
@@ -112,38 +178,12 @@ class MyApp(ShowBase):
         self.camera.lookAt(self.sphObject)
 
         
-        self.dlnp.setHpr(self.camera.getHpr())
-
-        return task.cont
-
-    def UpdateSpherePosition(self, task):
-        self.sphObject.setH(self.angle)
-        return task.cont
-
-    def ChooseDirection(self, task):
-
-
-
-
-        data = self.conn.recv(1024).decode()
-        data = int(data)
-    
-        curr_sec = int(task.time)
-        if curr_sec != self.prev_sec:
-            dir = self.dir_list[data]
-
-            if dir == 'forward':
-                self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
-            elif dir == 'backward':
-                self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
-            elif dir == 'right':
-                self.angle += 10
-            elif dir == 'left':
-                self.angle -= 10
-            self.prev_sec = curr_sec
+        self.dlnp.setHpr(self.camera.getHpr())        
 
         return task.cont
 
 
 game = MyApp()
+
 game.run()
+
