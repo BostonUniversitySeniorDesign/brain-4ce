@@ -41,7 +41,6 @@ class MyApp(ShowBase):
         self.accept('a', self.ChangeSpherePositionLeft)
         self.accept('s', self.ChangeSpherePositionBackward)
         self.accept('w', self.ChangeSpherePositionForward)
-        self.taskMgr.add(self.UpdateCameraPosition)
         self.taskMgr.add(self.UpdateSpherePosition)
         self.taskMgr.add(self.ChooseDirection)
 
@@ -107,24 +106,6 @@ class MyApp(ShowBase):
     def ChangeSpherePositionLeft(self):
         self.angle -= 10
         
-    def UpdateCameraPosition(self, task):
-        # self.textObject.destroy()
-        # self.textObject = OnscreenText(text='x: ' + str(round(self.sphObject.getPos()[0],2)) + ' y:' + str(round(self.sphObject.getPos()[1],2)), pos=(-0.5, 0.02), scale=0.07)
-        # sph_hpr = self.sphObject.getHpr()
-        # sph_heading = sph_hpr[0]
-
-
-        # self.camera_pos = self.sphObject.getPos() + Vec3(math.sin(math.radians(sph_heading)), math.cos(math.radians(sph_heading)), 0) * 10
-        # self.xCoord = self.camera_pos[0] 
-        # self.yCoord = self.camera_pos[1] 
-
-        # self.camera.setPos(self.camera_pos)
-        # self.camera.lookAt(self.sphObject)
-
-        
-        # self.dlnp.setHpr(self.camera.getHpr())
-
-        return task.cont
 
     def UpdateSpherePosition(self, task):
         self.sphObject.setH(self.angle)
@@ -132,32 +113,10 @@ class MyApp(ShowBase):
 
     def ChooseDirection(self, task):
         
-       #secs = int(task.time)
-        
-        #print(secs)
-
-        # if secs == 1:
-
-        #     dir = self.list[random.randint(0,3)]
-
-        #     if dir == 'forward':
-        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
-        #     elif dir == 'backward':
-        #         self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
-        #     elif dir == 'right':
-        #         self.angle += 10
-        #     elif dir == 'left':
-        #         self.angle -= 10
-
-        #     secs = 0
 
         # data = self.conn.recv(1024).decode()
         # data = int(data)
 
-       # curr_sec = int(task.time)
-        #if curr_sec != self.prev_sec:
-            #dir = self.list[random.randint(0,3)]
-        
 
         # dir = self.dir_list[data]
         # if dir == 'forward':
