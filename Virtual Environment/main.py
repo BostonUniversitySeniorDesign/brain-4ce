@@ -33,7 +33,7 @@ class MyApp(ShowBase):
         simplepbr.init()
         # ShowBase.useDrive(self)
         # ShowBase.useTrackball(self)
-        ShowBase.oobe(self)
+        #ShowBase.oobe(self)
 
 
         
@@ -61,12 +61,6 @@ class MyApp(ShowBase):
         self.scene = generate.GenerateModel(self, (0,0,-0.5), (50,50,10), (0,0,0), self.nodepath3, "models/plane.bam")
         #self.scene =  loader.loadModel("models/plane.bam")
         self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.6, 0.6, 0.6), (0,0,0), self.nodepath2, "models/sphere.egg")
-        self.barrier1 = generate.GenerateModel(self,(0, 300, 1.63), (6.3, 31.3, 1), (90,0,0), self.nodepath1, "models/barrier.egg")
-        self.barrier2 = generate.GenerateModel(self, (300, 0, 1.63), (6.3, 31.3, 1), (180,0,0), self.nodepath1, "models/barrier.egg")
-        self.barrier3 = generate.GenerateModel(self, (-300, 0, 1.63), (6.3, 31.3, 1), (180,0,0), self.nodepath1, "models/barrier.egg")
-        self.barrier4 = generate.GenerateModel(self, (0, -300, 1.63), (6.3, 31.3, 1), (90,0,0), self.nodepath1, "models/barrier.egg")
-
-
 
 
         self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
