@@ -4,10 +4,11 @@ from direct.actor.Actor import Actor
 from direct.interval.IntervalGlobal import Sequence
 from panda3d.core import AmbientLight, DirectionalLight, PointLight
 from panda3d.core import NodePath
-from panda3d.core import PandaNode, load_prc_file
+from panda3d.core import PandaNode, load_prc_file, TextNode
 from panda3d.core import Vec3, Spotlight, TextureStage
 from panda3d.core import WindowProperties
 from direct.gui.OnscreenText import OnscreenText
+from direct.gui.DirectGui import *
 import math
 import socket
 import generate
@@ -23,7 +24,10 @@ class MyApp(ShowBase):
     xCoord = 0
     yCoord = 0
     angle  = 180
+    textNode = None
     textObject = None
+    textNode = TextNode('myTextNode')
+
     camera_pos = 0
     dir_list = ['left', 'right', 'backward', 'forward']
     prev_sec = 0
@@ -60,12 +64,16 @@ class MyApp(ShowBase):
         #self.scene =  loader.loadModel("models/plane.bam")
         self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.6, 0.6, 0.6), (0,0,0), self.nodepath2, "models/sphere.egg")
 
+        add = 0
+        for i in range(10):
+            generate.GenerateModel(self, (0,25+add,0.5), (1,1,1), (90,0,0), self.render, "models/star.bam")
+            add+= 10
 
-        self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
+        #self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
 
-        #self.dlnp = generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
-      #  self.bluenp = generate.SetLight(self, "blue light", 'a', (0.2,0.2,0.8,1),  self.scene)
-       # self.bluenp = generate.SetLight(self, "my dlight2", 'd', 0, self.scene)
+        self.dlnp = generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
+        #self.bluenp = generate.SetLight(self, "blue light", 'a', (0.2,0.2,0.8,1),  self.scene)
+        #self.bluenp = generate.SetLight(self, "my dlight2", 'd', 0, self.scene)
        # self.greennp = generate.SetLight(self, "green light", 'a', ((0.2, 0.9, 0.2, 1)), self.nodepath1)
 
 
@@ -84,19 +92,17 @@ class MyApp(ShowBase):
         # """ Server accepts connection from client"""
         # self.conn, self.address = server_socket.accept()
 
-
-
     def ChangeSpherePositionBackward(self):
-        self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
+        self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 5)
 
     def ChangeSpherePositionForward(self):
-        self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
+        self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 5)
 
     def ChangeSpherePositionRight(self):
-        self.angle += 10
+        self.angle += 25
     
     def ChangeSpherePositionLeft(self):
-        self.angle -= 10
+        self.angle -= 25
         
 
     def UpdateSpherePosition(self, task):
@@ -122,13 +128,21 @@ class MyApp(ShowBase):
         #self.prev_sec = curr_sec
 
 
-        self.textObject.destroy()
-        self.textObject = OnscreenText(text='x: ' + str(round(self.sphObject.getPos()[0],2)) + ' y:' + str(round(self.sphObject.getPos()[1],2)), pos=(-0.5, 0.02), scale=0.07)
+        self.textNode.clear()
+        self.textNode.setText('x: ' + str(round(self.sphObject.getPos()[0],2)) + ' y:' + str(round(self.sphObject.getPos()[1],2)))
+        self.textNode.setTextColor(0, 0, 0, 1)
+        textNodePath = self.aspect2d.attachNewNode(self.textNode)
+        x = -self.get_aspect_ratio() + 0.1
+        y = 0.9
+        textNodePath.setPos(x, 0, y)        
+        textNodePath.setScale(0.1)
+
+
         sph_hpr = self.sphObject.getHpr()
         sph_heading = sph_hpr[0]
 
 
-        self.camera_pos = self.sphObject.getPos() + Vec3(math.sin(math.radians(sph_heading)), math.cos(math.radians(sph_heading)), 0) * 10
+        self.camera_pos = self.sphObject.getPos() + Vec3(math.sin(math.radians(sph_heading)), math.cos(math.radians(sph_heading)), 0.1) * 10
         self.xCoord = self.camera_pos[0] 
         self.yCoord = self.camera_pos[1] 
 
