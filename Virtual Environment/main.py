@@ -24,9 +24,12 @@ class MyApp(ShowBase):
     xCoord = 0
     yCoord = 0
     angle  = 180
-    textNode = None
     textObject = None
     textNode = TextNode('myTextNode')
+    isMovingForward = False
+    isMovingRight = False
+    isMovingBackward = False
+    isMovingLeft = False
 
     camera_pos = 0
     dir_list = ['left', 'right', 'backward', 'forward']
@@ -39,12 +42,20 @@ class MyApp(ShowBase):
         # ShowBase.useTrackball(self)
         #ShowBase.oobe(self)
 
-        self.accept('d', self.ChangeSpherePositionRight)
-        self.accept('a', self.ChangeSpherePositionLeft)
-        self.accept('s', self.ChangeSpherePositionBackward)
-        self.accept('w', self.ChangeSpherePositionForward)
+        self.accept('d', self.ChangeSpherePositionRightStart)
+        self.accept('d-up', self.ChangeSpherePositionRightEnd)
+        self.accept('a', self.ChangeSpherePositionLeftStart)
+        self.accept('a-up', self.ChangeSpherePositionLeftEnd)
+        self.accept('s', self.ChangeSpherePositionBackwardStart)
+        self.accept('s-up', self.ChangeSpherePositionBackwardEnd)
+        self.accept('w', self.ChangeSpherePositionForwardStart)
+        self.accept('w-up', self.ChangeSpherePositionForwardEnd)
         self.taskMgr.add(self.UpdateSpherePosition)
         self.taskMgr.add(self.ChooseDirection)
+        self.taskMgr.add(self.MoveFoward)
+        self.taskMgr.add(self.MoveBackward)
+        self.taskMgr.add(self.MoveLeft)
+        self.taskMgr.add(self.MoveRight)
 
         blank_node = PandaNode("my_blank_node")
         self.nodepath1 = NodePath(blank_node)
@@ -71,7 +82,7 @@ class MyApp(ShowBase):
 
         #self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
 
-        self.dlnp = generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
+        #self.dlnp = generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
         #self.bluenp = generate.SetLight(self, "blue light", 'a', (0.2,0.2,0.8,1),  self.scene)
         #self.bluenp = generate.SetLight(self, "my dlight2", 'd', 0, self.scene)
        # self.greennp = generate.SetLight(self, "green light", 'a', ((0.2, 0.9, 0.2, 1)), self.nodepath1)
@@ -92,18 +103,57 @@ class MyApp(ShowBase):
         # """ Server accepts connection from client"""
         # self.conn, self.address = server_socket.accept()
 
-    def ChangeSpherePositionBackward(self):
-        self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 5)
+    def ChangeSpherePositionBackwardStart(self):
+        self.isMovingBackward = True
 
-    def ChangeSpherePositionForward(self):
-        self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 5)
+    def ChangeSpherePositionBackwardEnd(self):
+        self.isMovingBackward = False
 
-    def ChangeSpherePositionRight(self):
-        self.angle += 25
+    def MoveBackward(self, task):
+        if self.isMovingBackward == True:
+            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.5)
+
+        return task.cont    
+
+    def ChangeSpherePositionForwardStart(self):
+        self.isMovingForward = True
+
+    def ChangeSpherePositionForwardEnd(self):
+        self.isMovingForward = False
+
+    def MoveFoward(self, task):
+        if self.isMovingForward == True:
+            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.5)
+
+        return task.cont
+
+    def ChangeSpherePositionRightStart(self):
+        #self.angle += 10
+        self.isMovingRight = True
+
+    def ChangeSpherePositionRightEnd(self):
+        self.isMovingRight = False
+
+    def MoveRight(self, task):
+        if self.isMovingRight == True:
+            self.angle += 2.5
+
+        return task.cont
     
-    def ChangeSpherePositionLeft(self):
-        self.angle -= 25
+
+    def ChangeSpherePositionLeftStart(self):
+        #self.angle -= 10
+        self.isMovingLeft = True
+    
+    def ChangeSpherePositionLeftEnd(self):
+        self.isMovingLeft = False
+
+    def MoveLeft(self, task):
+        if self.isMovingLeft == True:
+            self.angle -= 2.5
         
+        return task.cont
+
 
     def UpdateSpherePosition(self, task):
         self.sphObject.setH(self.angle)
