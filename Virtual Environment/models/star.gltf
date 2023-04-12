@@ -15,13 +15,19 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Plane"
+            "name" : "Cylinder",
+            "rotation" : [
+                -0.1092473715543747,
+                -0.10479025542736053,
+                -0.6842542886734009,
+                0.7133583426475525
+            ]
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "Material.002",
+            "name" : "Material.001",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0
@@ -33,7 +39,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Plane",
+            "name" : "Cylinder",
             "primitives" : [
                 {
                     "attributes" : {
@@ -56,69 +62,69 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "water",
-            "uri" : "water.png"
+            "name" : "gradient",
+            "uri" : "gradient.png"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 4,
+            "count" : 122,
             "max" : [
-                1,
-                0,
+                0.9510565400123596,
+                0.10983727872371674,
                 1
             ],
             "min" : [
-                -1,
-                0,
-                -1
+                -0.9510565400123596,
+                -0.27779248356819153,
+                -0.80901700258255
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 4,
+            "count" : 122,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 4,
+            "count" : 122,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 6,
+            "count" : 180,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 48,
+            "byteLength" : 1464,
             "byteOffset" : 0,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 48,
-            "byteOffset" : 48,
+            "byteLength" : 1464,
+            "byteOffset" : 1464,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 32,
-            "byteOffset" : 96,
+            "byteLength" : 976,
+            "byteOffset" : 2928,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 12,
-            "byteOffset" : 128,
+            "byteLength" : 360,
+            "byteOffset" : 3904,
             "target" : 34963
         }
     ],
@@ -130,8 +136,8 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 140,
-            "uri" : "plane.bin"
+            "byteLength" : 4264,
+            "uri" : "star.bin"
         }
     ]
 }
