@@ -35,8 +35,6 @@ class MyApp(ShowBase):
         # ShowBase.useTrackball(self)
         #ShowBase.oobe(self)
 
-
-        
         self.accept('d', self.ChangeSpherePositionRight)
         self.accept('a', self.ChangeSpherePositionLeft)
         self.accept('s', self.ChangeSpherePositionBackward)
