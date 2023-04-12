@@ -50,7 +50,6 @@ class MyApp(ShowBase):
         self.accept('s-up', self.ChangeSpherePositionBackwardEnd)
         self.accept('w', self.ChangeSpherePositionForwardStart)
         self.accept('w-up', self.ChangeSpherePositionForwardEnd)
-        self.taskMgr.add(self.UpdateSpherePosition)
         self.taskMgr.add(self.ChooseDirection)
         self.taskMgr.add(self.MoveFoward)
         self.taskMgr.add(self.MoveBackward)
@@ -79,7 +78,8 @@ class MyApp(ShowBase):
         for i in range(10):
             generate.GenerateModel(self, (0,25+add,0.5), (1,1,1), (90,0,0), self.render, "models/star.bam")
             add+= 10
-
+            
+        self.sphObject.setH(self.angle)
         #self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
 
         #self.dlnp = generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
@@ -103,6 +103,18 @@ class MyApp(ShowBase):
         # """ Server accepts connection from client"""
         # self.conn, self.address = server_socket.accept()
 
+    def cameraSet(self, sph_heading):
+        #sph_hpr = self.sphObject.getHpr()
+        #sph_heading = sph_hpr[0]
+
+
+        self.camera_pos = self.sphObject.getPos() + Vec3(math.sin(math.radians(sph_heading)), math.cos(math.radians(sph_heading)), 0.1) * 10
+        self.xCoord = self.camera_pos[0] 
+        self.yCoord = self.camera_pos[1] 
+
+        self.camera.setPos(self.camera_pos)
+        self.camera.lookAt(self.sphObject)
+
     def ChangeSpherePositionBackwardStart(self):
         self.isMovingBackward = True
 
@@ -111,19 +123,27 @@ class MyApp(ShowBase):
 
     def MoveBackward(self, task):
         if self.isMovingBackward == True:
-            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.5)
+            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.5 )
+
+            self.cameraSet(self.sphObject.getHpr()[0])
 
         return task.cont    
 
     def ChangeSpherePositionForwardStart(self):
         self.isMovingForward = True
+            
 
     def ChangeSpherePositionForwardEnd(self):
         self.isMovingForward = False
+            
+
+
 
     def MoveFoward(self, task):
         if self.isMovingForward == True:
-            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.5)
+            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.5 )
+
+            self.cameraSet(self.sphObject.getHpr()[0])
 
         return task.cont
 
@@ -138,6 +158,11 @@ class MyApp(ShowBase):
         if self.isMovingRight == True:
             self.angle += 2.5
 
+            self.sphObject.setH(self.angle)
+
+            self.cameraSet(self.sphObject.getHpr()[0])
+
+
         return task.cont
     
 
@@ -151,16 +176,15 @@ class MyApp(ShowBase):
     def MoveLeft(self, task):
         if self.isMovingLeft == True:
             self.angle -= 2.5
-        
-        return task.cont
+            self.sphObject.setH(self.angle)
+
+            self.cameraSet(self.sphObject.getHpr()[0])
 
 
-    def UpdateSpherePosition(self, task):
-        self.sphObject.setH(self.angle)
         return task.cont
+
 
     def ChooseDirection(self, task):
-        
 
         # data = self.conn.recv(1024).decode()
         # data = int(data)
@@ -187,17 +211,8 @@ class MyApp(ShowBase):
         textNodePath.setPos(x, 0, y)        
         textNodePath.setScale(0.1)
 
+        self.cameraSet(self.sphObject.getHpr()[0])
 
-        sph_hpr = self.sphObject.getHpr()
-        sph_heading = sph_hpr[0]
-
-
-        self.camera_pos = self.sphObject.getPos() + Vec3(math.sin(math.radians(sph_heading)), math.cos(math.radians(sph_heading)), 0.1) * 10
-        self.xCoord = self.camera_pos[0] 
-        self.yCoord = self.camera_pos[1] 
-
-        self.camera.setPos(self.camera_pos)
-        self.camera.lookAt(self.sphObject)
 
         
         #self.dlnp.setHpr(self.camera.getHpr())        
