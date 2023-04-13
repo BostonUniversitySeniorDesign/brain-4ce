@@ -69,10 +69,10 @@ class MyApp(ShowBase):
         self.nodepath3.reparentTo(self.render)
 
 
-
+        #Have brain rotate when camera rotates.
         self.scene = generate.GenerateModel(self, (0,0,-0.5), (200,200,1), (0,0,0), self.nodepath3, "models/plane.bam")
         #self.scene =  loader.loadModel("models/plane.bam")
-        self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.6, 0.6, 0.6), (0,0,0), self.nodepath2, "models/sphere.egg")
+        self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.3, 0.3, 0.3), (0,0,0), self.nodepath2, "models/brain.bam")
 
         add = 0
         for i in range(10):
@@ -82,7 +82,7 @@ class MyApp(ShowBase):
         self.sphObject.setH(self.angle)
         #self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
 
-        #self.dlnp = generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
+        self.dlnp = generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
         #self.bluenp = generate.SetLight(self, "blue light", 'a', (0.2,0.2,0.8,1),  self.scene)
         #self.bluenp = generate.SetLight(self, "my dlight2", 'd', 0, self.scene)
        # self.greennp = generate.SetLight(self, "green light", 'a', ((0.2, 0.9, 0.2, 1)), self.nodepath1)
