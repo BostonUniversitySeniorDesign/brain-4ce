@@ -23,7 +23,6 @@ class MyApp(ShowBase):
 
     xCoord = 0
     yCoord = 0
-    fakeH = 0
     angle  = 180
     textObject = None
     textNode = TextNode('myTextNode')
@@ -41,7 +40,7 @@ class MyApp(ShowBase):
         simplepbr.init()
         # ShowBase.useDrive(self)
         # ShowBase.useTrackball(self)
-        ShowBase.oobe(self)
+        #ShowBase.oobe(self)
 
         self.accept('d', self.ChangeSpherePositionRightStart)
         self.accept('d-up', self.ChangeSpherePositionRightEnd)
@@ -162,7 +161,7 @@ class MyApp(ShowBase):
             self.sphObject.setH(self.angle)
 
             self.cameraSet(self.sphObject.getHpr()[0])
-            
+
 
         return task.cont
     
@@ -177,7 +176,7 @@ class MyApp(ShowBase):
     def MoveLeft(self, task):
         if self.isMovingLeft == True:
             self.angle -= 2.5
-            #self.sphObject.setH(self.angle)
+            self.sphObject.setH(self.angle)
 
             self.cameraSet(self.sphObject.getHpr()[0])
 
