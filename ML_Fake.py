@@ -8,7 +8,7 @@ def s_main():
     # How many numbers to generate 
     num_outputs = 5
     # How many seconds to wait until the next number
-    sec_between = 1
+    sec_between = 3.5
 
     # setup socket connection 
     host = socket.gethostname()
@@ -26,7 +26,7 @@ def s_main():
         count += 1
         client_socket.send(str(num).encode())
         # print(num)
-        time.sleep(sec_between)
+        #time.sleep(sec_between)
 
 
 if __name__ == "__main__":

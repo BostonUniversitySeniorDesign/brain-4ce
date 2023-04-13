@@ -287,13 +287,30 @@ class MyApp(ShowBase):
 
         # dir = self.dir_list[data]
         # if dir == 'forward':
-        #     self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
+        #     self.isMovingForward = True
+        #     self.isMovingBackward = False
+        #     self.isMovingRight = False
+        #     self.isMovingLeft = False
+        #     #self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
         # elif dir == 'backward':
-        #     self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
+        #     self.isMovingForward = False
+        #     self.isMovingBackward = True
+        #     self.isMovingRight = False
+        #     self.isMovingLeft = False
+        #     #self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
         # elif dir == 'right':
-        #     self.angle += 10
+        #     self.isMovingForward = False
+        #     self.isMovingBackward = False
+        #     self.isMovingRight = True
+        #     self.isMovingLeft = False
+        #     #self.angle += 10
         # elif dir == 'left':
-        #     self.angle -= 10
+        #     self.isMovingForward = False
+        #     self.isMovingBackward = False
+        #     self.isMovingRight = False
+        #     self.isMovingLeft = True        
+        #     #self.angle -= 10
+        
         #self.prev_sec = curr_sec
 
         self.textNode.clear()
@@ -359,6 +376,8 @@ class MyApp(ShowBase):
 
             self.index = self.index + 1
 
+
+        print(self.isMovingBackward, self.isMovingForward, self.isMovingLeft, self.isMovingRight)
 
 
 
