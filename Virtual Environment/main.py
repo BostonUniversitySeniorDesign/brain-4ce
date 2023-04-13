@@ -84,24 +84,27 @@ class MyApp(ShowBase):
         self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.2, 0.2, 0.2), (0,0,0), self.nodepath2, "models/brain.bam")
 
         star = None
+        total = 0
 
         addy = 0
         for i in range(10):
             star = generate.GenerateModel(self, (0,25+addy,0.6), (1,1,1), (90,0,0), self.render, "models/star.bam")
             self.obj_coords.append((star, (0,25+addy,0.6)))
-            # self.stars.append(star)
             addy+= 10
-            
+            total += 1            
 
         star = None
         addx  = 0
         for i in range(10):
+            
             if i == 0:
                 star = generate.GenerateModel(self, (0+addx,25+addy,0.6), (1,1,1), (90,0,0), self.render, "models/star.bam")
                 self.obj_coords.append((star, (0+addx,25+addy,0.6)))
             else:
                 star = generate.GenerateModel(self, (0+addx,25+addy,0.6), (1,1,1), (0,0,0), self.render, "models/star.bam") 
                 self.obj_coords.append((star, (0+addx,25+addy,0.6)))
+
+            total += 1
             
             addx += 10
 
@@ -112,16 +115,16 @@ class MyApp(ShowBase):
         for i in range(10):
             if i == 0:
                 star = generate.GenerateModel(self, (0+addx,25+addy,0.6), (1,1,1), (0,0,0), self.render, "models/star.bam")
-                self.obj_coords.append((star, (0+addx,25+addy,0.6)))
             else:
                 star = generate.GenerateModel(self, (0+addx,25+addy,0.6), (1,1,1), (90,0,0), self.render, "models/star.bam") 
-                self.obj_coords.append((star, (0+addx,25+addy,0.6)))
-            addy -= 10
+                
+            self.obj_coords.append((star, (0+addx,25+addy,0.6)))
+            
+            total += 1
 
+            addy -= 10
             
 
-
-        print(len(self.obj_coords))
 
 #        for i in range(10):
 
@@ -333,30 +336,31 @@ class MyApp(ShowBase):
         pos = tuple(self.sphObject.getPos())
         
 
-        is_close = False
+
         self.index = 0
 
-        for i in range(len(self.obj_coords)-1):
+
+        for i in self.obj_coords:
 
             pos_tuple = tuple(pos)
-            diff_x = self.obj_coords[self.index][1][0] - pos_tuple[0]
-            diff_y = self.obj_coords[self.index][1][1] - pos_tuple[1]
-            diff_z = self.obj_coords[self.index][1][2] - pos_tuple[2]
-
-
+            diff_x = i[1][0] - pos_tuple[0]
+            diff_y = i[1][1] - pos_tuple[1]
+            diff_z = i[1][2] - pos_tuple[2]
 
             if abs(diff_x) <= 1 and abs(diff_y) <= 1 and abs(diff_z) <= 1:
-                is_close  =  True
-                star_to_delete = self.obj_coords[self.index][0]
+                
+                star_to_delete = i[0]
                 star_to_delete.removeNode() 
-
                 self.score = self.score + 1
-            
+
                 del self.obj_coords[self.index]
+                
+                break
 
             self.index = self.index + 1
 
-    
+
+
 
         
         
