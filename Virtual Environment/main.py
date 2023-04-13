@@ -3,9 +3,9 @@ from direct.task import Task
 from direct.actor.Actor import Actor
 from direct.interval.IntervalGlobal import Sequence
 from panda3d.core import AmbientLight, DirectionalLight, PointLight
-from panda3d.core import NodePath
-from panda3d.core import PandaNode, load_prc_file, TextNode
-from panda3d.core import Vec3, Spotlight, TextureStage
+from panda3d.core import NodePath, CardMaker, DepthTestAttrib, CullFaceAttrib
+from panda3d.core import PandaNode, load_prc_file, TextNode, GeomTristrips, GeomVertexData, GeomVertexFormat, Geom, GeomNode, Texture
+from panda3d.core import Vec3, Spotlight, TextureStage, Vec2
 from panda3d.core import WindowProperties
 from direct.gui.OnscreenText import OnscreenText
 from direct.gui.DirectGui import *
@@ -38,6 +38,9 @@ class MyApp(ShowBase):
 
     def __init__(self):
         ShowBase.__init__(self)
+
+        self.setBackgroundColor(0.95, 2.45, 2.45)
+
         simplepbr.init()
         # ShowBase.useDrive(self)
         # ShowBase.useTrackball(self)
@@ -68,12 +71,13 @@ class MyApp(ShowBase):
         blank_node3 = PandaNode("my_blank_node3")
         self.nodepath3 = NodePath(blank_node3)
         self.nodepath3.reparentTo(self.render)
-
+        
 
         #Have brain rotate when camera rotates.
         self.scene = generate.GenerateModel(self, (0,0,-0.5), (200,200,1), (0,0,0), self.nodepath3, "models/plane.bam")
         #self.scene =  loader.loadModel("models/plane.bam")
         self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.2, 0.2, 0.2), (0,0,0), self.nodepath2, "models/brain.bam")
+
 
         add = 0
         for i in range(10):
