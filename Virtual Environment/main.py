@@ -30,6 +30,7 @@ class MyApp(ShowBase):
     isMovingRight = False
     isMovingBackward = False
     isMovingLeft = False
+    fakeHeading = 180
 
     camera_pos = 0
     dir_list = ['left', 'right', 'backward', 'forward']
@@ -107,6 +108,7 @@ class MyApp(ShowBase):
         #sph_hpr = self.sphObject.getHpr()
         #sph_heading = sph_hpr[0]
 
+        #print(sph_heading)
 
         self.camera_pos = self.sphObject.getPos() + Vec3(math.sin(math.radians(sph_heading)), math.cos(math.radians(sph_heading)), 0.1) * 10
         self.xCoord = self.camera_pos[0] 
@@ -114,6 +116,7 @@ class MyApp(ShowBase):
 
         self.camera.setPos(self.camera_pos)
         self.camera.lookAt(self.sphObject)
+        #self.sphObject.setHpr(sph_heading)
 
     def ChangeSpherePositionBackwardStart(self):
         self.isMovingBackward = True
@@ -125,7 +128,15 @@ class MyApp(ShowBase):
         if self.isMovingBackward == True:
             self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.5 )
 
-            self.cameraSet(self.sphObject.getHpr()[0])
+            #self.cameraSet(self.sphObject.getHpr()[0])
+            self.cameraSet(self.fakeHeading)
+
+        if self.camera.getHpr()[0] > 0:
+
+            self.sphObject.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
+
+        else:
+            self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))            
 
         return task.cont    
 
@@ -143,7 +154,15 @@ class MyApp(ShowBase):
         if self.isMovingForward == True:
             self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.5 )
 
-            self.cameraSet(self.sphObject.getHpr()[0])
+            #self.cameraSet(self.sphObject.getHpr()[0])
+            self.cameraSet(self.fakeHeading)
+
+        if self.camera.getHpr()[0] > 0:
+
+            self.sphObject.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
+
+        else:
+            self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
 
         return task.cont
 
@@ -157,11 +176,18 @@ class MyApp(ShowBase):
     def MoveRight(self, task):
         if self.isMovingRight == True:
             self.angle += 2.5
+            
+            self.fakeHeading += 2.5
+            #self.sphObject.setH(self.angle)
 
-            self.sphObject.setH(self.angle)
+            self.cameraSet(self.fakeHeading)
 
-            self.cameraSet(self.sphObject.getHpr()[0])
+        if self.camera.getHpr()[0] > 0:
 
+            self.sphObject.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
+
+        else:
+            self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
 
         return task.cont
     
@@ -176,9 +202,18 @@ class MyApp(ShowBase):
     def MoveLeft(self, task):
         if self.isMovingLeft == True:
             self.angle -= 2.5
-            self.sphObject.setH(self.angle)
+            #self.sphObject.setH(self.angle)
 
-            self.cameraSet(self.sphObject.getHpr()[0])
+            self.fakeHeading -= 2.5
+            #self.cameraSet(self.sphObject.getHpr()[0])
+            self.cameraSet(self.fakeHeading)
+
+        if self.camera.getHpr()[0] > 0:
+
+            self.sphObject.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
+
+        else:
+            self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
 
 
         return task.cont
@@ -200,7 +235,7 @@ class MyApp(ShowBase):
         # elif dir == 'left':
         #     self.angle -= 10
         #self.prev_sec = curr_sec
-
+        print(self.sphObject.getHpr())
 
         self.textNode.clear()
         self.textNode.setText('x: ' + str(round(self.sphObject.getPos()[0],2)) + ' y:' + str(round(self.sphObject.getPos()[1],2)))
@@ -211,10 +246,18 @@ class MyApp(ShowBase):
         textNodePath.setPos(x, 0, y)        
         textNodePath.setScale(0.1)
 
-        self.cameraSet(self.sphObject.getHpr()[0])
+        #self.cameraSet(self.sphObject.getHpr()[0])
+        self.cameraSet(self.fakeHeading)
 
+        if self.camera.getHpr()[0] > 0:
 
-        
+            self.sphObject.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
+
+        else:
+            self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
+
+        print(self.camera.getHpr(), self.sphObject.getHpr())
+
         #self.dlnp.setHpr(self.camera.getHpr())        
 
         return task.cont
