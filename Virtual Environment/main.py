@@ -73,11 +73,11 @@ class MyApp(ShowBase):
         #Have brain rotate when camera rotates.
         self.scene = generate.GenerateModel(self, (0,0,-0.5), (200,200,1), (0,0,0), self.nodepath3, "models/plane.bam")
         #self.scene =  loader.loadModel("models/plane.bam")
-        self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.3, 0.3, 0.3), (0,0,0), self.nodepath2, "models/brain.bam")
+        self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.2, 0.2, 0.2), (0,0,0), self.nodepath2, "models/brain.bam")
 
         add = 0
         for i in range(10):
-            generate.GenerateModel(self, (0,25+add,0.5), (1,1,1), (90,0,0), self.render, "models/star.bam")
+            generate.GenerateModel(self, (0,25+add,0.6), (1,1,1), (90,0,0), self.render, "models/star.bam")
             add+= 10
             
         self.sphObject.setH(self.angle)
