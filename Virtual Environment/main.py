@@ -134,9 +134,12 @@ class MyApp(ShowBase):
         if self.camera.getHpr()[0] > 0:
 
             self.sphObject.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
+            self.dlnp.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
 
         else:
-            self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))            
+            self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
+            self.dlnp.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
+         
 
         return task.cont    
 
@@ -160,9 +163,12 @@ class MyApp(ShowBase):
         if self.camera.getHpr()[0] > 0:
 
             self.sphObject.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
+            self.dlnp.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
 
         else:
             self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
+            self.dlnp.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
+
 
         return task.cont
 
@@ -185,9 +191,12 @@ class MyApp(ShowBase):
         if self.camera.getHpr()[0] > 0:
 
             self.sphObject.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
+            self.dlnp.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
 
         else:
             self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
+            self.dlnp.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
+
 
         return task.cont
     
@@ -211,9 +220,12 @@ class MyApp(ShowBase):
         if self.camera.getHpr()[0] > 0:
 
             self.sphObject.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
+            self.dlnp.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
 
         else:
             self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
+            self.dlnp.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
+
 
 
         return task.cont
@@ -235,7 +247,6 @@ class MyApp(ShowBase):
         # elif dir == 'left':
         #     self.angle -= 10
         #self.prev_sec = curr_sec
-        print(self.sphObject.getHpr())
 
         self.textNode.clear()
         self.textNode.setText('x: ' + str(round(self.sphObject.getPos()[0],2)) + ' y:' + str(round(self.sphObject.getPos()[1],2)))
@@ -252,11 +263,18 @@ class MyApp(ShowBase):
         if self.camera.getHpr()[0] > 0:
 
             self.sphObject.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
+            self.dlnp.setHpr(Vec3(abs(self.fakeHeading-180), 0,0))
 
         else:
             self.sphObject.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
+            self.dlnp.setHpr(Vec3(-(self.fakeHeading-180), 0,0))
 
-        print(self.camera.getHpr(), self.sphObject.getHpr())
+
+
+        if abs(self.fakeHeading) >= 360:
+            self.fakeHeading = 0
+
+
 
         #self.dlnp.setHpr(self.camera.getHpr())        
 
