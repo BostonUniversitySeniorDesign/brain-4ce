@@ -377,7 +377,6 @@ class MyApp(ShowBase):
             self.index = self.index + 1
 
 
-        print(self.isMovingBackward, self.isMovingForward, self.isMovingLeft, self.isMovingRight)
 
 
 
