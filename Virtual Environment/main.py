@@ -26,11 +26,16 @@ class MyApp(ShowBase):
     angle  = 180
     textObject = None
     textNode = TextNode('myTextNode')
+    scoreNode = TextNode('myScore')
     isMovingForward = False
     isMovingRight = False
     isMovingBackward = False
     isMovingLeft = False
     fakeHeading = 180
+    obj_coords = []
+    index = 0
+    score = 0
+    #stars = []
 
     camera_pos = 0
     dir_list = ['left', 'right', 'backward', 'forward']
@@ -78,12 +83,48 @@ class MyApp(ShowBase):
         #self.scene =  loader.loadModel("models/plane.bam")
         self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.2, 0.2, 0.2), (0,0,0), self.nodepath2, "models/brain.bam")
 
+        star = None
 
-        add = 0
+        addy = 0
         for i in range(10):
-            generate.GenerateModel(self, (0,25+add,0.6), (1,1,1), (90,0,0), self.render, "models/star.bam")
-            add+= 10
+            star = generate.GenerateModel(self, (0,25+addy,0.6), (1,1,1), (90,0,0), self.render, "models/star.bam")
+            self.obj_coords.append((star, (0,25+addy,0.6)))
+            # self.stars.append(star)
+            addy+= 10
             
+
+        star = None
+        addx  = 0
+        for i in range(10):
+            if i == 0:
+                star = generate.GenerateModel(self, (0+addx,25+addy,0.6), (1,1,1), (90,0,0), self.render, "models/star.bam")
+                self.obj_coords.append((star, (0+addx,25+addy,0.6)))
+            else:
+                star = generate.GenerateModel(self, (0+addx,25+addy,0.6), (1,1,1), (0,0,0), self.render, "models/star.bam") 
+                self.obj_coords.append((star, (0+addx,25+addy,0.6)))
+            
+            addx += 10
+
+            
+
+
+        star = None
+        for i in range(10):
+            if i == 0:
+                star = generate.GenerateModel(self, (0+addx,25+addy,0.6), (1,1,1), (0,0,0), self.render, "models/star.bam")
+                self.obj_coords.append((star, (0+addx,25+addy,0.6)))
+            else:
+                star = generate.GenerateModel(self, (0+addx,25+addy,0.6), (1,1,1), (90,0,0), self.render, "models/star.bam") 
+                self.obj_coords.append((star, (0+addx,25+addy,0.6)))
+            addy -= 10
+
+            
+
+
+        print(len(self.obj_coords))
+
+#        for i in range(10):
+
         self.sphObject.setH(self.angle)
         #self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
 
@@ -261,6 +302,16 @@ class MyApp(ShowBase):
         textNodePath.setPos(x, 0, y)        
         textNodePath.setScale(0.1)
 
+        self.scoreNode.clear()
+        self.scoreNode.setText("Score: " + str(self.score))
+        self.scoreNode.setTextColor(0, 0, 0, 1)
+        scoreNodePath = self.aspect2d.attachNewNode(self.scoreNode)
+        x = -self.get_aspect_ratio() + 0.1
+        y = 0.8
+        scoreNodePath.setPos(x, 0, y)        
+        scoreNodePath.setScale(0.1)
+
+
         #self.cameraSet(self.sphObject.getHpr()[0])
         self.cameraSet(self.fakeHeading)
 
@@ -279,9 +330,36 @@ class MyApp(ShowBase):
             self.fakeHeading = 0
 
 
+        pos = tuple(self.sphObject.getPos())
+        
 
-        #self.dlnp.setHpr(self.camera.getHpr())        
+        is_close = False
+        self.index = 0
 
+        for i in range(len(self.obj_coords)-1):
+
+            pos_tuple = tuple(pos)
+            diff_x = self.obj_coords[self.index][1][0] - pos_tuple[0]
+            diff_y = self.obj_coords[self.index][1][1] - pos_tuple[1]
+            diff_z = self.obj_coords[self.index][1][2] - pos_tuple[2]
+
+
+
+            if abs(diff_x) <= 1 and abs(diff_y) <= 1 and abs(diff_z) <= 1:
+                is_close  =  True
+                star_to_delete = self.obj_coords[self.index][0]
+                star_to_delete.removeNode() 
+
+                self.score = self.score + 1
+            
+                del self.obj_coords[self.index]
+
+            self.index = self.index + 1
+
+    
+
+        
+        
         return task.cont
 
 
