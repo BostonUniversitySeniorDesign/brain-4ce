@@ -278,22 +278,13 @@ class MyApp(ShowBase):
         return task.cont
 
     def rotateStar(self, task):
-
-        for i in self.obj_coords:
-
-
-            try:
+        if self.obj_coords:
+            for i in self.obj_coords:
                 angleDegrees = task.time * 150.0 % 360.0
-                angleRadians = angleDegrees * (math.pi / 180.0)
-                i[0].setHpr(angleDegrees, 0, 0)
-                
-                print(angleDegrees)
                 i[0].setHpr(angleDegrees % 360, 0, 0)
-
-            except:
-                pass
-
-        return Task.cont
+            return Task.cont
+        else:
+            return Task.done
 
 
 
