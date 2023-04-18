@@ -3,7 +3,7 @@ from direct.task import Task
 from direct.actor.Actor import Actor
 from direct.interval.IntervalGlobal import Sequence
 from panda3d.core import AmbientLight, DirectionalLight, PointLight
-from panda3d.core import NodePath, CardMaker, DepthTestAttrib, CullFaceAttrib
+from panda3d.core import NodePath
 from panda3d.core import PandaNode, load_prc_file, TextNode, GeomTristrips, GeomVertexData, GeomVertexFormat, Geom, GeomNode, Texture
 from panda3d.core import Vec3, Spotlight, TextureStage, Vec2
 from panda3d.core import WindowProperties
@@ -35,6 +35,8 @@ class MyApp(ShowBase):
     obj_coords = []
     index = 0
     score = 0
+    star_angle = 0
+    last_message_time = 0
     #stars = []
 
     camera_pos = 0
@@ -64,6 +66,7 @@ class MyApp(ShowBase):
         self.taskMgr.add(self.MoveBackward)
         self.taskMgr.add(self.MoveLeft)
         self.taskMgr.add(self.MoveRight)
+        self.taskMgr.add(self.rotateStar)
 
         blank_node = PandaNode("my_blank_node")
         self.nodepath1 = NodePath(blank_node)
@@ -278,8 +281,20 @@ class MyApp(ShowBase):
 
         return task.cont
 
+    def rotateStar(self, task):
+
+        for i in self.obj_coords:
+        
+            angleDegrees = task.time * 150.0
+            i[0].setHpr(angleDegrees, 0, 0)
+        
+        return Task.cont
+
+
 
     def ChooseDirection(self, task):
+
+
 
         # data = self.conn.recv(1024).decode()
         # data = int(data)
@@ -287,30 +302,13 @@ class MyApp(ShowBase):
 
         # dir = self.dir_list[data]
         # if dir == 'forward':
-        #     self.isMovingForward = True
-        #     self.isMovingBackward = False
-        #     self.isMovingRight = False
-        #     self.isMovingLeft = False
-        #     #self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
+        #     self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
         # elif dir == 'backward':
-        #     self.isMovingForward = False
-        #     self.isMovingBackward = True
-        #     self.isMovingRight = False
-        #     self.isMovingLeft = False
-        #     #self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
+        #     self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
         # elif dir == 'right':
-        #     self.isMovingForward = False
-        #     self.isMovingBackward = False
-        #     self.isMovingRight = True
-        #     self.isMovingLeft = False
-        #     #self.angle += 10
+        #     self.angle += 10
         # elif dir == 'left':
-        #     self.isMovingForward = False
-        #     self.isMovingBackward = False
-        #     self.isMovingRight = False
-        #     self.isMovingLeft = True        
-        #     #self.angle -= 10
-        
+        #     self.angle -= 10
         #self.prev_sec = curr_sec
 
         self.textNode.clear()
@@ -356,13 +354,18 @@ class MyApp(ShowBase):
 
         self.index = 0
 
+        #self.star_angle = 0
 
         for i in self.obj_coords:
+
+
 
             pos_tuple = tuple(pos)
             diff_x = i[1][0] - pos_tuple[0]
             diff_y = i[1][1] - pos_tuple[1]
             diff_z = i[1][2] - pos_tuple[2]
+
+
 
             if abs(diff_x) <= 1 and abs(diff_y) <= 1 and abs(diff_z) <= 1:
                 
@@ -374,8 +377,10 @@ class MyApp(ShowBase):
                 
                 break
 
-            self.index = self.index + 1
 
+
+
+            self.index = self.index + 1
 
 
 
