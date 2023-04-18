@@ -156,10 +156,7 @@ class MyApp(ShowBase):
         # self.conn, self.address = server_socket.accept()
 
     def cameraSet(self, sph_heading):
-        #sph_hpr = self.sphObject.getHpr()
-        #sph_heading = sph_hpr[0]
 
-        #print(sph_heading)
 
         self.camera_pos = self.sphObject.getPos() + Vec3(math.sin(math.radians(sph_heading)), math.cos(math.radians(sph_heading)), 0.1) * 10
         self.xCoord = self.camera_pos[0] 
@@ -167,7 +164,7 @@ class MyApp(ShowBase):
 
         self.camera.setPos(self.camera_pos)
         self.camera.lookAt(self.sphObject)
-        #self.sphObject.setHpr(sph_heading)
+
 
     def ChangeSpherePositionBackwardStart(self):
         self.isMovingBackward = True
@@ -179,7 +176,6 @@ class MyApp(ShowBase):
         if self.isMovingBackward == True:
             self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.5 )
 
-            #self.cameraSet(self.sphObject.getHpr()[0])
             self.cameraSet(self.fakeHeading)
 
         if self.camera.getHpr()[0] > 0:
@@ -208,7 +204,7 @@ class MyApp(ShowBase):
         if self.isMovingForward == True:
             self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.5 )
 
-            #self.cameraSet(self.sphObject.getHpr()[0])
+
             self.cameraSet(self.fakeHeading)
 
         if self.camera.getHpr()[0] > 0:
@@ -235,7 +231,7 @@ class MyApp(ShowBase):
             self.angle += 2.5
             
             self.fakeHeading += 2.5
-            #self.sphObject.setH(self.angle)
+
 
             self.cameraSet(self.fakeHeading)
 
@@ -262,10 +258,10 @@ class MyApp(ShowBase):
     def MoveLeft(self, task):
         if self.isMovingLeft == True:
             self.angle -= 2.5
-            #self.sphObject.setH(self.angle)
+
 
             self.fakeHeading -= 2.5
-            #self.cameraSet(self.sphObject.getHpr()[0])
+
             self.cameraSet(self.fakeHeading)
 
         if self.camera.getHpr()[0] > 0:
@@ -330,7 +326,6 @@ class MyApp(ShowBase):
         scoreNodePath.setScale(0.1)
 
 
-        #self.cameraSet(self.sphObject.getHpr()[0])
         self.cameraSet(self.fakeHeading)
 
         if self.camera.getHpr()[0] > 0:
@@ -354,7 +349,6 @@ class MyApp(ShowBase):
 
         self.index = 0
 
-        #self.star_angle = 0
 
         for i in self.obj_coords:
 
@@ -380,7 +374,6 @@ class MyApp(ShowBase):
 
 
 
-            self.index = self.index + 1
 
 
 
