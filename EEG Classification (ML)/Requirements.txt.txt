@@ -1,0 +1,3 @@
+mne==0.18.0
+braindecode
+conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
