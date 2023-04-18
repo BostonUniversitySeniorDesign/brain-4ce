@@ -283,7 +283,11 @@ class MyApp(ShowBase):
         
             angleDegrees = task.time * 150.0
             i[0].setHpr(angleDegrees, 0, 0)
-        
+
+            if (angleDegrees >= 359):
+                angleDegrees = 0
+
+
         return Task.cont
 
 
