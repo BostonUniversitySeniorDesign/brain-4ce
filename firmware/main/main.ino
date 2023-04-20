@@ -19,7 +19,14 @@ void loop() {
     }
   }
   // Check the serial ports for new data
-  if (board.hasDataSerial0()) board.processChar(board.getCharSerial0());
+  if (board.hasDataSerial0()) {
+    char command = board.getCharSerial0();
+    board.processChar(command);
+
+    Serial.println(command);
+    
+  }
+  
   if (board.hasDataSerial1()) board.processChar(board.getCharSerial1());
   board.loop();
 }
