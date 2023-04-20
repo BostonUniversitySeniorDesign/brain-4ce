@@ -6,3 +6,6 @@ GUI
 fp-info-cache
 *.zip
 *.gbrjob
+Physionet Dataloader/labels_3D.csv
+Physionet Dataloader/FormattedPhysionetData.idx
+Physionet Dataloader/components.csv
