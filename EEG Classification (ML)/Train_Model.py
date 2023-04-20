@@ -1,3 +1,6 @@
+ #taken from https://github.com/berdakh/eeg-pytorch
+    
+
 import torch
 import numpy as np
 import copy
