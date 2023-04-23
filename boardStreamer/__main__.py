@@ -100,11 +100,10 @@ board = CytonBoard(**args)
 
 # setup socket connection 
 host = socket.gethostname()
-port = 50000 #random unprivileged port
 """ Starting a TCP socket. """
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 """ Connecting to the server. """    
-client_socket.connect((host, port))
+client_socket.connect((host, args['port']))
 
 while True:
 	data = board.get_data()
