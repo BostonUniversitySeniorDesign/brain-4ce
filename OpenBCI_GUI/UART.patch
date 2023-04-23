@@ -1,0 +1,37 @@
+diff --git a/OpenBCI_GUI/ControlPanel.pde b/OpenBCI_GUI/ControlPanel.pde
+index a18e39e4..b1a564b8 100644
+--- a/OpenBCI_GUI/ControlPanel.pde
++++ b/OpenBCI_GUI/ControlPanel.pde
+@@ -651,23 +651,18 @@ class ComPortBox {
+     }
+ 
+     private LinkedList<String> getCytonComPorts() {
+-        final String[] names = {"FT231X USB UART", "VCP"};
+         final SerialPort[] comPorts = SerialPort.getCommPorts();
+         LinkedList<String> results = new LinkedList<String>();
+         for (SerialPort comPort : comPorts) {
+-            for (String name : names) {
+-                if (comPort.toString().startsWith(name)) {
+-                    // on macos need to drop tty ports
+-                    if (isMac() && comPort.getSystemPortName().startsWith("tty")) {
+-                        continue;
+-                    }
+-                    String found = "";
+-                    if (isMac() || isLinux()) found += "/dev/";
+-                    found += comPort.getSystemPortName();
+-                    println("ControlPanel: Found Cyton Dongle on COM port: " + found);
+-                    results.add(found);
+-                }
+-            }
++            // on macos need to drop tty ports
++            if (isMac() && comPort.getSystemPortName().startsWith("tty")) {
++                continue;
++            }
++            String found = "";
++            if (isMac() || isLinux()) found += "/dev/";
++            found += comPort.getSystemPortName();
++            println("ControlPanel: Found Cyton Dongle on COM port: " + found);
++            results.add(found);
+         }
+ 
+         return results;
