@@ -28,7 +28,7 @@ timer_started = False
 
 font = pygame.font.Font(None, 36)
 
-time_text = "Time: 0.00s"
+time_text = "Time: 0.0s"
 text = font.render(time_text, True, black)
 elapsed_time = 0
 total = 0
@@ -55,12 +55,13 @@ while not game_over:
             timer_started = True
         
         elapsed_time = time.time() - start_time + total
-        time_text = "Time: {:.2f}s".format(elapsed_time)
+        time_text = "Time: {:.1f}s".format(elapsed_time)
         text = font.render(time_text, True, black)
         screen.blit(text, (10, 10))
     else:
         timer_started = False
         total = elapsed_time
+
 
             
     if keys[pygame.K_ESCAPE]:
