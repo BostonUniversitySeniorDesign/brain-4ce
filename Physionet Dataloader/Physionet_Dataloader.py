@@ -95,5 +95,3 @@ else:
     idx2numpy.convert_to_file(os.path.join(savepath, 'FormattedPhysionetData.idx'), total_data)
     df = pd.DataFrame(labels)
     df.to_csv(os.path.join(savepath, 'labels_3D.csv'))
-
-
