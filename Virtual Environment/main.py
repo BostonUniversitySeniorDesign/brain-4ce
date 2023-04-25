@@ -10,17 +10,16 @@ from panda3d.core import WindowProperties
 from direct.gui.OnscreenText import OnscreenText
 from direct.gui.DirectGui import *
 import math
-import socket
 import generate
-import random
-import time
 import simplepbr
+import threading
 
 
 load_prc_file('myConfig.prc')
 
 class MyApp(ShowBase):
 
+    lock = threading.Lock()
     xCoord = 0
     yCoord = 0
     angle  = 180
@@ -49,9 +48,7 @@ class MyApp(ShowBase):
         self.setBackgroundColor(0.95, 2.45, 2.45)
 
         simplepbr.init()
-        # ShowBase.useDrive(self)
-        # ShowBase.useTrackball(self)
-        #ShowBase.oobe(self)
+
 
         self.accept('d', self.ChangeSpherePositionRightStart)
         self.accept('d-up', self.ChangeSpherePositionRightEnd)
@@ -81,9 +78,7 @@ class MyApp(ShowBase):
         self.nodepath3.reparentTo(self.render)
         
 
-        #Have brain rotate when camera rotates.
         self.scene = generate.GenerateModel(self, (0,0,-0.5), (200,200,1), (0,0,0), self.nodepath3, "models/plane.bam")
-        #self.scene =  loader.loadModel("models/plane.bam")
         self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.2, 0.2, 0.2), (0,0,0), self.nodepath2, "models/brain.bam")
 
         star = None
@@ -126,34 +121,11 @@ class MyApp(ShowBase):
             total += 1
 
             addy -= 10
-            
 
-
-#        for i in range(10):
 
         self.sphObject.setH(self.angle)
-        #self.textObject = OnscreenText(text='x:0 y:0', pos=(-0.5, 0.02), scale=0.07)
 
         self.dlnp = generate.SetLight(self, "my dlight", 'd', 0, self.nodepath2)
-        #self.bluenp = generate.SetLight(self, "blue light", 'a', (0.2,0.2,0.8,1),  self.scene)
-        #self.bluenp = generate.SetLight(self, "my dlight2", 'd', 0, self.scene)
-       # self.greennp = generate.SetLight(self, "green light", 'a', ((0.2, 0.9, 0.2, 1)), self.nodepath1)
-
-
-        # host = socket.gethostname()
-        # port = 55002 #random unprivileged port
-
-        # """ Starting a TCP socket. """
-        # server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        
-        # """ Bind the IP and PORT to the server. """
-        # server_socket.bind((host, port))
-        
-        # """ Start Server Listening"""
-        # server_socket.listen()
-
-        # """ Server accepts connection from client"""
-        # self.conn, self.address = server_socket.accept()
 
     def cameraSet(self, sph_heading):
 
@@ -220,7 +192,6 @@ class MyApp(ShowBase):
         return task.cont
 
     def ChangeSpherePositionRightStart(self):
-        #self.angle += 10
         self.isMovingRight = True
 
     def ChangeSpherePositionRightEnd(self):
@@ -249,7 +220,6 @@ class MyApp(ShowBase):
     
 
     def ChangeSpherePositionLeftStart(self):
-        #self.angle -= 10
         self.isMovingLeft = True
     
     def ChangeSpherePositionLeftEnd(self):
@@ -280,8 +250,9 @@ class MyApp(ShowBase):
     def rotateStar(self, task):
         if self.obj_coords:
             for i in self.obj_coords:
-                angleDegrees = task.time * 150.0 % 360.0
-                i[0].setHpr(angleDegrees % 360, 0, 0)
+                if not i[0].isEmpty():
+                    angleDegrees = task.time * 150.0 % 360.0
+                    i[0].setHpr(angleDegrees % 360, 0, 0)
             return Task.cont
         else:
             return Task.done
@@ -289,23 +260,6 @@ class MyApp(ShowBase):
 
 
     def ChooseDirection(self, task):
-
-
-
-        # data = self.conn.recv(1024).decode()
-        # data = int(data)
-
-
-        # dir = self.dir_list[data]
-        # if dir == 'forward':
-        #     self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 10)
-        # elif dir == 'backward':
-        #     self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 10)
-        # elif dir == 'right':
-        #     self.angle += 10
-        # elif dir == 'left':
-        #     self.angle -= 10
-        #self.prev_sec = curr_sec
 
         self.textNode.clear()
         self.textNode.setText('x: ' + str(round(self.sphObject.getPos()[0],2)) + ' y:' + str(round(self.sphObject.getPos()[1],2)))
@@ -348,37 +302,31 @@ class MyApp(ShowBase):
 
 
         self.index = 0
+        
 
 
         for i in self.obj_coords:
-
-
 
             pos_tuple = tuple(pos)
             diff_x = i[1][0] - pos_tuple[0]
             diff_y = i[1][1] - pos_tuple[1]
             diff_z = i[1][2] - pos_tuple[2]
 
-
-
             if abs(diff_x) <= 1 and abs(diff_y) <= 1 and abs(diff_z) <= 1:
                 
                 star_to_delete = i[0]
                 star_to_delete.removeNode() 
+
                 self.score = self.score + 1
 
+                self.obj_coords[self.index][0].removeNode()
+
                 del self.obj_coords[self.index]
-                
+
+
                 break
 
-
-
-
-
-
-
-
-        
+            self.index = self.index +1
         
         return task.cont
 
