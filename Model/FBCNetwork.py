@@ -34,7 +34,7 @@ class LinearWithConstraint(nn.Linear):
         return super(LinearWithConstraint, self).forward(x)
 
 
-class swish(nn.module):
+class swish(nn.Module):
     #Implementation of the swish activation function
     def __init__(self):
         super(swish, self).__init__()
@@ -43,7 +43,7 @@ class swish(nn.module):
         return x * torch.sigmoid(x)
 
 
-class LogVarLayer(nn.module):
+class LogVarLayer(nn.Module):
     #Calculates the log variance of the data along the given dimension
     def __init__(self, dim):
         super(LogVarLayer, self).__init__()
@@ -53,7 +53,7 @@ class LogVarLayer(nn.module):
         return torch.log(torch.clamp(x.var(dim = self.dim, keepdim= True), 1e-6, 1e6))
 
 
-class FBCNet(nn.module):
+class FBCNet(nn.Module):
     #Implementation of the FBCNet architecture using a logvar temporal layer
     def __init__(self, nTime, nChan = 16, nClass = 5, nBands = 9, m = 32, strideFactor= 4, doWeightNorm = True):
         super(FBCNet, self).__init__()
@@ -83,7 +83,8 @@ class FBCNet(nn.module):
 
     def forward(self,x):
         # input x is of shape (batch_size, nChan, nTime, nBands)
-
+        # reshape to size (batch_size, nBands, nChan, nTime)
+        x = x.permute(0,3,1,2)
         # apply spatial convolution block
         x = self.scb(x)
         # reduce temporal dimension by factor of strideFactor

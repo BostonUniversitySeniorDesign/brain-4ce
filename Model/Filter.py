@@ -19,7 +19,7 @@ class FilterBank(object):
         self.axis = axis
 
 
-    def bandpassFilter(self, data, freqband, fs, filtAllowance=2, axis=1):
+    def bandpassFilter(self, data, freqband, fs, filtAllowance=2, axis=1, output=False):
         # filters the given signal into a specific band using cheby2 iir filtering
 
         aStop = 30 #stopband attenuation in dB
@@ -35,7 +35,10 @@ class FilterBank(object):
             fpass = freqband[1]/nFreq
             fstop = (freqband[1] + filtAllowance)/nFreq
             [N, ws] = signal.cheb2ord(fpass, fstop, aPass, aStop)
-            b, a = signal.cheby2(N, aStop, fstop, 'lowpass') 
+            b, a = signal.cheby2(N, aStop, fstop, 'lowpass')
+
+            if output:
+                print('Performing low pass filter with cutoff frequency: ' + str(freqband[1]))
 
         elif (freqband[1] is None) or (freqband[1] + filtAllowance >= nFreq):
             # highpass filter
@@ -45,6 +48,9 @@ class FilterBank(object):
             [N, ws] = signal.cheb2ord(fpass, fstop, aPass, aStop)
             b, a = signal.cheby2(N, aStop, fstop, 'highpass')
 
+            if output:
+                print('Performing high pass filter with cutoff frequency: ' + str(freqband[0]))
+
         else:
             #bandpass filter
             fpass = (np.array(freqband)/nFreq).tolist()
@@ -52,17 +58,20 @@ class FilterBank(object):
 
             [N, ws] = signal.cheb2ord(fpass, fstop, aPass, aStop)
             b, a = signal.cheby2(N, aStop, fstop, 'bandpass')
+
+            if output:
+                print('Performing band pass filter with frequency band: (' + str(freqband[0]) + ',' + str(freqband[1]) + ')')
         
         dataout = signal.lfilter(b, a, data, axis=axis)
         return dataout
     
 
-    def __call__(self, data):
+    def __call__(self, data, output=False):
         data_copy = copy.deepcopy(data)
         # init output array
         out = np.zeros([*data_copy.shape, len(self.filtbank)])
         # apply filters, append to last dimension
         for i, filtBand in enumerate(self.filtbank):
-            out[:,:,:,i] = self.bandpassFilter(data_copy, filtBand, self.fs, self.filtAllowance, self.axis)
+            out[:,:,:,i] = self.bandpassFilter(data_copy, filtBand, self.fs, self.filtAllowance, self.axis, output)
         
         return torch.from_numpy(out).float()

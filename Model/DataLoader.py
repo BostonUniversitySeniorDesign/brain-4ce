@@ -15,7 +15,7 @@ def PhysionetDataLoader(subjects, channels, datapath, batch_size, shuffle=True):
     return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
 
 
-#This function loads the EEG BCI Data and formats it into a dictionary that can be indexed by the task number (T0, T1, T2) with values formatted as a num_samples X 64 X 961(timesteps) ndarray
+#This function loads the EEG BCI Data and formats it into a dictionary that can be indexed by the task number (T0, T1, T2) with values formatted as a num_samples X 64 X timesteps) ndarray
 # @params
 # Subject: Subject number to extract data from
 # Cases an array-like object that contains which experiments to extract (1-14)
@@ -31,9 +31,9 @@ def create_epochs(subject, cases, datapath):
     #Get Events
     events, event_ids = mne.events_from_annotations(raw_obj, event_id='auto')
     #Set epoch size
-    tmin, tmax = -1, 4
+    tmin, tmax = -1, 2
     #Create epoch map
-    epochs = mne.Epochs(raw_obj, events, event_ids, tmin - 0.5, tmax + 0.5, baseline=None, preload=True)
+    epochs = mne.Epochs(raw_obj, events, event_ids, tmin, tmax, baseline=None, preload=True)
     return epochs
 
 
@@ -57,9 +57,10 @@ def load_eegbci_data(subjects, channels, data_path):
         epochs_case2 = create_epochs(subject, cases[1], data_path)
 
         for curr_epoch in [epochs_case1, epochs_case2]:
-            data.append(curr_epoch['T2']._data[:, channels, :])
-            data.append(curr_epoch['T1']._data[:, channels, :])
-            data.append(curr_epoch['T0']._data[:, channels, :])
+            # Remove last time step and select channels
+            data.append(curr_epoch['T2']._data[:, channels, :-1])
+            data.append(curr_epoch['T1']._data[:, channels, :-1])
+            data.append(curr_epoch['T0']._data[:, channels, :-1])
 
         # Class, Action
         # 0, Rest
