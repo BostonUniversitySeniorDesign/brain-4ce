@@ -11,8 +11,6 @@ def savedata():
     window = tk.Tk()
     window.title("Brain4ce Menu")
 
-    #Set window size and pos
-
     screen_width = window.winfo_screenwidth()
     screen_height = window.winfo_screenheight()
     window_width = 300
@@ -26,7 +24,6 @@ def savedata():
     canvas.pack()
 
     canvas.create_text(150, 50, text="Save data?", fill="black", font=('Helvetica 25 bold'))
-   # canvas.place(relx=0.5, rely=0.5, anchor='n')
 
     bYes = tk.Button(window, text="Yes", command=Save)
     bYes.place(relx=0.4, rely=0.6, anchor="se")

@@ -1,5 +1,5 @@
 import tkinter as tk
-import time
+import savewindow
 
 class Circle:
     def __init__(self, canvas, window):
@@ -11,8 +11,10 @@ class Circle:
         self.draw()
         
     def erase_text(self):
-        self.canvas.delete("all")
-        self.canvas.after(2000, self.draw)
+
+        if self.curr != 6:
+            self.canvas.delete("all")
+            self.canvas.after(2000, self.draw)
 
     def draw(self):
         self.x = 45
@@ -21,26 +23,24 @@ class Circle:
 
         self.canvas.scale("all", 0, 0, 2, 2)
 
-        self.change_color()
+        self.change_task()
 
         self.canvas.after(5000, self.erase_text)
 
         
-    def change_color(self):
+    def change_task(self):
 
         self.canvas.create_text(300, 185, text=self.labels[self.curr], fill="black", font=('Calibri 60 bold'))
         self.curr = self.curr + 1
         if self.curr == 6:
-            self.curr = 0
-
-
+            self.window.destroy()
+            savewindow.savedata()
+            return
 
 
 def tWindow():
     window = tk.Tk()
     window.title("Brain4ce Menu")
-
-    #Set window size and pos
 
     screen_width = window.winfo_screenwidth()
     screen_height = window.winfo_screenheight()
@@ -59,4 +59,4 @@ def tWindow():
 
     window.mainloop()
 
-tWindow()
+
