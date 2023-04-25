@@ -4,9 +4,15 @@ import time
 # Initialize Pygame
 pygame.init()
 
-# Set up the display
-width = 500
-height = 1000
+info = pygame.display.Info()
+screen_width = info.current_w
+screen_height = info.current_h
+
+
+# set display size to fit within screen resolution
+width = min(500, screen_width)
+height = min(screen_height - 100, 1000)
+
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Simple 2D Game")
 
@@ -19,7 +25,7 @@ red = (255, 0, 0)
 player_size = 50
 player_x = width / 2 - player_size / 2
 player_y = height - player_size - 10
-player_speed = 1
+player_speed = 0.7
 
 # Set up the game loop
 start_time = None
@@ -45,10 +51,10 @@ while True:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_UP] and player_y > 0:
         player_y -= player_speed
-    if keys[pygame.K_DOWN] and player_x < width - player_size and player_y <= 1000-50/2.5:
+    if keys[pygame.K_DOWN] and  player_y <= height-50/2.5:
         player_y += player_speed
 
-    if player_y >= 400 and player_y <= 390 + 0.1*1000:
+    if player_y >= height/2-50 and player_y <= height/2-60 + 0.1*height:
         if not timer_started:
             start_time = time.time()
             timer_started = True
@@ -62,8 +68,8 @@ while True:
         total = elapsed_time
 
     # Draw the screen
-    pygame.draw.rect(screen, red, (width/2 - 25, 0, player_size, 1000))
-    pygame.draw.rect(screen, 'green', (width/2 - 25, 400, player_size, 0.1*1000))
+    pygame.draw.rect(screen, red, (width/2 - 25, 0, player_size, height))
+    pygame.draw.rect(screen, 'green', (width/2 - 25, height/2-50, player_size, 0.1*height))
     pygame.draw.rect(screen, black, (player_x, player_y, player_size, player_size/2.5))
 
     pygame.display.update()
