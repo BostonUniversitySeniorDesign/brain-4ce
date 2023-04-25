@@ -1,23 +1,46 @@
 import tkinter as tk
-import time
+import savewindow
 
-# def changecirc(canvas):
-#     i =  0
-#     for i in range(6):
-#         canvas.itemconfig(i, fill='yellow')
-#         if i > 0 and i != 5:
-#             canvas.itemconfig(i-1, fill='gray')
-#         if i == 6:
-#             i = -1
+class Circle:
+    def __init__(self, canvas, window):
+        self.window = window
+        self.canvas = canvas
+        self.iswhite = True
+        self.curr = 0
+        self.labels = ['Right arm!', 'Left arm!', 'Right foot!', 'Left foot!', 'Left hand!', 'Right hand!']
+        self.draw()
         
-#         i  = i + 1
+    def erase_text(self):
+
+        if self.curr != 6:
+            self.canvas.delete("all")
+            self.canvas.after(2000, self.draw)
+
+    def draw(self):
+        self.x = 45
+        self.y = 25
+        self.circles = []
+
+        self.canvas.scale("all", 0, 0, 2, 2)
+
+        self.change_task()
+
+        self.canvas.after(5000, self.erase_text)
+
+        
+    def change_task(self):
+
+        self.canvas.create_text(300, 185, text=self.labels[self.curr], fill="black", font=('Calibri 60 bold'))
+        self.curr = self.curr + 1
+        if self.curr == 6:
+            self.window.destroy()
+            savewindow.savedata()
+            return
+
 
 def tWindow():
-
     window = tk.Tk()
     window.title("Brain4ce Menu")
-
-    #Set window size and pos
 
     screen_width = window.winfo_screenwidth()
     screen_height = window.winfo_screenheight()
@@ -28,29 +51,12 @@ def tWindow():
 
     window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_pos, y_pos))
 
-    canvas = tk.Canvas(window, width=450, height=450)
+    canvas = tk.Canvas(window, width=600, height=400)
     canvas.pack()
 
-    ovals = []
-
-    ovals.append(canvas.create_oval(25, 25, 75, 75, outline='black', width=2))
-    ovals.append(canvas.create_oval(100, 25, 150, 75, outline='black', width=2))
-    ovals.append(canvas.create_oval(175, 25, 225, 75, outline='black', width=2))
-    ovals.append(canvas.create_oval(25, 100, 75, 150, outline='black', width=2))
-    ovals.append(canvas.create_oval(100, 100, 150, 150, outline='black', width=2))
-    ovals.append(canvas.create_oval(175, 100, 225, 150, outline='black', width=2))
-
-
-
-    canvas.scale("all", 0, 0, 2, 2)
-    canvas.place(relx=0.45, rely=0.05, anchor='n')
-    canvas.create_text(100, 100, text="1", fill="black", font=('Helvetica 25 bold'))
-    canvas.create_text(250, 100, text="2", fill="black", font=('Helvetica 25 bold'))   
-    canvas.create_text(400, 100, text="3", fill="black", font=('Helvetica 25 bold'))
-    canvas.create_text(100, 250, text="4", fill="black", font=('Helvetica 25 bold'))
-    canvas.create_text(250, 250, text="5", fill="black", font=('Helvetica 25 bold'))
-    canvas.create_text(400, 250, text="6", fill="black", font=('Helvetica 25 bold'))        
-    
-
+    canvas.scale("all", 0, 0, 1.5, 1.5)
+    Circle(canvas, window)
 
     window.mainloop()
+
+
