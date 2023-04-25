@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Com Board",
+            "type": "python",
+            "request": "launch",
+            "program": "__main__.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "-p", "800",
+                "-m", "com"
+            ]
+        },
+        {
+            "name": "8 Channel Sim Board",
+            "type": "python",
+            "request": "launch",
+            "program": "__main__.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "-p", "800",
+                "-m", "sim8"
+            ]
+        },
+        {
+            "name": "16 Channel Sim Board",
+            "type": "python",
+            "request": "launch",
+            "program": "__main__.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "-p", "800",
+                "-m", "sim16"
+            ]
+        }
+    ]
+}
