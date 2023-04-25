@@ -22,7 +22,6 @@ player_y = height - player_size - 10
 player_speed = 1
 
 # Set up the game loop
-game_over = False
 start_time = None
 timer_started = False
 
@@ -33,11 +32,11 @@ text = font.render(time_text, True, black)
 elapsed_time = 0
 total = 0
 
-while not game_over:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            game_over = True
-            break
+while True:
+    
+    # checks if the user tried to quit the window
+    if len(pygame.event.get(eventtype=pygame.QUIT)):
+        break # ends game
     
     screen.blit(text, (10, 10))
 
@@ -62,15 +61,6 @@ while not game_over:
         timer_started = False
         total = elapsed_time
 
-
-            
-    if keys[pygame.K_ESCAPE]:
-        try:
-            event.type = pygame.QUIT
-    
-        except AttributeError:
-            exit(0)
-
     # Draw the screen
     pygame.draw.rect(screen, red, (width/2 - 25, 0, player_size, 1000))
     pygame.draw.rect(screen, 'green', (width/2 - 25, 400, player_size, 0.1*1000))
@@ -79,7 +69,4 @@ while not game_over:
     pygame.display.update()
     screen.fill('yellow')
 
-    
-
-# Quit Pygame
-#pygame.quit()
+pygame.quit()
