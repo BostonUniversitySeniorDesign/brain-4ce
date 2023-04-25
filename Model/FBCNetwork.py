@@ -55,7 +55,7 @@ class LogVarLayer(nn.module):
 
 class FBCNet(nn.module):
     #Implementation of the FBCNet architecture using a logvar temporal layer
-    def __init__(self, nTime, nChan = 16, nClass = 4, nBands = 9, m = 32, strideFactor= 4, doWeightNorm = True):
+    def __init__(self, nTime, nChan = 16, nClass = 5, nBands = 9, m = 32, strideFactor= 4, doWeightNorm = True):
         super(FBCNet, self).__init__()
     
         # number of frequency bands
@@ -71,21 +71,19 @@ class FBCNet(nn.module):
             swish()
         )
 
-        # Original implementation allows for different kinds of temporal layers - this implementation only used log variance 
+        # Original implementation allows for different kinds of temporal layers - this implementation only uses log variance 
         self.temporalLayer = LogVarLayer(dim=3)
 
         # last layer of the network
-        # sequential layer with a constrained fully connected layer and a softmax layer
+        # sequential layer with a constrained fully connected layer followed by a softmax layer
         self.lastLayer = nn.Sequential(
             LinearWithConstraint(m*nBands*strideFactor, nClass, max_norm=2, doWeightNorm=doWeightNorm),
             nn.LogSoftmax(dim=1)
         )
 
     def forward(self,x):
-        # input x is of shape (batch_size, 1, nChan, nTime, nBands)
+        # input x is of shape (batch_size, nChan, nTime, nBands)
 
-        # remove channel dimension and permute to (batch_size, nBands, nChan, nTime)
-        x = torch.squeeze(x.permute((0,4,2,3,1)), dim = 4)
         # apply spatial convolution block
         x = self.scb(x)
         # reduce temporal dimension by factor of strideFactor

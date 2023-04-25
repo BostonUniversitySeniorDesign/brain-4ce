@@ -6,6 +6,14 @@ import numpy as np
 import torch
 
 
+# Loads eegbci data for a given subject list
+# channels is a list of channels to extract in range (0,63)
+# returns a PyTorch DataLoader object
+def PhysionetDataLoader(subjects, channels, datapath, batch_size, shuffle=True):
+    data, labels = load_eegbci_data(subjects, channels, datapath)
+    dataset = TensorDataset(data, labels)
+    return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
+
 
 #This function loads the EEG BCI Data and formats it into a dictionary that can be indexed by the task number (T0, T1, T2) with values formatted as a num_samples X 64 X 961(timesteps) ndarray
 # @params
@@ -15,7 +23,7 @@ import torch
 # epoch containing data from subject in each case of cases
 def create_epochs(subject, cases, datapath):
     #Load data
-    files = eegbci.load_data(subject, cases, datapath)
+    files = eegbci.load_data(subject, cases, datapath, verbose=False)
     # Convert to raw object
     raws = [read_raw_edf(f, preload=True) for f in files]
     #Combine all loaded runs
@@ -77,7 +85,3 @@ def load_eegbci_data(subjects, channels, data_path):
 
     return data, labels
 
-def PhysionetDataLoader(subjects, channels, datapath, batch_size, shuffle=True):
-    data, labels = load_eegbci_data(subjects, channels, datapath)
-    dataset = TensorDataset(data, labels)
-    return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
