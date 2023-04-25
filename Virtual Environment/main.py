@@ -1,25 +1,17 @@
 from direct.showbase.ShowBase import ShowBase
 from direct.task import Task
-from direct.actor.Actor import Actor
-from direct.interval.IntervalGlobal import Sequence
-from panda3d.core import AmbientLight, DirectionalLight, PointLight
 from panda3d.core import NodePath
-from panda3d.core import PandaNode, load_prc_file, TextNode, GeomTristrips, GeomVertexData, GeomVertexFormat, Geom, GeomNode, Texture
-from panda3d.core import Vec3, Spotlight, TextureStage, Vec2
-from panda3d.core import WindowProperties
-from direct.gui.OnscreenText import OnscreenText
+from panda3d.core import PandaNode, load_prc_file, TextNode, Vec3
 from direct.gui.DirectGui import *
 import math
 import generate
 import simplepbr
-import threading
 
 
 load_prc_file('myConfig.prc')
 
 class MyApp(ShowBase):
 
-    lock = threading.Lock()
     xCoord = 0
     yCoord = 0
     angle  = 180
@@ -36,7 +28,6 @@ class MyApp(ShowBase):
     score = 0
     star_angle = 0
     last_message_time = 0
-    #stars = []
 
     camera_pos = 0
     dir_list = ['left', 'right', 'backward', 'forward']
