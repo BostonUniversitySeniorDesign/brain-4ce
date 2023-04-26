@@ -11,16 +11,13 @@ parser = argparse.ArgumentParser(description='Argument parser example')
 parser.add_argument('--batch_size', type=int, default=32,
                     help='Batch size for training (default: 32)')
 
-parser.add_argument('--fs', type=int, default=160,
-                    help='Sampling frequency (default: 160)')
-
 parser.add_argument('--datapath', type=str, default=None,
                     help='Path to data directory (default: None)')
 
 parser.add_argument('--savepath', type=str, default='./trained_models',
                     help='Path to save directory (default: None)')
 
-parser.add_argument('--pretrained', action='store_true',
+parser.add_argument('--pretrained', action='store_true', default=False,
                     help='Use a pre-trained model (default: False)')
 
 parser.add_argument('--loadpath', type=str, default=None,
@@ -55,7 +52,7 @@ else:
     network = FBCNet(nTime=460, nChan=len(channels), nClass=5, nBands=9, m=32, strideFactor=4, doWeightNorm=True)
 
 # Define trainer object
-trainer = FBCTrainer(network, channels=channels, batch_size=args.batch_size, fs=args.fs, datapath=args.datapath, savepath=args.savepath)
+trainer = FBCTrainer(network, channels=channels, batch_size=args.batch_size, fs=160, datapath=args.datapath, savepath=args.savepath)
 
 # Define optimizer
 optimizer = torch.optim.Adam(network.parameters(), lr=.001)
