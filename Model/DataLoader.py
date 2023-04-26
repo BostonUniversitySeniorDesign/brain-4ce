@@ -5,6 +5,7 @@ import mne
 import numpy as np
 import torch
 
+mne.set_log_level('CRITICAL')
 
 # Loads eegbci data for a given subject list
 # channels is a list of channels to extract in range (0,63)
@@ -21,19 +22,19 @@ def PhysionetDataLoader(subjects, channels, datapath, batch_size, shuffle=True):
 # Cases an array-like object that contains which experiments to extract (1-14)
 # @returns:
 # epoch containing data from subject in each case of cases
-def create_epochs(subject, cases, datapath):
+def create_epochs(subject, cases, datapath, verbose='CRITICAL'):
     #Load data
-    files = eegbci.load_data(subject, cases, datapath, verbose=False)
+    files = eegbci.load_data(subject, cases, datapath, verbose=verbose)
     # Convert to raw object
-    raws = [read_raw_edf(f, preload=True) for f in files]
+    raws = [read_raw_edf(f, preload=True, verbose=verbose) for f in files]
     #Combine all loaded runs
-    raw_obj = concatenate_raws(raws)
+    raw_obj = concatenate_raws(raws, verbose=verbose)
     #Get Events
-    events, event_ids = mne.events_from_annotations(raw_obj, event_id='auto')
+    events, event_ids = mne.events_from_annotations(raw_obj, event_id='auto', verbose=verbose)
     #Set epoch size
     tmin, tmax = -1, 2
     #Create epoch map
-    epochs = mne.Epochs(raw_obj, events, event_ids, tmin, tmax, baseline=None, preload=True)
+    epochs = mne.Epochs(raw_obj, events, event_ids, tmin, tmax, baseline=None, preload=True, verbose=verbose)
     return epochs
 
 
@@ -42,7 +43,7 @@ def create_epochs(subject, cases, datapath):
 def load_eegbci_data(subjects, channels, data_path):
     data = []
     labels = []
-    cases = [[3,4,7,8,11,12], [1,2,5,6,9,10,13,14]]
+    cases = [[3,4,7,8,11,12], [5,6,9,10,13,14]]
 
     for channel in channels:
         if channel < 0 or channel > 63:
