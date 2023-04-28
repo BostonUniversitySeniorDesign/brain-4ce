@@ -48,6 +48,7 @@ elapsed_time = 0
 box_elapsed_time = 0
 total = 0
 score = 0
+init = 0
 
 countdown_font = pygame.font.Font(None, 36)
 countdown_time = 30
@@ -92,6 +93,8 @@ while True:
     screen.blit(text, (10, 10))
 
     # Handle player movement
+
+    
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_UP] and player_y > 0:
@@ -141,6 +144,12 @@ while True:
     pygame.display.update()
 
     pygame.display.update()
+
+    if not init: 
+        time.sleep(0.5)
+        init = 1
+
+    
 
 pygame.quit()
 
