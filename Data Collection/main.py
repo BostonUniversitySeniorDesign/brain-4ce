@@ -1,6 +1,6 @@
 import tkinter as tk
 import taskwindow
-
+import find_cyton
 
 class MainGUI:
     def StartImagery(self):
@@ -9,7 +9,7 @@ class MainGUI:
     def StartReal(self):
         self.window.destroy()
         print("real selected")
-        taskwindow.tWindow()
+        taskwindow.tWindow(self.board)
 
     def __init__(self):
 
@@ -32,6 +32,9 @@ class MainGUI:
 
         bStartReal = tk.Button(self.window, text="Start Real", command=self.StartReal)
         bStartReal.place(relx=0.95, rely=0.5, anchor = "se")
+
+        self.board = find_cyton.find_cyton(lambda x : True)
+        self.board.prepare_session()
 
         self.window.mainloop()
 

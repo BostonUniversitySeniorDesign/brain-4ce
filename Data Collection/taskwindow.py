@@ -1,7 +1,8 @@
 import tkinter as tk
 import savewindow
 
-class Circle:
+
+class Tasks:
     def __init__(self, canvas, window):
         self.window = window
         self.canvas = canvas
@@ -34,11 +35,11 @@ class Circle:
         self.curr = self.curr + 1
         if self.curr == 6:
             self.window.destroy()
-            savewindow.savedata()
+            #savewindow.savedata()
             return
 
 
-def tWindow():
+def tWindow(board):
     window = tk.Tk()
     window.title("Brain4ce Menu")
 
@@ -55,7 +56,12 @@ def tWindow():
     canvas.pack()
 
     canvas.scale("all", 0, 0, 1.5, 1.5)
-    Circle(canvas, window)
+
+    channels = board.get_eeg_channels(board.board_id)
+
+    board.start_stream()
+    Tasks(canvas, window)
+    data = board.get_board_data()
 
     window.mainloop()
 
