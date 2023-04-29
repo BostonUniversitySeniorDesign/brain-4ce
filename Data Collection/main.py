@@ -26,7 +26,6 @@ class MainGUI:
 
         self.window.geometry("{}x{}+{}+{}".format(self.window_width, self.window_height, self.x_pos, self.y_pos))
 
-
         bStartImg = tk.Button(self.window, text="Start Imagery", command=self.StartImagery)
         bStartImg.place(relx=0.4, rely=0.5, anchor="se")
 
@@ -35,6 +34,8 @@ class MainGUI:
 
         self.board = find_cyton.find_cyton(lambda x : True)
         self.board.prepare_session()
+
+
 
         self.window.mainloop()
 

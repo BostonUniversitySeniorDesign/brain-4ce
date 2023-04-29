@@ -1,5 +1,6 @@
 import tkinter as tk
 import savewindow
+import pandas as pd
 
 
 class Tasks:
@@ -62,6 +63,8 @@ def tWindow(board):
     board.start_stream()
     Tasks(canvas, window)
     data = board.get_board_data()
+    df = pd.DataFrame(data)
+    df.to_csv('./dataout')
 
     window.mainloop()
 
