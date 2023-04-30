@@ -6,17 +6,16 @@
 
 
 <p align="center">
-  <img src="./Documents/brain_4ce_logo.png" alt="Brain 4ce Logo" style="display:block; margin:auto;" width="350">
-  <br>
-  <em>Where thoughts become motion.</em>
+    <img src="./Documents/brain_4ce_logo.png" alt="Brain 4ce Logo" style="display:block; margin:auto;" width="350">
+    <br>
+    <em>Where thoughts become motion.</em>
 </p>
-<!-- <br></br> -->
-<div style="text-align: center;">
-  <h2 style="text-decoration: underline;">Designed by BU ECE 2023 Senior Design Capstone Team 4</h2>
-  <img src="./Documents/team_photo.png" alt="Brain 4ce Logo" style="display:block; margin:auto;" width="600">
-  <p><em>From left to right: Brendan Shortall, Mitchell Gilmore, Dayanna De La Torres, Jonathan Mikalov, Alexander Johnson</em></p>
-</div>
-<br></br>
+<h2 style="text-decoration: underline; text-align: center">Designed by BU ECE 2023 Senior Design Capstone Team 4</h2>
+<p align="center">
+    <img src="./Documents/team_photo.png" alt="Brain 4ce Logo" style="display:block; margin:auto;" width="600">
+    <em>From left to right: Brendan Shortall, Mitchell Gilmore, Dayanna De La Torres, Jonathan Mikalov, Alexander Johnson</em>
+</p>
+<br>
 
 # Table of Contents
 - [**Brain-4ce** - An EEG-based Brain-Computer Interface](#brain-4ce---an-eeg-based-brain-computer-interface)
