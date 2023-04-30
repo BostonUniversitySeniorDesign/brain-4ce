@@ -60,12 +60,14 @@ def tWindow(board):
 
     channels = board.get_eeg_channels(board.board_id)
 
-    board.start_stream()
     Tasks(canvas, window)
-    data = board.get_board_data()
-    df = pd.DataFrame(data)
-    df.to_csv('./dataout')
 
+    board.start_stream()
     window.mainloop()
+
+    data = board.get_board_data()[channels]
+    board.release_session()
+    df = pd.DataFrame(data)
+    df.to_hdf('./dataout.hdf', mode='a')
 
 
