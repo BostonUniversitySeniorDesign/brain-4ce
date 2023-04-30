@@ -10,3 +10,4 @@ Physionet Dataloader/labels_3D.csv
 Physionet Dataloader/FormattedPhysionetData.idx
 Physionet Dataloader/components.csv
 __pycache__
+.DS_Store
