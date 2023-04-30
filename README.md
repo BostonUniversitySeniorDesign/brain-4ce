@@ -7,6 +7,7 @@
 
 <p align="center">
   <img src="./Documents/brain_4ce_logo.png" alt="Brain 4ce Logo" style="display:block; margin:auto;" width="350">
+  <br>
   <em>Where thoughts become motion.</em>
 </p>
 <!-- <br></br> -->
