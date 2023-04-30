@@ -17,9 +17,6 @@ parser.add_argument('--datapath', type=str, default=None,
 parser.add_argument('--savepath', type=str, default='./trained_models',
                     help='Path to save directory (default: None)')
 
-parser.add_argument('--pretrained', action='store_true', default=False,
-                    help='Use a pre-trained model (default: False)')
-
 parser.add_argument('--loadpath', type=str, default=None,
                     help='Path to pre-trained model (default: None)')
 
@@ -43,13 +40,16 @@ class LogCrossEntropyLoss(nn.Module):
         loss = nn.functional.nll_loss(log_probs, target)
         return loss
 
+#From PCA and channel placement
 channels = [2, 4, 8, 12, 15, 18, 31, 34, 42, 43, 55, 56, 58, 59, 60, 62]
 
-# Load or create model
-if(args.pretrained and args.loadpath != None):
-    network = torch.load(args.loadpath)
-else:
-    network = FBCNet(nTime=460, nChan=len(channels), nClass=5, nBands=9, m=32, strideFactor=4, doWeightNorm=True)
+# Define network
+network = FBCNet(nTime=460, nChan=len(channels), nClass=5, nBands=9, m=32, strideFactor=4, doWeightNorm=True)
+
+
+# Load dictionary of pre-trained weights
+if(args.loadpath != None):
+    network.load_state_dict(torch.load(args.loadpath))
 
 # Define trainer object
 trainer = FBCTrainer(network, channels=channels, batch_size=args.batch_size, fs=160, datapath=args.datapath, savepath=args.savepath)
@@ -60,7 +60,7 @@ optimizer = torch.optim.Adam(network.parameters(), lr=.001)
 criterion = LogCrossEntropyLoss()
 
 # begin training
-losses, accuracies = trainer.train(device=args.device, optimizer=optimizer, criterion=criterion, nEpochs=args.num_epochs, save=True)
+losses, accuracies = trainer.train(device=args.device, optimizer=optimizer, criterion=criterion, nEpochs=args.num_epochs)
 
 # test model
 test_accuracy = trainer.test(device=args.device, criterion=criterion)

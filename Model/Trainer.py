@@ -6,6 +6,7 @@ import torch
 import torch.nn as nn
 import os
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix
 from csv import writer
 
 
@@ -115,13 +116,16 @@ class FBCTrainer:
         correct = np.sum(np.array(preds_epoch) == np.array(labels_epoch))
         accuracy = correct / total
         print('Test Accuracy: {}'.format(accuracy))
+        cm = confusion_matrix(np.array(labels_epoch), np.array(preds_epoch))
+        print(cm)
         # append test accuracy to results csv
-        results_path = os.path.join(self.savepath, 'results.csv')
-        with open(results_path, 'a') as f:
-                    writer_obj = writer(f)
-                    writer_obj.writerow(['test', np.mean(losses_epoch), accuracy])
-                    f.close()
-        return accuracy
+        if self.savepath != None:
+            results_path = os.path.join(self.savepath, 'results.csv')
+            with open(results_path, 'a') as f:
+                        writer_obj = writer(f)
+                        writer_obj.writerow(['test', np.mean(losses_epoch), accuracy])
+                        f.close()
+        return accuracy, cm
 
 
     def save_network(self,  epoch, name, savepath):
