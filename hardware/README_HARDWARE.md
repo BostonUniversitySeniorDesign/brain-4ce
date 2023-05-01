@@ -11,7 +11,7 @@ The headset comes assembled out of the box with 16 electrodes placed in the rear
 3. If you would like to change the electrode positions, gently remove the probe by squeezing the sides of the outer electrode casing and pulling outwards. You should never change where the electrodes are connected to the boards, but if you choose to do so refer to the layout described in section 2.3.4 of the [User's Manual](../Documents/Team%204%20User's%20Manual.pdf).
 4. Once you are ready to start the EEG system, connect an ear clip to each of your earlobes and place the headset on your head with the board on the back. Make sure that each of the probes is making contact with the scalp.
 <div style="display:flex; justify-content:center;">
-  <img src="../Documents/ear_nodes.png" alt="Ear Clips" style="width:50%;">
+  <img src="../Documents/ear_nodes.png" alt="Ear Clips" style="width:33%;">
 </div> 
 <br>
 
