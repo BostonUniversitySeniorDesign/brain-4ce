@@ -5,10 +5,10 @@ Make sure to install the required Python libraries. Running the command `pip ins
 
 # Virtual Environment
 
-<div style='text-align:center;'> 
-<img src='../Documents/venv.png' style='width:50%; text-align:center;'>
+<p align="center"> 
+<img src="../Documents/venv.png" style="width:50%;">
 
-</div>
+</p>
 
 To run the virtual environment: Execute `python /Virtual Environment/main.py`
 
@@ -18,8 +18,8 @@ A user may control the object using data received from the EEG, or can modify th
 
 # 2D Game
 
-<div style='text-align: center;'>
-<img src='../Documents/2d_game.png' style='width:33%'> </img></div>
+<p align="center">
+<img src="../Documents/2d_game.png" style="width:20%"> </img></div> </p>
 
 The main objective of this game is to keep the black box within the green bar for as long as possible. The EEG will use power density concentration measurements to determine the adqueate  placement of the black box. The higher the concentration, the higher the box will go up the red bar.
 
@@ -41,4 +41,4 @@ The GUI presents 2 options. Selecting "Imagery" will assume that the EEG will be
 * <a href='https://docs.python.org/3/library/tkinter.html'>Tkinter</a>
 
 
-For a more thorough view on software, including visual aid, you can access our User's Manual.
+For a more thorough view on software, including visual aid, you can access our <a href="https://github.com/BostonUniversitySeniorDesign/brain-4ce/blob/main/Documents/Team%204%20User's%20Manual.pdf">User's Manual.</a>
