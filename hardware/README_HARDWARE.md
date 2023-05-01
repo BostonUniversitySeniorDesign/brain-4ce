@@ -1,5 +1,5 @@
 # Hardware Setup
-<div style="display:flex">
+<div style="display:flex; justify-content:center;">
   <img src="../Documents/full_headset.jpeg" alt="Full Headset" style="width:33%;">
   <img src="../Documents/close_up_boards.jpeg" alt="Close Up of Boards" style="width:33%;">
 </div> 
