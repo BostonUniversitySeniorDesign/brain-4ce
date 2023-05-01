@@ -1,0 +1,1215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/alexjohnson/Desktop/BU/SeniorDesign/GitHub Repos/brain-4ce-fork/hardware/electrical/cyton daisy/cyton daisy.kicad_sch</source>
+    <date>2023 April 30, Sunday 20:15:27</date>
+    <tool>Eeschema 7.0.1-0</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company>Brain-4ce</company>
+        <rev>A</rev>
+        <date>2023-01-05</date>
+        <source>cyton daisy.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/">
+      <title_block>
+        <title>Daisy Functionality</title>
+        <company>Brain-4ce</company>
+        <rev>A</rev>
+        <date>2023-01-05</date>
+        <source>ADS129X-X functionality.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C19">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d0a7f0d1-92e2-4ac7-9d13-48900930a499</tstamps>
+    </comp>
+    <comp ref="C20">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ef909171-ffa9-4f59-8fd9-10fc18b868dd</tstamps>
+    </comp>
+    <comp ref="C21">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a9b67748-df93-4f56-9688-a520d759de6e</tstamps>
+    </comp>
+    <comp ref="C22">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4ebd3ace-bf0e-40e9-be7a-af9527df5122</tstamps>
+    </comp>
+    <comp ref="C23">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8b7a8a86-469f-4a77-91b2-a5a2613487f9</tstamps>
+    </comp>
+    <comp ref="C24">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>db8906c2-a571-4fb1-a483-29ac2e40d011</tstamps>
+    </comp>
+    <comp ref="C25">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ebb700ca-97a7-495e-8b0e-0e98d244e01b</tstamps>
+    </comp>
+    <comp ref="C26">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>786fa80f-edf5-45c4-a90b-3e15eef9601c</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_02x13_Odd_Even</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x13_P2.54mm_Horizontal</footprint>
+      <libsource lib="Connector_Generic" part="Conn_02x13_Odd_Even" description="Generic connector, double row, 02x13, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, double row, 02x13, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d65982a2-0ca4-4ff2-acaf-d19d16243f15</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x08</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x08" description="Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>52f3ec10-afae-4ff4-a619-06d7d22e1e12</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>Conn_01x02</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="cyton daisy.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2e5bcd2c-c453-417d-80a6-8396731b3b50</tstamps>
+    </comp>
+    <comp ref="C1">
+      <value>CA0508KRX7R9BB102</value>
+      <footprint>Capacitor Arrays:CAPCAXE50P210X130X94-8N</footprint>
+      <fields>
+        <field name="MANUFACTURER">Yageo</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">0.94mm</field>
+        <field name="STANDARD">IPC-7351B</field>
+      </fields>
+      <libsource lib="Capacitor Arrays" part="CA0508KRX7R9BB102" description=""/>
+      <property name="STANDARD" value="IPC-7351B"/>
+      <property name="PARTREV" value=""/>
+      <property name="MANUFACTURER" value="Yageo"/>
+      <property name="MAXIMUM_PACKAGE_HEIGHT" value="0.94mm"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>7067cb38-6703-44ad-a119-caa409800854 551c858b-1246-4096-83a0-67784f5eb7d8 6cf8cb2f-75e4-4b79-acce-ca16bd3fe78c 15621afb-05c1-4d04-bc0d-c58a864f5665</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>CA0508KRX7R9BB102</value>
+      <footprint>Capacitor Arrays:CAPCAXE50P210X130X94-8N</footprint>
+      <fields>
+        <field name="MANUFACTURER">Yageo</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">0.94mm</field>
+        <field name="STANDARD">IPC-7351B</field>
+      </fields>
+      <libsource lib="Capacitor Arrays" part="CA0508KRX7R9BB102" description=""/>
+      <property name="STANDARD" value="IPC-7351B"/>
+      <property name="PARTREV" value=""/>
+      <property name="MANUFACTURER" value="Yageo"/>
+      <property name="MAXIMUM_PACKAGE_HEIGHT" value="0.94mm"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>cf7ad6e4-f893-488d-b7b9-a6dfed2c751d d9b036c3-5b77-4b7a-92be-68ecf424ed71 9027180f-433d-432a-b148-384f5f8f9aac 14fe9f5e-ec0d-4e90-a4ec-bbf28bd4bac2</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>CA0508KRX7R9BB102</value>
+      <footprint>Capacitor Arrays:CAPCAXE50P210X130X94-8N</footprint>
+      <fields>
+        <field name="MANUFACTURER">Yageo</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">0.94mm</field>
+        <field name="STANDARD">IPC-7351B</field>
+      </fields>
+      <libsource lib="Capacitor Arrays" part="CA0508KRX7R9BB102" description=""/>
+      <property name="STANDARD" value="IPC-7351B"/>
+      <property name="PARTREV" value=""/>
+      <property name="MANUFACTURER" value="Yageo"/>
+      <property name="MAXIMUM_PACKAGE_HEIGHT" value="0.94mm"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>75ee1b1f-32a3-4bbe-aab7-25e0f507e661 4e4bf5c5-76b5-410f-99fc-8ccc9e9ce965 6f59fc82-4ccc-4e61-a06e-137cd6f7157a 438d2e5b-1a59-4f7e-91fe-ab8e173bfd5d</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>CA0508KRX7R9BB102</value>
+      <footprint>Capacitor Arrays:CAPCAXE50P210X130X94-8N</footprint>
+      <fields>
+        <field name="MANUFACTURER">Yageo</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">0.94mm</field>
+        <field name="STANDARD">IPC-7351B</field>
+      </fields>
+      <libsource lib="Capacitor Arrays" part="CA0508KRX7R9BB102" description=""/>
+      <property name="STANDARD" value="IPC-7351B"/>
+      <property name="PARTREV" value=""/>
+      <property name="MANUFACTURER" value="Yageo"/>
+      <property name="MAXIMUM_PACKAGE_HEIGHT" value="0.94mm"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>a6c965cc-9944-4474-bcec-a208adba6acd 26f1a5fd-bd8a-4608-8487-d4cd1629a7d4 5498ae53-bdc4-48c5-a6c4-1bd6a99262c1 0a553ed9-9333-4242-a967-da471ad931e9</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>CA0508KRX7R9BB102</value>
+      <footprint>Capacitor Arrays:CAPCAXE50P210X130X94-8N</footprint>
+      <fields>
+        <field name="MANUFACTURER">Yageo</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">0.94mm</field>
+        <field name="STANDARD">IPC-7351B</field>
+      </fields>
+      <libsource lib="Capacitor Arrays" part="CA0508KRX7R9BB102" description=""/>
+      <property name="STANDARD" value="IPC-7351B"/>
+      <property name="PARTREV" value=""/>
+      <property name="MANUFACTURER" value="Yageo"/>
+      <property name="MAXIMUM_PACKAGE_HEIGHT" value="0.94mm"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>faba6a5a-c4a0-413c-a2a8-3dea8d4546ee d5931125-e86c-4a8f-b623-5d3185706e6c 5f6c4acf-e24b-4b3a-bf33-771e98a2e9fe 2d4fe96f-63fc-4ccd-9958-24b9db1c9f53</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>37e3de13-7ac9-4a44-b859-c2e13d91cdc2</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>773e5413-f31f-4ddd-88dd-2ddd1a11b2ea</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>d9ed15a1-db96-4d98-ab6c-563abb39fb12</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>3f441110-7764-49e1-8a6e-249e1dfc6082</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>ee33af95-b9e2-4f63-8ac7-6fd67247475b</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>da8c96d2-83c6-48bd-aa91-e02da213ac70</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>100uF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>fa7f4bcf-e841-4ed6-ae5d-e1642b4c8549</tstamps>
+    </comp>
+    <comp ref="C13">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>8de2d490-9669-4192-9358-b91b86f8be98</tstamps>
+    </comp>
+    <comp ref="C14">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>22244463-2318-4f8b-a565-111f20945df8</tstamps>
+    </comp>
+    <comp ref="C15">
+      <value>1nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>f8fd43bb-f64a-4c8a-9517-bd56ff1fb467</tstamps>
+    </comp>
+    <comp ref="C27">
+      <value>1nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>5a236162-ce77-4f72-92a2-7b6ebb9b27e8</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>TPD4E1B06DCKR</value>
+      <footprint>TSV - Diodes:TPD4E1B06DCKR</footprint>
+      <libsource lib="TSV - Diodes" part="TPD4E1B06DCKR" description=""/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>18eae9b1-3c6f-4d59-8120-6e0feff9f86f</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>TPD4E1B06DCKR</value>
+      <footprint>TSV - Diodes:TPD4E1B06DCKR</footprint>
+      <libsource lib="TSV - Diodes" part="TPD4E1B06DCKR" description=""/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>db3f6587-c1aa-4a1e-84c2-7de3d58fa46a</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>TPD4E1B06DCKR</value>
+      <footprint>TSV - Diodes:TPD4E1B06DCKR</footprint>
+      <libsource lib="TSV - Diodes" part="TPD4E1B06DCKR" description=""/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>720f949b-5745-4149-af30-3df57b8b1462</tstamps>
+    </comp>
+    <comp ref="D4">
+      <value>TPD4E1B06DCKR</value>
+      <footprint>TSV - Diodes:TPD4E1B06DCKR</footprint>
+      <libsource lib="TSV - Diodes" part="TPD4E1B06DCKR" description=""/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>122dc408-2423-401a-b6e4-59212e8f274b</tstamps>
+    </comp>
+    <comp ref="D5">
+      <value>TPD4E1B06DCKR</value>
+      <footprint>TSV - Diodes:TPD4E1B06DCKR</footprint>
+      <libsource lib="TSV - Diodes" part="TPD4E1B06DCKR" description=""/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>ded11194-9bd9-48bf-91ac-352b0e72809e</tstamps>
+    </comp>
+    <comp ref="D6">
+      <value>TPD4E1B06DCKR</value>
+      <footprint>TSV - Diodes:TPD4E1B06DCKR</footprint>
+      <libsource lib="TSV - Diodes" part="TPD4E1B06DCKR" description=""/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>6e6b0ef3-230e-4c39-89ae-c3091a4f444a</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>CAY16-222J4LF</value>
+      <footprint>Resistor Arrays:RESCAF80P320X160X60-8N</footprint>
+      <fields>
+        <field name="MANUFACTURER">Bourns</field>
+        <field name="STANDARD">IPC-7351B</field>
+      </fields>
+      <libsource lib="Resistor Arrays" part="CAY16-222J4LF" description=""/>
+      <property name="STANDARD" value="IPC-7351B"/>
+      <property name="MANUFACTURER" value="Bourns"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>7dbafe01-0a84-4c6a-afc2-d4c0759b1412</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>CAY16-222J4LF</value>
+      <footprint>Resistor Arrays:RESCAF80P320X160X60-8N</footprint>
+      <fields>
+        <field name="MANUFACTURER">Bourns</field>
+        <field name="STANDARD">IPC-7351B</field>
+      </fields>
+      <libsource lib="Resistor Arrays" part="CAY16-222J4LF" description=""/>
+      <property name="STANDARD" value="IPC-7351B"/>
+      <property name="MANUFACTURER" value="Bourns"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>c0b07347-af46-4200-87bf-1f7b2cd4350e</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>CAY16-222J4LF</value>
+      <footprint>Resistor Arrays:RESCAF80P320X160X60-8N</footprint>
+      <fields>
+        <field name="MANUFACTURER">Bourns</field>
+        <field name="STANDARD">IPC-7351B</field>
+      </fields>
+      <libsource lib="Resistor Arrays" part="CAY16-222J4LF" description=""/>
+      <property name="STANDARD" value="IPC-7351B"/>
+      <property name="MANUFACTURER" value="Bourns"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>3cd7342a-62a4-4bbe-b19c-c7697ef50508</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>CAY16-222J4LF</value>
+      <footprint>Resistor Arrays:RESCAF80P320X160X60-8N</footprint>
+      <fields>
+        <field name="MANUFACTURER">Bourns</field>
+        <field name="STANDARD">IPC-7351B</field>
+      </fields>
+      <libsource lib="Resistor Arrays" part="CAY16-222J4LF" description=""/>
+      <property name="STANDARD" value="IPC-7351B"/>
+      <property name="MANUFACTURER" value="Bourns"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>104a77c0-4ac5-4421-b467-8dc22d64b85f</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>CAY16-222J4LF</value>
+      <footprint>Resistor Arrays:RESCAF80P320X160X60-8N</footprint>
+      <fields>
+        <field name="MANUFACTURER">Bourns</field>
+        <field name="STANDARD">IPC-7351B</field>
+      </fields>
+      <libsource lib="Resistor Arrays" part="CAY16-222J4LF" description=""/>
+      <property name="STANDARD" value="IPC-7351B"/>
+      <property name="MANUFACTURER" value="Bourns"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>16964581-1126-47ab-8635-80faabd8bade</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>1M</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>61b2f1d4-0f9f-4182-bcd0-7f8f2cca67a4</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>0</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>88f55598-4ce0-4f5e-92c7-540da9707fa1</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>ADS129x</value>
+      <footprint>Package_QFP:TQFP-64_10x10mm_P0.5mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/ads1298.pdf</datasheet>
+      <libsource lib="Analog_ADC" part="ADS1298xPAG" description="ADS1298 Low-Power, 8-Channel, 24-Bit Analog Front-End for Biopotential Measurements, TQFP-64"/>
+      <property name="Sheetname" value="Daisy Functionality"/>
+      <property name="Sheetfile" value="../shared schematics/ADS129X-X functionality.kicad_sch"/>
+      <property name="ki_description" value="ADS1298 Low-Power, 8-Channel, 24-Bit Analog Front-End for Biopotential Measurements, TQFP-64"/>
+      <property name="ki_keywords" value="24bit ADC 8 Channels PGA SPI Biopotential"/>
+      <sheetpath names="/Daisy Functionality/" tstamps="/59a2adfc-5bb4-49a5-b947-81743a3b3fe6/"/>
+      <tstamps>183650d5-a46b-414f-959f-1efec0e71f32</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Analog_ADC" part="ADS1298xPAG">
+      <description>ADS1298 Low-Power, 8-Channel, 24-Bit Analog Front-End for Biopotential Measurements, TQFP-64</description>
+      <docs>http://www.ti.com/lit/ds/symlink/ads1298.pdf</docs>
+      <footprints>
+        <fp>TQFP*10x10mm*P0.5mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ADS1298xPAG</field>
+        <field name="Footprint">Package_QFP:TQFP-64_10x10mm_P0.5mm</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/ads1298.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IN8N" type="input"/>
+        <pin num="2" name="IN8P" type="input"/>
+        <pin num="3" name="IN7P" type="input"/>
+        <pin num="4" name="IN7N" type="input"/>
+        <pin num="5" name="IN6N" type="input"/>
+        <pin num="6" name="IN6P" type="input"/>
+        <pin num="7" name="IN5N" type="input"/>
+        <pin num="8" name="IN5P" type="input"/>
+        <pin num="9" name="IN4N" type="input"/>
+        <pin num="10" name="IN4P" type="input"/>
+        <pin num="11" name="IN3N" type="input"/>
+        <pin num="12" name="IN3P" type="input"/>
+        <pin num="13" name="IN2N" type="input"/>
+        <pin num="14" name="IN2P" type="input"/>
+        <pin num="15" name="IN1N" type="input"/>
+        <pin num="16" name="IN1P" type="input"/>
+        <pin num="17" name="TESTP_PACE_OUT1" type="bidirectional"/>
+        <pin num="18" name="TESTP_PACE_OUT2" type="bidirectional"/>
+        <pin num="19" name="AVDD" type="power_in"/>
+        <pin num="20" name="AVSS" type="power_in"/>
+        <pin num="21" name="AVDD" type="passive"/>
+        <pin num="22" name="AVDD" type="passive"/>
+        <pin num="23" name="AVSS" type="passive"/>
+        <pin num="24" name="VREFP" type="passive"/>
+        <pin num="25" name="VREFN" type="passive"/>
+        <pin num="26" name="VCAP4" type="passive"/>
+        <pin num="27" name="NC" type="no_connect"/>
+        <pin num="28" name="VCAP1" type="passive"/>
+        <pin num="29" name="NC" type="no_connect"/>
+        <pin num="30" name="VCAP2" type="passive"/>
+        <pin num="31" name="RESV1" type="input"/>
+        <pin num="32" name="AVSS" type="passive"/>
+        <pin num="33" name="DGND" type="power_in"/>
+        <pin num="34" name="DIN" type="input"/>
+        <pin num="35" name="~{PWDN}" type="input"/>
+        <pin num="36" name="~{RESET}" type="input"/>
+        <pin num="37" name="CLK" type="bidirectional"/>
+        <pin num="38" name="START" type="input"/>
+        <pin num="39" name="~{CS}" type="input"/>
+        <pin num="40" name="SCLK" type="input"/>
+        <pin num="41" name="DAISY_IN" type="input"/>
+        <pin num="42" name="GPIO1" type="bidirectional"/>
+        <pin num="43" name="DOUT" type="output"/>
+        <pin num="44" name="GPIO2" type="bidirectional"/>
+        <pin num="45" name="GPIO3" type="bidirectional"/>
+        <pin num="46" name="GPIO4" type="bidirectional"/>
+        <pin num="47" name="~{DRDY}" type="output"/>
+        <pin num="48" name="DVDD" type="power_in"/>
+        <pin num="49" name="DGND" type="passive"/>
+        <pin num="50" name="DVDD" type="passive"/>
+        <pin num="51" name="DGND" type="passive"/>
+        <pin num="52" name="CLKSEL" type="input"/>
+        <pin num="53" name="AVSS1" type="power_in"/>
+        <pin num="54" name="AVDD1" type="power_in"/>
+        <pin num="55" name="VCAP3" type="passive"/>
+        <pin num="56" name="AVDD" type="passive"/>
+        <pin num="57" name="AVSS" type="passive"/>
+        <pin num="58" name="AVSS" type="passive"/>
+        <pin num="59" name="AVDD" type="passive"/>
+        <pin num="60" name="RLDREF" type="input"/>
+        <pin num="61" name="RLDINV" type="input"/>
+        <pin num="62" name="RLDIN" type="input"/>
+        <pin num="63" name="RLDOUT" type="output"/>
+        <pin num="64" name="WCT" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="Capacitor Arrays" part="CA0508KRX7R9BB102">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CA0508KRX7R9BB102</field>
+        <field name="Footprint">Capacitor Arrays:CAPCAXE50P210X130X94-8N</field>
+        <field name="STANDARD">IPC-7351B</field>
+        <field name="MANUFACTURER">Yageo</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">0.94mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+        <pin num="3" name="" type="passive"/>
+        <pin num="4" name="" type="passive"/>
+        <pin num="5" name="" type="passive"/>
+        <pin num="6" name="" type="passive"/>
+        <pin num="7" name="" type="passive"/>
+        <pin num="8" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x02">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x08">
+      <description>Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x08</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_02x13_Odd_Even">
+      <description>Generic connector, double row, 02x13, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_2x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_02x13_Odd_Even</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+        <pin num="13" name="Pin_13" type="passive"/>
+        <pin num="14" name="Pin_14" type="passive"/>
+        <pin num="15" name="Pin_15" type="passive"/>
+        <pin num="16" name="Pin_16" type="passive"/>
+        <pin num="17" name="Pin_17" type="passive"/>
+        <pin num="18" name="Pin_18" type="passive"/>
+        <pin num="19" name="Pin_19" type="passive"/>
+        <pin num="20" name="Pin_20" type="passive"/>
+        <pin num="21" name="Pin_21" type="passive"/>
+        <pin num="22" name="Pin_22" type="passive"/>
+        <pin num="23" name="Pin_23" type="passive"/>
+        <pin num="24" name="Pin_24" type="passive"/>
+        <pin num="25" name="Pin_25" type="passive"/>
+        <pin num="26" name="Pin_26" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Resistor Arrays" part="CAY16-222J4LF">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">CAY16-222J4LF</field>
+        <field name="Footprint">RESCAF80P320X160X60-8N</field>
+        <field name="STANDARD">IPC-7351B</field>
+        <field name="MANUFACTURER">Bourns</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+        <pin num="3" name="" type="passive"/>
+        <pin num="4" name="" type="passive"/>
+        <pin num="5" name="" type="passive"/>
+        <pin num="6" name="" type="passive"/>
+        <pin num="7" name="" type="passive"/>
+        <pin num="8" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="TSV - Diodes" part="TPD4E1B06DCKR">
+      <footprints>
+        <fp>DCK6_TEX</fp>
+        <fp>DCK6_TEX-M</fp>
+        <fp>DCK6_TEX-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">TPD4E1B06DCKR</field>
+        <field name="Footprint">DCK6_TEX</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IO1" type="bidirectional"/>
+        <pin num="2" name="IO2" type="bidirectional"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="IO3" type="bidirectional"/>
+        <pin num="5" name="IO4" type="bidirectional"/>
+        <pin num="6" name="NC" type="no_connect"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Analog_ADC">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Analog_ADC.kicad_sym</uri>
+    </library>
+    <library logical="Capacitor Arrays">
+      <uri>/Users/alexjohnson/Desktop/BU/SeniorDesign/GitHub Repos/brain-4ce-fork/hardware/electrical/cyton daisy/libraries/symbols/Capacitor_Arrays.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="Resistor Arrays">
+      <uri>/Users/alexjohnson/Desktop/BU/SeniorDesign/GitHub Repos/brain-4ce-fork/hardware/electrical/cyton daisy/libraries/symbols/Resistor_Arrays.kicad_sym</uri>
+    </library>
+    <library logical="TSV - Diodes">
+      <uri>/Users/alexjohnson/Desktop/BU/SeniorDesign/GitHub Repos/brain-4ce-fork/hardware/electrical/cyton daisy/libraries/symbols/TSV_Diodes.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/1N">
+      <node ref="D2" pin="4" pinfunction="IO3" pintype="bidirectional"/>
+      <node ref="J1" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+    </net>
+    <net code="2" name="/1P">
+      <node ref="D1" pin="1" pinfunction="IO1" pintype="bidirectional"/>
+      <node ref="J1" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="3" name="/2N">
+      <node ref="D2" pin="2" pinfunction="IO2" pintype="bidirectional"/>
+      <node ref="J1" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="R2" pin="3" pintype="passive"/>
+    </net>
+    <net code="4" name="/2P">
+      <node ref="D2" pin="5" pinfunction="IO4" pintype="bidirectional"/>
+      <node ref="J1" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="R2" pin="4" pintype="passive"/>
+    </net>
+    <net code="5" name="/3N">
+      <node ref="D3" pin="4" pinfunction="IO3" pintype="bidirectional"/>
+      <node ref="J1" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+    </net>
+    <net code="6" name="/3P">
+      <node ref="D2" pin="1" pinfunction="IO1" pintype="bidirectional"/>
+      <node ref="J1" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+    </net>
+    <net code="7" name="/4N">
+      <node ref="D3" pin="2" pinfunction="IO2" pintype="bidirectional"/>
+      <node ref="J1" pin="12" pinfunction="Pin_12" pintype="passive"/>
+      <node ref="R3" pin="3" pintype="passive"/>
+    </net>
+    <net code="8" name="/4P">
+      <node ref="D3" pin="5" pinfunction="IO4" pintype="bidirectional"/>
+      <node ref="J1" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="R3" pin="4" pintype="passive"/>
+    </net>
+    <net code="9" name="/5N">
+      <node ref="D4" pin="4" pinfunction="IO3" pintype="bidirectional"/>
+      <node ref="J1" pin="14" pinfunction="Pin_14" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+    </net>
+    <net code="10" name="/5P">
+      <node ref="D3" pin="1" pinfunction="IO1" pintype="bidirectional"/>
+      <node ref="J1" pin="13" pinfunction="Pin_13" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+    </net>
+    <net code="11" name="/6N">
+      <node ref="D4" pin="2" pinfunction="IO2" pintype="bidirectional"/>
+      <node ref="J1" pin="16" pinfunction="Pin_16" pintype="passive"/>
+      <node ref="R4" pin="3" pintype="passive"/>
+    </net>
+    <net code="12" name="/6P">
+      <node ref="D4" pin="5" pinfunction="IO4" pintype="bidirectional"/>
+      <node ref="J1" pin="15" pinfunction="Pin_15" pintype="passive"/>
+      <node ref="R4" pin="4" pintype="passive"/>
+    </net>
+    <net code="13" name="/7N">
+      <node ref="D5" pin="4" pinfunction="IO3" pintype="bidirectional"/>
+      <node ref="J1" pin="18" pinfunction="Pin_18" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+    </net>
+    <net code="14" name="/7P">
+      <node ref="D4" pin="1" pinfunction="IO1" pintype="bidirectional"/>
+      <node ref="J1" pin="17" pinfunction="Pin_17" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+    </net>
+    <net code="15" name="/8N">
+      <node ref="D5" pin="2" pinfunction="IO2" pintype="bidirectional"/>
+      <node ref="J1" pin="20" pinfunction="Pin_20" pintype="passive"/>
+      <node ref="R5" pin="3" pintype="passive"/>
+    </net>
+    <net code="16" name="/8P">
+      <node ref="D5" pin="5" pinfunction="IO4" pintype="bidirectional"/>
+      <node ref="J1" pin="19" pinfunction="Pin_19" pintype="passive"/>
+      <node ref="R5" pin="4" pintype="passive"/>
+    </net>
+    <net code="17" name="/BIAS">
+      <node ref="D6" pin="4" pinfunction="IO3" pintype="bidirectional"/>
+      <node ref="J1" pin="21" pinfunction="Pin_21" pintype="passive"/>
+      <node ref="J1" pin="22" pinfunction="Pin_22" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+    </net>
+    <net code="18" name="/BIAS_INV">
+      <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U1" pin="61" pinfunction="RLDINV" pintype="input"/>
+    </net>
+    <net code="19" name="/CLK">
+      <node ref="J2" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="U1" pin="37" pinfunction="CLK" pintype="bidirectional"/>
+    </net>
+    <net code="20" name="/CS2">
+      <node ref="J2" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="U1" pin="39" pinfunction="~{CS}" pintype="input"/>
+    </net>
+    <net code="21" name="/Daisy Functionality/BIAS_DRV">
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="C5" pin="8" pintype="passive"/>
+      <node ref="R5" pin="8" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+    </net>
+    <net code="22" name="/Daisy Functionality/DRDY">
+      <node ref="U1" pin="47" pinfunction="~{DRDY}" pintype="output+no_connect"/>
+    </net>
+    <net code="23" name="/Daisy Functionality/IN1N">
+      <node ref="C1" pin="8" pintype="passive"/>
+      <node ref="R1" pin="8" pintype="passive"/>
+      <node ref="U1" pin="15" pinfunction="IN1N" pintype="input"/>
+    </net>
+    <net code="24" name="/Daisy Functionality/IN1P">
+      <node ref="C1" pin="7" pintype="passive"/>
+      <node ref="R1" pin="7" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="IN1P" pintype="input"/>
+    </net>
+    <net code="25" name="/Daisy Functionality/IN2N">
+      <node ref="C2" pin="6" pintype="passive"/>
+      <node ref="R2" pin="6" pintype="passive"/>
+      <node ref="U1" pin="13" pinfunction="IN2N" pintype="input"/>
+    </net>
+    <net code="26" name="/Daisy Functionality/IN2P">
+      <node ref="C2" pin="5" pintype="passive"/>
+      <node ref="R2" pin="5" pintype="passive"/>
+      <node ref="U1" pin="14" pinfunction="IN2P" pintype="input"/>
+    </net>
+    <net code="27" name="/Daisy Functionality/IN3N">
+      <node ref="C2" pin="8" pintype="passive"/>
+      <node ref="R2" pin="8" pintype="passive"/>
+      <node ref="U1" pin="11" pinfunction="IN3N" pintype="input"/>
+    </net>
+    <net code="28" name="/Daisy Functionality/IN3P">
+      <node ref="C2" pin="7" pintype="passive"/>
+      <node ref="R2" pin="7" pintype="passive"/>
+      <node ref="U1" pin="12" pinfunction="IN3P" pintype="input"/>
+    </net>
+    <net code="29" name="/Daisy Functionality/IN4N">
+      <node ref="C3" pin="6" pintype="passive"/>
+      <node ref="R3" pin="6" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="IN4N" pintype="input"/>
+    </net>
+    <net code="30" name="/Daisy Functionality/IN4P">
+      <node ref="C3" pin="5" pintype="passive"/>
+      <node ref="R3" pin="5" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="IN4P" pintype="input"/>
+    </net>
+    <net code="31" name="/Daisy Functionality/IN5N">
+      <node ref="C3" pin="8" pintype="passive"/>
+      <node ref="R3" pin="8" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="IN5N" pintype="input"/>
+    </net>
+    <net code="32" name="/Daisy Functionality/IN5P">
+      <node ref="C3" pin="7" pintype="passive"/>
+      <node ref="R3" pin="7" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="IN5P" pintype="input"/>
+    </net>
+    <net code="33" name="/Daisy Functionality/IN6N">
+      <node ref="C4" pin="6" pintype="passive"/>
+      <node ref="R4" pin="6" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="IN6N" pintype="input"/>
+    </net>
+    <net code="34" name="/Daisy Functionality/IN6P">
+      <node ref="C4" pin="5" pintype="passive"/>
+      <node ref="R4" pin="5" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="IN6P" pintype="input"/>
+    </net>
+    <net code="35" name="/Daisy Functionality/IN7N">
+      <node ref="C4" pin="8" pintype="passive"/>
+      <node ref="R4" pin="8" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="IN7P" pintype="input"/>
+    </net>
+    <net code="36" name="/Daisy Functionality/IN7P">
+      <node ref="C4" pin="7" pintype="passive"/>
+      <node ref="R4" pin="7" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="IN7N" pintype="input"/>
+    </net>
+    <net code="37" name="/Daisy Functionality/IN8N">
+      <node ref="C5" pin="6" pintype="passive"/>
+      <node ref="R5" pin="6" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="IN8N" pintype="input"/>
+    </net>
+    <net code="38" name="/Daisy Functionality/IN8P">
+      <node ref="C5" pin="5" pintype="passive"/>
+      <node ref="R5" pin="5" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="IN8P" pintype="input"/>
+    </net>
+    <net code="39" name="/Daisy Functionality/_SRB1">
+      <node ref="C1" pin="5" pintype="passive"/>
+      <node ref="R1" pin="5" pintype="passive"/>
+      <node ref="U1" pin="17" pinfunction="TESTP_PACE_OUT1" pintype="bidirectional"/>
+    </net>
+    <net code="40" name="/Daisy Functionality/_SRB2">
+      <node ref="C1" pin="6" pintype="passive"/>
+      <node ref="R1" pin="6" pintype="passive"/>
+      <node ref="U1" pin="18" pinfunction="TESTP_PACE_OUT2" pintype="bidirectional"/>
+    </net>
+    <net code="41" name="/MISO">
+      <node ref="J2" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U1" pin="43" pinfunction="DOUT" pintype="output"/>
+    </net>
+    <net code="42" name="/MOSI">
+      <node ref="J2" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="U1" pin="34" pinfunction="DIN" pintype="input"/>
+    </net>
+    <net code="43" name="/RESET">
+      <node ref="J2" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="U1" pin="36" pinfunction="~{RESET}" pintype="input"/>
+    </net>
+    <net code="44" name="/SCLK">
+      <node ref="J2" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U1" pin="40" pinfunction="SCLK" pintype="input"/>
+    </net>
+    <net code="45" name="/SRB1">
+      <node ref="D1" pin="5" pinfunction="IO4" pintype="bidirectional"/>
+      <node ref="J1" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R1" pin="4" pintype="passive"/>
+    </net>
+    <net code="46" name="/SRB2">
+      <node ref="D1" pin="2" pinfunction="IO2" pintype="bidirectional"/>
+      <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R1" pin="3" pintype="passive"/>
+    </net>
+    <net code="47" name="GNDA">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C1" pin="3" pintype="passive"/>
+      <node ref="C1" pin="4" pintype="passive"/>
+      <node ref="C19" pin="2" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C2" pin="3" pintype="passive"/>
+      <node ref="C2" pin="4" pintype="passive"/>
+      <node ref="C20" pin="2" pintype="passive"/>
+      <node ref="C21" pin="2" pintype="passive"/>
+      <node ref="C22" pin="2" pintype="passive"/>
+      <node ref="C24" pin="2" pintype="passive"/>
+      <node ref="C26" pin="2" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C3" pin="3" pintype="passive"/>
+      <node ref="C3" pin="4" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C4" pin="3" pintype="passive"/>
+      <node ref="C4" pin="4" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C5" pin="3" pintype="passive"/>
+      <node ref="C5" pin="4" pintype="passive"/>
+      <node ref="C5" pin="7" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="D1" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="D2" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="D3" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="D4" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="D5" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="D6" pin="1" pinfunction="IO1" pintype="bidirectional"/>
+      <node ref="D6" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="J1" pin="23" pinfunction="Pin_23" pintype="passive"/>
+      <node ref="J1" pin="24" pinfunction="Pin_24" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="R5" pin="7" pintype="passive"/>
+      <node ref="U1" pin="31" pinfunction="RESV1" pintype="input"/>
+      <node ref="U1" pin="33" pinfunction="DGND" pintype="power_in"/>
+      <node ref="U1" pin="41" pinfunction="DAISY_IN" pintype="input"/>
+      <node ref="U1" pin="49" pinfunction="DGND" pintype="passive"/>
+      <node ref="U1" pin="51" pinfunction="DGND" pintype="passive"/>
+      <node ref="U1" pin="60" pinfunction="RLDREF" pintype="input"/>
+    </net>
+    <net code="48" name="Net-(U1-RLDIN)">
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="U1" pin="62" pinfunction="RLDIN" pintype="input"/>
+      <node ref="U1" pin="63" pinfunction="RLDOUT" pintype="output"/>
+    </net>
+    <net code="49" name="Net-(U1-VCAP1)">
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="U1" pin="28" pinfunction="VCAP1" pintype="passive"/>
+    </net>
+    <net code="50" name="Net-(U1-VCAP2)">
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="U1" pin="30" pinfunction="VCAP2" pintype="passive"/>
+    </net>
+    <net code="51" name="Net-(U1-VCAP3)">
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="U1" pin="55" pinfunction="VCAP3" pintype="passive"/>
+    </net>
+    <net code="52" name="Net-(U1-VCAP4)">
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="U1" pin="26" pinfunction="VCAP4" pintype="passive"/>
+    </net>
+    <net code="53" name="Net-(U1-VREFP)">
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="U1" pin="24" pinfunction="VREFP" pintype="passive"/>
+    </net>
+    <net code="54" name="Net-(U1-WCT)">
+      <node ref="C27" pin="2" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="U1" pin="64" pinfunction="WCT" pintype="output"/>
+    </net>
+    <net code="55" name="VDD">
+      <node ref="C19" pin="1" pintype="passive"/>
+      <node ref="C21" pin="1" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="35" pinfunction="~{PWDN}" pintype="input"/>
+      <node ref="U1" pin="48" pinfunction="DVDD" pintype="power_in"/>
+      <node ref="U1" pin="50" pinfunction="DVDD" pintype="passive"/>
+      <node ref="U1" pin="52" pinfunction="CLKSEL" pintype="input"/>
+    </net>
+    <net code="56" name="VDDA">
+      <node ref="C20" pin="1" pintype="passive"/>
+      <node ref="C22" pin="1" pintype="passive"/>
+      <node ref="C23" pin="1" pintype="passive"/>
+      <node ref="C24" pin="1" pintype="passive"/>
+      <node ref="C25" pin="1" pintype="passive"/>
+      <node ref="C26" pin="1" pintype="passive"/>
+      <node ref="D6" pin="2" pinfunction="IO2" pintype="bidirectional"/>
+      <node ref="J1" pin="25" pinfunction="Pin_25" pintype="passive"/>
+      <node ref="J1" pin="26" pinfunction="Pin_26" pintype="passive"/>
+      <node ref="U1" pin="19" pinfunction="AVDD" pintype="power_in"/>
+      <node ref="U1" pin="21" pinfunction="AVDD" pintype="passive"/>
+      <node ref="U1" pin="22" pinfunction="AVDD" pintype="passive"/>
+      <node ref="U1" pin="54" pinfunction="AVDD1" pintype="power_in"/>
+      <node ref="U1" pin="56" pinfunction="AVDD" pintype="passive"/>
+      <node ref="U1" pin="59" pinfunction="AVDD" pintype="passive"/>
+    </net>
+    <net code="57" name="VSSA">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C23" pin="2" pintype="passive"/>
+      <node ref="C25" pin="2" pintype="passive"/>
+      <node ref="C27" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="D1" pin="4" pinfunction="IO3" pintype="bidirectional"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U1" pin="20" pinfunction="AVSS" pintype="power_in"/>
+      <node ref="U1" pin="23" pinfunction="AVSS" pintype="passive"/>
+      <node ref="U1" pin="25" pinfunction="VREFN" pintype="passive"/>
+      <node ref="U1" pin="32" pinfunction="AVSS" pintype="passive"/>
+      <node ref="U1" pin="53" pinfunction="AVSS1" pintype="power_in"/>
+      <node ref="U1" pin="57" pinfunction="AVSS" pintype="passive"/>
+      <node ref="U1" pin="58" pinfunction="AVSS" pintype="passive"/>
+    </net>
+    <net code="58" name="unconnected-(D1-NC-Pad6)">
+      <node ref="D1" pin="6" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="59" name="unconnected-(D2-NC-Pad6)">
+      <node ref="D2" pin="6" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="60" name="unconnected-(D3-NC-Pad6)">
+      <node ref="D3" pin="6" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="61" name="unconnected-(D4-NC-Pad6)">
+      <node ref="D4" pin="6" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="62" name="unconnected-(D5-IO1-Pad1)">
+      <node ref="D5" pin="1" pinfunction="IO1" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="63" name="unconnected-(D5-NC-Pad6)">
+      <node ref="D5" pin="6" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="64" name="unconnected-(D6-IO4-Pad5)">
+      <node ref="D6" pin="5" pinfunction="IO4" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="65" name="unconnected-(D6-NC-Pad6)">
+      <node ref="D6" pin="6" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="66" name="unconnected-(U1-GPIO1-Pad42)">
+      <node ref="U1" pin="42" pinfunction="GPIO1" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="67" name="unconnected-(U1-GPIO2-Pad44)">
+      <node ref="U1" pin="44" pinfunction="GPIO2" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="68" name="unconnected-(U1-GPIO3-Pad45)">
+      <node ref="U1" pin="45" pinfunction="GPIO3" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="69" name="unconnected-(U1-GPIO4-Pad46)">
+      <node ref="U1" pin="46" pinfunction="GPIO4" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="70" name="unconnected-(U1-NC-Pad27)">
+      <node ref="U1" pin="27" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="71" name="unconnected-(U1-NC-Pad29)">
+      <node ref="U1" pin="29" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="72" name="unconnected-(U1-START-Pad38)">
+      <node ref="U1" pin="38" pinfunction="START" pintype="input+no_connect"/>
+    </net>
+  </nets>
+</export>
