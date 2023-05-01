@@ -6,7 +6,7 @@ Make sure to install the required Python libraries. Running the command `pip ins
 # Virtual Environment
 
 <div style='text-align:center;'> 
-<img src='../Documents/venv.png' style='width:50%'>
+<img src='../Documents/venv.png' style='width:50%; text-align:center;'>
 
 </div>
 
