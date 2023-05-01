@@ -1,6 +1,17 @@
 import tkinter as tk
-import savewindow
 import pandas as pd
+
+
+'''
+Action     | Time
+Rest       | 0s
+R Fist     | 7s
+L Fist     | 14s
+Both Fists | 21s
+Both Feet  | 28s
+
+'''
+
 
 
 class Tasks:
@@ -9,7 +20,7 @@ class Tasks:
         self.canvas = canvas
         self.iswhite = True
         self.curr = 0
-        self.labels = ['Right arm!', 'Left arm!', 'Right foot!', 'Left foot!', 'Left hand!', 'Right hand!']
+        self.labels = ['Rest', 'Right Fist!', 'Left Fist!', 'Both Fists!', 'Both Feet!']
         self.draw()
         
     def erase_text(self):
@@ -29,14 +40,14 @@ class Tasks:
 
         self.canvas.after(5000, self.erase_text)
 
-        
+
+
     def change_task(self):
 
         self.canvas.create_text(300, 185, text=self.labels[self.curr], fill="black", font=('Calibri 60 bold'))
         self.curr = self.curr + 1
-        if self.curr == 6:
+        if self.curr == len(self.labels):
             self.window.destroy()
-            #savewindow.savedata()
             return
 
 
@@ -76,6 +87,5 @@ def tWindow(board, choice):
     else:
 
         df.to_hdf('./dataout_real.hdf', mode='a')
-
 
 
