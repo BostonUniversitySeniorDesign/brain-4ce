@@ -40,7 +40,7 @@ class Tasks:
             return
 
 
-def tWindow(board):
+def tWindow(board, choice):
     window = tk.Tk()
     window.title("Brain4ce Menu")
 
@@ -68,6 +68,14 @@ def tWindow(board):
     data = board.get_board_data()[channels]
     board.release_session()
     df = pd.DataFrame(data)
-    df.to_hdf('./dataout.hdf', mode='a')
+
+    if choice == 'i':
+
+        df.to_hdf('./dataout_imagery.hdf', mode='a')
+
+    else:
+
+        df.to_hdf('./dataout_real.hdf', mode='a')
+
 
 

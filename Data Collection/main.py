@@ -4,12 +4,12 @@ import find_cyton
 
 class MainGUI:
     def StartImagery(self):
-        print("bImg selected")
-
+        self.window.destroy()
+        taskwindow.tWindow(self.board, 'i')
+        
     def StartReal(self):
         self.window.destroy()
-        print("real selected")
-        taskwindow.tWindow(self.board)
+        taskwindow.tWindow(self.board, 'r')
 
     def __init__(self):
 
