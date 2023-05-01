@@ -30,9 +30,15 @@ Almost identical to the 2D Game, except there is  a 30 second timer as well as r
 
 # Data Collection GUI
 
-To run GUI: Execute `python /GUI/main.py`
+To run GUI: Execute `python /Data\ Collection/main.py`
 
 The GUI presents 2 options. Selecting "Imagery" will assume that the EEG will be classifiyng motor-imagery tasks. Selecting "Real" implies the actual movement of the instructed task.
+
+# Useful Resources
+
+* <a href='https://docs.panda3d.org/1.10/python/index'>Panda3D</a>
+* <a href='https://www.pygame.org/docs/'>Pygame</a>
+* <a href='https://docs.python.org/3/library/tkinter.html'>Tkinter</a>
 
 
 For a more thorough view on software, including visual aid, you can access our User's Manual.
