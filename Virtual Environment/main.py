@@ -29,6 +29,8 @@ class MyApp(ShowBase):
     star_angle = 0
     last_message_time = 0
 
+    direction_array = []
+
     camera_pos = 0
     dir_list = ['left', 'right', 'backward', 'forward']
     prev_sec = 0
@@ -131,6 +133,7 @@ class MyApp(ShowBase):
 
     def ChangeSpherePositionBackwardStart(self):
         self.isMovingBackward = True
+        self.direction_array.append('backward')
 
     def ChangeSpherePositionBackwardEnd(self):
         self.isMovingBackward = False
@@ -155,6 +158,7 @@ class MyApp(ShowBase):
 
     def ChangeSpherePositionForwardStart(self):
         self.isMovingForward = True
+        self.direction_array.append('forward')
             
 
     def ChangeSpherePositionForwardEnd(self):
@@ -184,6 +188,7 @@ class MyApp(ShowBase):
 
     def ChangeSpherePositionRightStart(self):
         self.isMovingRight = True
+        self.direction_array.append('right')
 
     def ChangeSpherePositionRightEnd(self):
         self.isMovingRight = False
@@ -212,7 +217,8 @@ class MyApp(ShowBase):
 
     def ChangeSpherePositionLeftStart(self):
         self.isMovingLeft = True
-    
+        self.direction_array.append('left')
+
     def ChangeSpherePositionLeftEnd(self):
         self.isMovingLeft = False
 
@@ -318,6 +324,8 @@ class MyApp(ShowBase):
                 break
 
             self.index = self.index +1
+
+        print(self.direction_array)
         
         return task.cont
 
@@ -325,4 +333,5 @@ class MyApp(ShowBase):
 game = MyApp()
 
 game.run()
+
 
