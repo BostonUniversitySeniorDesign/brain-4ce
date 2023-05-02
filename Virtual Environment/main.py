@@ -6,7 +6,7 @@ from direct.gui.DirectGui import *
 import math
 import generate
 import simplepbr
-
+import csv
 
 load_prc_file('myConfig.prc')
 
@@ -42,7 +42,6 @@ class MyApp(ShowBase):
 
         simplepbr.init()
 
-
         self.accept('d', self.ChangeSpherePositionRightStart)
         self.accept('d-up', self.ChangeSpherePositionRightEnd)
         self.accept('a', self.ChangeSpherePositionLeftStart)
@@ -51,6 +50,7 @@ class MyApp(ShowBase):
         self.accept('s-up', self.ChangeSpherePositionBackwardEnd)
         self.accept('w', self.ChangeSpherePositionForwardStart)
         self.accept('w-up', self.ChangeSpherePositionForwardEnd)
+        self.accept('escape', self.onExit)
         self.taskMgr.add(self.ChooseDirection)
         self.taskMgr.add(self.MoveFoward)
         self.taskMgr.add(self.MoveBackward)
@@ -325,13 +325,21 @@ class MyApp(ShowBase):
 
             self.index = self.index +1
 
-        print(self.direction_array)
         
         return task.cont
+    
+    def onExit(self):
+        with open('dirs.csv', 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(self.direction_array)
+        exit(0)
 
 
 game = MyApp()
 
+
+
 game.run()
+
 
 
