@@ -76,7 +76,7 @@ class FBCTrainer:
             print('Epoch: {} | Loss: {} | Accuracy: {}'.format(epoch, np.mean(losses_epoch), accuracy))
 
             if epoch % 10 == 0 and self.savepath != None:
-                self.save_network(epoch, 'FBC', self.savepath)
+                self.save_network(epoch, 'FBC2', self.savepath)
                 results_path = os.path.join(self.savepath, 'results.csv')
                 # save results to csv
                 with open(results_path, 'a') as f:

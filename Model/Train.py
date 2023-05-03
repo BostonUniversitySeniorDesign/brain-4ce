@@ -44,7 +44,7 @@ class LogCrossEntropyLoss(nn.Module):
 channels = [2, 4, 8, 12, 15, 18, 31, 34, 42, 43, 55, 56, 58, 59, 60, 62]
 
 # Define network
-network = FBCNet(nTime=460, nChan=len(channels), nClass=5, nBands=9, m=32, strideFactor=4, doWeightNorm=True)
+network = FBCNet(nTime=460, nChan=len(channels), nClass=4, nBands=9, m=32, strideFactor=4, doWeightNorm=True)
 
 
 # Load dictionary of pre-trained weights

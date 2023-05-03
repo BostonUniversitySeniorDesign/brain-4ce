@@ -32,7 +32,7 @@ def create_epochs(subject, cases, datapath, verbose='CRITICAL'):
     #Get Events
     events, event_ids = mne.events_from_annotations(raw_obj, event_id='auto', verbose=verbose)
     #Set epoch size
-    tmin, tmax = -1, 2
+    tmin, tmax = 0, 1
     #Create epoch map
     epochs = mne.Epochs(raw_obj, events, event_ids, tmin, tmax, baseline=None, preload=True, verbose=verbose)
     return epochs
@@ -61,7 +61,7 @@ def load_eegbci_data(subjects, channels, data_path):
             # Remove last time step and select channels
             data.append(curr_epoch['T2']._data[:, channels, :-1])
             data.append(curr_epoch['T1']._data[:, channels, :-1])
-            data.append(curr_epoch['T0']._data[:, channels, :-1])
+            #data.append(curr_epoch['T0']._data[:, channels, :-1])
 
         # Class, Action
         # 0, Rest
@@ -70,12 +70,12 @@ def load_eegbci_data(subjects, channels, data_path):
         # 3, Both fists
         # 4, Both feet
 
-        labels.append(np.full((1,len(epochs_case1['T0']._data)),0))
-        labels.append(np.full((1,len(epochs_case1['T1']._data)),2))
-        labels.append(np.full((1,len(epochs_case1['T2']._data)),1))
-        labels.append(np.full((1,len(epochs_case2['T0']._data)),0))
-        labels.append(np.full((1,len(epochs_case2['T1']._data)),3))
-        labels.append(np.full((1,len(epochs_case2['T2']._data)),4))
+        #labels.append(np.full((1,len(epochs_case1['T0']._data)),0))
+        labels.append(np.full((1,len(epochs_case1['T1']._data)),1))
+        labels.append(np.full((1,len(epochs_case1['T2']._data)),0))
+        #labels.append(np.full((1,len(epochs_case2['T0']._data)),0))
+        labels.append(np.full((1,len(epochs_case2['T1']._data)),2))
+        labels.append(np.full((1,len(epochs_case2['T2']._data)),3))
 
     data = np.concatenate(data, axis=0)
     labels = np.concatenate(labels, axis=1)
