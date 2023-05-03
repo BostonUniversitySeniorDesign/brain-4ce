@@ -329,7 +329,7 @@ class MyApp(ShowBase):
         return task.cont
     
     def onExit(self):
-        with open('dirs.csv', 'w', newline='') as f:
+        with open('dirs.csv', 'a', newline='') as f:
             writer = csv.writer(f)
             writer.writerow(self.direction_array)
         exit(0)
