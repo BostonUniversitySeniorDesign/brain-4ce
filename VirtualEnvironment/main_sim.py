@@ -1,6 +1,6 @@
 from direct.showbase.ShowBase import ShowBase
 from direct.task import Task
-from panda3d.core import NodePath
+from panda3d.core import NodePath, Filename
 from panda3d.core import PandaNode, load_prc_file, TextNode, Vec3
 from direct.gui.DirectGui import *
 import math
@@ -9,12 +9,8 @@ import simplepbr
 import sys
 import os
 
-config_dir = os.environ['myConfig']
-config_file = os.path.join(config_dir, 'myConfig.prc')
 
-load_prc_file(config_file)
-
-
+load_prc_file('myConfig.prc')
 
 
 class MyApp(ShowBase):
@@ -35,10 +31,12 @@ class MyApp(ShowBase):
     score = 0
     star_angle = 0
     last_message_time = 0
-
     camera_pos = 0
     dir_list = ['left', 'right', 'backward', 'forward']
     prev_sec = 0
+
+
+
 
     def __init__(self):
 
@@ -47,7 +45,6 @@ class MyApp(ShowBase):
         self.setBackgroundColor(0.95, 2.45, 2.45)
 
         simplepbr.init()
-
 
         self.accept('d', self.ChangeSpherePositionRightStart)
         self.accept('d-up', self.ChangeSpherePositionRightEnd)
@@ -77,7 +74,7 @@ class MyApp(ShowBase):
         self.nodepath3.reparentTo(self.render)
         
 
-        self.scene = generate.GenerateModel(self, (0,0,-0.5), (200,200,1), (0,0,0), self.nodepath3, 'models/plane.bam')
+        self.scene = generate.GenerateModel(self, (0,0,-0.5), (200,200,1), (0,0,0), self.nodepath3, "models/plane.bam")
         self.sphObject = generate.GenerateModel(self, (0, 10, 0.1), (0.2, 0.2, 0.2), (0,0,0), self.nodepath2, "models/brain.bam")
 
         star = None
@@ -303,7 +300,6 @@ class MyApp(ShowBase):
         self.index = 0
         
 
-
         for i in self.obj_coords:
 
             pos_tuple = tuple(pos)
@@ -330,7 +326,7 @@ class MyApp(ShowBase):
         return task.cont
 
 
-# game = MyApp()
+game = MyApp()
 
-# game.run()
+game.run()
 
