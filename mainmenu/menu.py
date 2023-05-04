@@ -1,4 +1,15 @@
 import tkinter as tk
+import sys
+import os
+
+sys.path.append('VirtualEnvironment')
+
+os.environ['MY_PROJECT_MODELS'] = 'VirtualEnvironment/models'
+
+os.environ['myConfig'] = 'VirtualEnvironment'
+
+
+import main_sim
 
 
 class MainMenu(tk.Frame):
@@ -26,6 +37,12 @@ class MainMenu(tk.Frame):
 
 
         print("Button 1 clicked")
+
+        run = main_sim.MyApp()
+    
+        run.run()
+
+
 
     def button2_clicked(self):
         print("Error: Not yet pushed to GitHub.")
