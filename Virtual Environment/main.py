@@ -7,6 +7,7 @@ import math
 import generate
 import simplepbr
 import csv
+import random
 
 load_prc_file('myConfig.prc')
 
@@ -57,6 +58,7 @@ class MyApp(ShowBase):
         self.taskMgr.add(self.MoveLeft)
         self.taskMgr.add(self.MoveRight)
         self.taskMgr.add(self.rotateStar)
+        self.taskMgr.add(self.recvInput)
 
         blank_node = PandaNode("my_blank_node")
         self.nodepath1 = NodePath(blank_node)
@@ -140,7 +142,13 @@ class MyApp(ShowBase):
 
     def MoveBackward(self, task):
         if self.isMovingBackward == True:
-            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.5 )
+            
+            getNewPos = self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.1
+
+            if getNewPos[0] >= 200 or getNewPos[0] <= -200 or getNewPos[1] >= 200 or getNewPos[1] <= -200:
+                return Task.cont
+
+            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.1 )
 
             self.cameraSet(self.fakeHeading)
 
@@ -168,8 +176,15 @@ class MyApp(ShowBase):
 
 
     def MoveFoward(self, task):
+
         if self.isMovingForward == True:
-            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.5 )
+
+            getNewPos = self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.1
+
+            if getNewPos[0] >= 200 or getNewPos[0] <= -200 or getNewPos[1] >= 200 or getNewPos[1] <= -200:
+                return Task.cont
+
+            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.1 )
 
 
             self.cameraSet(self.fakeHeading)
@@ -195,9 +210,9 @@ class MyApp(ShowBase):
 
     def MoveRight(self, task):
         if self.isMovingRight == True:
-            self.angle += 2.5
+            self.angle += 0.3
             
-            self.fakeHeading += 2.5
+            self.fakeHeading += 0.3
 
 
             self.cameraSet(self.fakeHeading)
@@ -224,10 +239,10 @@ class MyApp(ShowBase):
 
     def MoveLeft(self, task):
         if self.isMovingLeft == True:
-            self.angle -= 2.5
+            self.angle -= 0.3
 
 
-            self.fakeHeading -= 2.5
+            self.fakeHeading -= 0.3
 
             self.cameraSet(self.fakeHeading)
 
@@ -254,6 +269,44 @@ class MyApp(ShowBase):
         else:
             return Task.done
 
+    def recvInput(self, task):
+    
+        current_sec = int(task.time)
+        if current_sec != self.prev_sec:
+            self.prev_sec = current_sec
+
+            direction_index = random.randint(0, 3)
+            print(direction_index)
+            
+            # ['left', 'right', 'backward', 'forward']
+            # 0         1       2            3
+            
+            if direction_index == 0:
+                self.ChangeSpherePositionLeftStart()
+                self.ChangeSpherePositionRightEnd()
+                self.ChangeSpherePositionForwardEnd()
+                self.ChangeSpherePositionBackwardEnd()
+
+            elif direction_index == 1:
+                self.ChangeSpherePositionLeftEnd()
+                self.ChangeSpherePositionRightStart()
+                self.ChangeSpherePositionForwardEnd()
+                self.ChangeSpherePositionBackwardEnd()
+
+            elif direction_index == 2:
+                self.ChangeSpherePositionLeftEnd()
+                self.ChangeSpherePositionRightEnd()
+                self.ChangeSpherePositionForwardEnd()
+                self.ChangeSpherePositionBackwardStart()                
+        
+            elif direction_index == 3:
+                self.ChangeSpherePositionLeftEnd()
+                self.ChangeSpherePositionRightEnd()
+                self.ChangeSpherePositionForwardStart()
+                self.ChangeSpherePositionBackwardEnd() 
+
+
+        return Task.cont
 
 
     def ChooseDirection(self, task):
@@ -336,8 +389,6 @@ class MyApp(ShowBase):
 
 
 game = MyApp()
-
-
 
 game.run()
 
