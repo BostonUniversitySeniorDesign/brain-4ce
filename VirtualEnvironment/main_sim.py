@@ -1,13 +1,11 @@
 from direct.showbase.ShowBase import ShowBase
 from direct.task import Task
-from panda3d.core import NodePath, Filename
+from panda3d.core import NodePath
 from panda3d.core import PandaNode, load_prc_file, TextNode, Vec3
 from direct.gui.DirectGui import *
 import math
 import generate
 import simplepbr
-import sys
-import os
 
 
 load_prc_file('myConfig.prc')

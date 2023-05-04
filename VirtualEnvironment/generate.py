@@ -1,11 +1,6 @@
 from panda3d.core import AmbientLight, DirectionalLight
-import os
-
-#config_dir = os.environ['models']
 
 def GenerateModel(self, position, scale, hpr, parent, path):
-    
-    # full_path = os.path.join(config_dir, path)
     
     model = self.loader.loadModel(path)
     model.setPos(*position)
