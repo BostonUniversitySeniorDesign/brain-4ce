@@ -1,6 +1,7 @@
 from panda3d.core import AmbientLight, DirectionalLight
 
 def GenerateModel(self, position, scale, hpr, parent, path):
+    
     model = self.loader.loadModel(path)
     model.setPos(*position)
     model.setScale(*scale)

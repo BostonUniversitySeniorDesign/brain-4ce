@@ -10,8 +10,9 @@ import simplepbr
 
 load_prc_file('myConfig.prc')
 
-class MyApp(ShowBase):
 
+class MyApp(ShowBase):
+    
     xCoord = 0
     yCoord = 0
     angle  = 180
@@ -28,18 +29,20 @@ class MyApp(ShowBase):
     score = 0
     star_angle = 0
     last_message_time = 0
-
     camera_pos = 0
     dir_list = ['left', 'right', 'backward', 'forward']
     prev_sec = 0
 
+
+
+
     def __init__(self):
+
         ShowBase.__init__(self)
 
         self.setBackgroundColor(0.95, 2.45, 2.45)
 
         simplepbr.init()
-
 
         self.accept('d', self.ChangeSpherePositionRightStart)
         self.accept('d-up', self.ChangeSpherePositionRightEnd)
@@ -294,7 +297,6 @@ class MyApp(ShowBase):
 
         self.index = 0
         
-
 
         for i in self.obj_coords:
 
