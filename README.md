@@ -39,7 +39,7 @@ Our team was inspired to develop this project by our aspiration to bridge the di
 
 # Getting Started
 - Please refer to our [Hardware Setup Guide](./hardware/README_HARDWARE.md) for instructions on setting up the hardware.
-- Please refer to our [Software Setup Guide](./Virtual%20Environment/README_SOFTWARE.md) for instructions on setting up the software.
+- Please refer to our [Software Setup Guide](./mainmenu/README_SOFTWARE.md) for instructions on setting up the software.
 <br></br>
 
 # Current State of the Project
