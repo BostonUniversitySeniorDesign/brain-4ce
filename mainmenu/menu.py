@@ -18,7 +18,7 @@ class MainMenu(tk.Frame):
         self.button1 = tk.Button(self.button_frame, text="Run Virtual Environment", command=self.run_venv)
         self.button1.pack(side="top", pady=10)
 
-        self.button2 = tk.Button(self.button_frame, text="Run 30s Game", command=self.button2_clicked)
+        self.button2 = tk.Button(self.button_frame, text="Run 30s Game", command=self.run_30sgame)
         self.button2.pack(side="bottom", pady=10)
 
         self.button3 = tk.Button(self.button_frame, text="Run 2D Game", command=self.run_2dgame)
@@ -32,8 +32,9 @@ class MainMenu(tk.Frame):
 
         os.system("python 2DGame/main.py")
 
-    def button2_clicked(self):
-        print("Error: Not yet pushed to GitHub.")
+    def run_30sgame(self):
+        
+        os.system("python 30s\ Game/main.py")
 
 if __name__ == '__main__':
     root = tk.Tk()
