@@ -6,7 +6,8 @@ from direct.gui.DirectGui import *
 import math
 import generate
 import simplepbr
-
+import csv
+import random
 
 load_prc_file('myConfig.prc')
 
@@ -29,6 +30,8 @@ class MyApp(ShowBase):
     star_angle = 0
     last_message_time = 0
 
+    direction_array = []
+
     camera_pos = 0
     dir_list = ['left', 'right', 'backward', 'forward']
     prev_sec = 0
@@ -40,7 +43,6 @@ class MyApp(ShowBase):
 
         simplepbr.init()
 
-
         self.accept('d', self.ChangeSpherePositionRightStart)
         self.accept('d-up', self.ChangeSpherePositionRightEnd)
         self.accept('a', self.ChangeSpherePositionLeftStart)
@@ -49,12 +51,17 @@ class MyApp(ShowBase):
         self.accept('s-up', self.ChangeSpherePositionBackwardEnd)
         self.accept('w', self.ChangeSpherePositionForwardStart)
         self.accept('w-up', self.ChangeSpherePositionForwardEnd)
+        self.accept('escape', self.onExit)
         self.taskMgr.add(self.ChooseDirection)
         self.taskMgr.add(self.MoveFoward)
         self.taskMgr.add(self.MoveBackward)
         self.taskMgr.add(self.MoveLeft)
         self.taskMgr.add(self.MoveRight)
         self.taskMgr.add(self.rotateStar)
+        
+        #Generates random direction once every second, uncomment to enable
+
+        #self.taskMgr.add(self.recvInput)
 
         blank_node = PandaNode("my_blank_node")
         self.nodepath1 = NodePath(blank_node)
@@ -131,13 +138,20 @@ class MyApp(ShowBase):
 
     def ChangeSpherePositionBackwardStart(self):
         self.isMovingBackward = True
+        self.direction_array.append('backward')
 
     def ChangeSpherePositionBackwardEnd(self):
         self.isMovingBackward = False
 
     def MoveBackward(self, task):
         if self.isMovingBackward == True:
-            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.5 )
+            
+            getNewPos = self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.1
+
+            if getNewPos[0] >= 200 or getNewPos[0] <= -200 or getNewPos[1] >= 200 or getNewPos[1] <= -200:
+                return Task.cont
+
+            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle)), math.cos(math.radians(self.angle)), 0) * 0.1 )
 
             self.cameraSet(self.fakeHeading)
 
@@ -155,6 +169,7 @@ class MyApp(ShowBase):
 
     def ChangeSpherePositionForwardStart(self):
         self.isMovingForward = True
+        self.direction_array.append('forward')
             
 
     def ChangeSpherePositionForwardEnd(self):
@@ -164,8 +179,15 @@ class MyApp(ShowBase):
 
 
     def MoveFoward(self, task):
+
         if self.isMovingForward == True:
-            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.5 )
+
+            getNewPos = self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.1
+
+            if getNewPos[0] >= 200 or getNewPos[0] <= -200 or getNewPos[1] >= 200 or getNewPos[1] <= -200:
+                return Task.cont
+
+            self.sphObject.setPos(self.sphObject.getPos() + Vec3(math.sin(math.radians(self.angle+180)), math.cos(math.radians(self.angle+180)), 0) * 0.1 )
 
 
             self.cameraSet(self.fakeHeading)
@@ -184,15 +206,16 @@ class MyApp(ShowBase):
 
     def ChangeSpherePositionRightStart(self):
         self.isMovingRight = True
+        self.direction_array.append('right')
 
     def ChangeSpherePositionRightEnd(self):
         self.isMovingRight = False
 
     def MoveRight(self, task):
         if self.isMovingRight == True:
-            self.angle += 2.5
+            self.angle += 0.3
             
-            self.fakeHeading += 2.5
+            self.fakeHeading += 0.3
 
 
             self.cameraSet(self.fakeHeading)
@@ -212,16 +235,17 @@ class MyApp(ShowBase):
 
     def ChangeSpherePositionLeftStart(self):
         self.isMovingLeft = True
-    
+        self.direction_array.append('left')
+
     def ChangeSpherePositionLeftEnd(self):
         self.isMovingLeft = False
 
     def MoveLeft(self, task):
         if self.isMovingLeft == True:
-            self.angle -= 2.5
+            self.angle -= 0.3
 
 
-            self.fakeHeading -= 2.5
+            self.fakeHeading -= 0.3
 
             self.cameraSet(self.fakeHeading)
 
@@ -248,6 +272,44 @@ class MyApp(ShowBase):
         else:
             return Task.done
 
+    def recvInput(self, task):
+    
+        current_sec = int(task.time)
+        if current_sec != self.prev_sec:
+            self.prev_sec = current_sec
+
+            direction_index = random.randint(0, 3)
+            print(direction_index)
+            
+            # ['left', 'right', 'backward', 'forward']
+            # 0         1       2            3
+            
+            if direction_index == 0:
+                self.ChangeSpherePositionLeftStart()
+                self.ChangeSpherePositionRightEnd()
+                self.ChangeSpherePositionForwardEnd()
+                self.ChangeSpherePositionBackwardEnd()
+
+            elif direction_index == 1:
+                self.ChangeSpherePositionLeftEnd()
+                self.ChangeSpherePositionRightStart()
+                self.ChangeSpherePositionForwardEnd()
+                self.ChangeSpherePositionBackwardEnd()
+
+            elif direction_index == 2:
+                self.ChangeSpherePositionLeftEnd()
+                self.ChangeSpherePositionRightEnd()
+                self.ChangeSpherePositionForwardEnd()
+                self.ChangeSpherePositionBackwardStart()                
+        
+            elif direction_index == 3:
+                self.ChangeSpherePositionLeftEnd()
+                self.ChangeSpherePositionRightEnd()
+                self.ChangeSpherePositionForwardStart()
+                self.ChangeSpherePositionBackwardEnd() 
+
+
+        return Task.cont
 
 
     def ChooseDirection(self, task):
@@ -318,11 +380,20 @@ class MyApp(ShowBase):
                 break
 
             self.index = self.index +1
+
         
         return task.cont
+    
+    def onExit(self):
+        with open('dirs.csv', 'a', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(self.direction_array)
+        exit(0)
 
 
 game = MyApp()
 
 game.run()
+
+
 
