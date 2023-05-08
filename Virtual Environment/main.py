@@ -58,7 +58,10 @@ class MyApp(ShowBase):
         self.taskMgr.add(self.MoveLeft)
         self.taskMgr.add(self.MoveRight)
         self.taskMgr.add(self.rotateStar)
-        self.taskMgr.add(self.recvInput)
+        
+        #Generates random direction once every second, uncomment to enable
+
+        #self.taskMgr.add(self.recvInput)
 
         blank_node = PandaNode("my_blank_node")
         self.nodepath1 = NodePath(blank_node)
